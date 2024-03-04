@@ -1,0 +1,28 @@
+magephp:
+  log_dir: ./storage/logs/mage
+  log_limit: 10
+  environments:
+    develop:
+      user: udeploy
+      branch: master
+      from: ./
+      host_path: /var/www/html/linguameeting
+      releases: 0
+      exclude:
+        - bootstrap/*
+        - storage/*
+        - tests/*
+        - vendor/*
+        - .env
+        - .env.testing
+        - .mage.yml
+        - .idea/*
+      hosts:
+        - 139.177.201.195
+      rsync: -r --omit-dir-times --no-perms
+      pre-deploy:
+      on-deploy:
+      on-release:
+      post-release:
+      post-deploy:
+        - exec: { cmd: 'sh laravel_refresh.sh', desc: 'Refresh config and cache' }

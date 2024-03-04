@@ -1,0 +1,232 @@
+.card-course-dashboard{
+    margin-top: 40px;
+    -webkit-box-shadow: 5px 5px 0px 1px #F0F0F0;
+    box-shadow: 5px 5px 0px 1px #F0F0F0;
+    border-radius: 0px !important;
+}
+
+.background-color-card1{
+
+    background-color: #e2d2fe;
+}
+
+.background-color-card2{
+
+    background-color: #fde1ab;
+}
+
+.background-color-card3{
+
+    background-color: #bae5f4;
+}
+
+.background-color-card4{
+
+    background-color: #ccf0bf;
+}
+
+.card-sep-course-dashboard{
+
+    padding-top: 20px;
+    border-top: 2px solid #aeaeae;
+    margin-top: 20px;
+}
+
+.icon-card-dashboard{
+    margin-bottom: 10px;
+}
+
+.color-grey-dashboard{
+    color: #aeaeae;
+}
+
+.margin-top-10{
+    margin-top: 10px;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-center{
+    text-align: center !important;
+}
+
+.custom-color-a{
+    color: #0d6efd;
+}
+
+#table-instructor {
+    border-collapse: unset !important;
+}
+
+#table-instructor thead tr,th{
+
+    color: #aaaaaa !important;
+    font-weight: normal;
+}
+
+#table-instructor thead, tbody, tfoot, tr, td, th {
+    border-color: inherit;
+    border-width: 0;
+    border-style: none;
+}
+
+
+.card-list-courses-instructor{
+    border: none;
+}
+
+.align-svg svg{
+        vertical-align: bottom !important;
+}
+
+.custom-color-background-instructor{
+
+    background-color: #eef5f3 !important;
+}
+
+.padding-5{
+    padding: 5px;
+}
+
+.chart-card-background{
+
+    background-color: #f9f9f9;
+    border: none;
+}
+
+.chartRegisteredStudents{
+
+    width: 60%;
+    margin: auto;
+}
+
+.title-dashboard{
+    font-size: 1rem;
+    padding-top: 10px;
+}
+
+.title-dashboard span{
+    margin-left: 10px;
+}
+
+
+.title-dashboard-circle{
+    background-color: #186e74;
+    width: 50px;
+    padding: 10px;
+    border-radius: 100%;
+    color: white;
+    height: 50px;
+    text-align: center;
+
+}
+
+.bar-dashboard-background{
+
+    margin: 5px 0;
+    background-color: #d1d9da;
+    height: 30px;
+    width:100%;
+    border-radius: 20px;
+}
+
+.bar-dashboard-fill{
+
+    height: 100%;
+    border-radius: 20px;
+}
+
+.bar-dashboard-big-background{
+
+    margin: 5px 0;
+    background-color: #d1d9da;
+    height: 40px;
+    width:100%;
+    border-radius: 10px;
+}
+
+.bar-dashboard-big-fill{
+
+    height: 100%;
+    border-radius: 10px;
+}
+
+.color-bar-extra{
+    background-color: #569e8b;
+}
+
+.border-bottom-inst{
+    border-bottom: 1px solid grey;
+}
+
+.rate-select-layer {
+    color: orange;
+}
+
+.text-14{
+    font-size: 14px;
+}
+
+.text-16{
+    font-size: 16px;
+}
+
+.text-18{
+    font-size: 18px;
+}
+
+.text-20{
+    font-size: 20px;
+}
+
+.margin-auto{
+    margin: auto;
+}
+
+.border-color2{
+    border: 2px solid #35b4b4 !important;
+}
+
+.img_coach_attendance{
+
+	height: 100px;
+}
+
+.background_colorAAAAAA{
+    background-color: #AAAAAA !important;
+}
+
+.colorWhite{
+	color: white !important;
+}
+
+.points-sessions{
+    font-size: 50px;
+}
+
+.points-grade{
+    font-size: 30px;
+}
+
+.points-grade-total{
+    font-size: 40px;
+}
+
+.bg-feedback-good{
+    background-color: #cdebcc !important;
+}
+
+.bg-feedback-bad{
+    background-color: #ffd8d6 !important;
+}
+
+.create-course-btn{
+    padding: 15px;
+    border-radius: 5px;
+}

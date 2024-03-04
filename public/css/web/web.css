@@ -1,0 +1,6103 @@
+/* 
+    Created on : 05-may-2023, 1:47:57
+    Author     : Sandra <wilowi.com>
+*/
+
+@CHARSET "UTF-8";
+
+@-webkit-viewport {
+    width: device-width;
+}
+@-moz-viewport { 
+    width: device-width;
+}
+@-o-viewport {
+    width: device-width;
+}
+@-ms-viewport {
+    width: device-width;
+}
+@viewport {
+    width: device-width;
+}
+
+#reamazejs-container{
+
+    display: none;
+}
+
+#divReadyGetMedia{
+
+    display: none;
+}
+
+#divReadyGet{
+
+    display: block;
+}
+
+#section_4Media{
+
+    display: none;
+}
+
+#section_4{
+
+    display: block;
+}
+
+#section_5Media{
+
+    display: none;
+}
+
+.divCrystalMedia{
+    display: none;
+}
+
+#experiencesCarouselHomeMedia{
+
+    display: none;
+}
+
+#experiencesCarouselHome{
+
+    display: block;
+}
+
+
+#section_5{
+
+    display: block;
+}
+
+#section1HIWMedia{
+    
+    display: none;
+    
+}
+
+#section1HIW{
+    
+    display: flex;
+    
+}
+
+#CaseStudyKateMedia{
+
+    display: none;
+}
+#CaseStudyCrystalMedia{
+
+    display: none;
+}
+#CaseStudyKate{
+
+    display: block;
+}
+
+#section2HISMedia{
+
+    display: none;
+}
+
+#section2HIS{
+
+    display: block;
+}
+
+#sectionCoachsMapDivMedia{
+    display: none;
+}
+
+
+.boxConnectTestimonialMedia{
+
+    display: none;
+}
+
+.heightIconLogoGrey{
+    
+    height: 120px;
+}
+
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+    margin:0;
+    padding:0;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    border: none;
+}
+
+.navbar-toggler-icon{
+    width: auto !important;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px !important;
+    background-color: #edf4f4 !important;
+    line-height: normal !important;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    
+}
+
+.navbar-collapse{
+    
+    flex-grow: 0 !important;
+}
+
+.w100 {
+  font-weight: 100;
+}
+.w200 {
+  font-weight: 200;
+}
+.w300 {
+  font-weight: 300;
+}
+.w400 {
+  font-weight: 400;
+}
+.w500 {
+  font-weight: 500;
+}
+.w600 {
+  font-weight: 600;
+}
+
+.colorBase1{
+    color: #186e74 !important;
+}
+
+.colorBase2{
+    color: #39b4b3 !important;
+}
+
+.colorBase3{
+    color: #edf4f4 !important;
+}
+
+.colorBase4{
+    color: #f04d24 !important;
+}
+
+.colorBase1RGB{
+    color: rgb(24,110,116)!important;
+}
+
+.colorBase2RGB{
+    color: rgb(57,180,179) !important;
+}
+
+.colorBase3RGB{
+    color: rgb(237,244,244) !important;
+}
+
+.colorBase4RGB{
+    color: rgb(240,77,36) !important;
+}
+
+
+.backgroundColorBase1{
+    background-color: #186e74 !important;
+}
+
+.backgroundColorBase2{
+    background-color: #39b4b3 !important;
+}
+
+.backgroundColorBase3{
+    background-color: #edf4f4 !important;
+}
+
+.backgroundColorBase4{
+    background-color: #f04d24 !important;
+}
+
+.backgroundColorBase5{
+    background-color: #fbece8 !important;
+}
+
+.btnBasicRed{
+    
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: #f04d24;
+    border-radius: 30px;
+    cursor: pointer;
+    
+}
+
+.btnBasicRedLong{
+    
+    width: 220px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: #f04d24;
+    border-radius: 30px;
+    cursor: pointer;
+    
+}
+
+.btnBasicWhite{
+    
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    color: #f04d24;
+    border-radius: 30px;
+    background-color: white;
+    border: 1px solid #f04d24;
+    
+}
+
+.btnBasicWhiteLong{
+    
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    color: #f04d24;
+    border-radius: 30px;
+    background-color: white;
+    border: 1px solid #f04d24;
+    
+}
+
+.btnBasicWhiteLongGreen{
+    
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+    color: #39b4b3;
+    border-radius: 30px;
+    background-color: white;
+    border: 1px solid #f04d24;
+    
+}
+
+.btnBasicWhiteNB{
+    
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    color: #f04d24;
+    border-radius: 30px;
+    background-color: white;
+    
+}
+
+.btnBasicTransparent{
+    
+    width: 180px;
+    padding: 10px;
+    text-align: center;
+    color: #f04d24;
+    border-radius: 30px;
+    border: 1px solid #f04d24;
+    
+}
+
+.btnBasicTransparentLong{
+    
+    width: 230px;
+    padding: 10px;
+    text-align: center;
+    color: #f04d24;
+    border-radius: 30px;
+    border: 1px solid #f04d24;
+    
+}
+
+.btnBasicTransparentWhite{
+    
+    width: 180px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    border-radius: 30px;
+    border: 1px solid #f04d24;
+    
+}
+
+.btnBasicWith{
+    
+    width: 180px;
+}
+
+.btnBaseRound{
+    
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    border-radius: 34px;
+    height: 50px;
+    width: 170px;
+    background-color: #f04d24;
+}
+
+.btnPlay{
+    
+    font-weight: 600;
+    font-size: 50px;
+    border-radius: 34px;
+    color: #f04d24;
+    background-color: white;
+    width: 72px;
+    height: 72px;
+}
+
+.btnPlayBorder{
+    
+    font-weight: 600;
+    font-size: 50px;
+    border-radius: 34px;
+    color: #f04d24;
+    background-color: white;
+    width: 72px;
+    height: 72px;
+    border: 2px solid #f04d24;
+}
+
+.footerBlock1{
+    min-height: 100px;
+    background-color: #edf4f4;
+    color: #186e74;
+    padding: 100px 300px 50px 300px;
+}
+
+.footerBlock2{
+    
+    background-color: #39b4b3;
+    min-height: 200px;
+    padding: 100px 300px 50px 300px;
+    color: white;
+}
+
+.footerBlock3{
+    
+    background-color: #186e74;
+    min-height: 80px;
+    color: white;
+    padding: 10px 300px 20px 300px;
+}
+
+.textFooter1{
+    
+    font-size: 28px;
+    padding-bottom: 10px;
+    
+}
+
+.social-networkDiv{
+
+    margin-top: 55px;
+    
+}
+
+.linguaMeetingFooter{
+    font-size: 32px;
+    color: #186e74;
+}
+
+/* footer social icons */
+ul.social-network{
+	list-style: none;
+	display: inline;
+}
+ul.social-network li {
+	display: inline;
+	margin: 0 30px 0 0;
+        
+}
+
+ul.social-network li a > i {
+	font-size: 25px !important;
+        color: #39b4b3 !important;
+}
+
+
+/* navbar */
+
+#headerWeb{
+    
+    background-color: #edf4f4 !important;
+    color: #186e74;
+    height: 80px;
+    
+}
+
+#navbarWeb{
+    border-bottom: 2px solid white;
+}
+
+.btnMenuWeb:hover{
+    
+    border-bottom: 2px solid #39b4b3;    
+    
+}
+
+.btnMenuWebBorder{
+    
+    border-bottom: 2px solid #39b4b3;    
+    
+}
+
+.addonHeader{
+    
+    height: 50px;
+    color: white;
+    background-color:#39b4b3;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 20px;
+}
+
+.widthNavBar{
+
+    max-width: 100%;
+    margin: 0px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+.hWayde{
+    height: 100%;
+}
+
+.varBarOptions{
+
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.KvZmB {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+
+.KvZmB img{
+    
+    height: 50px;
+    
+}
+
+
+
+.hcRsrb {
+    display: flex;
+    margin-right: 56px;
+}
+
+.iniev {
+    -webkit-box-align: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    height: 100%;
+    position: relative;
+}
+
+.closeStarted{
+    
+    padding-right: 40px;
+    
+}
+
+/* body homepage*/
+
+.paddingSection{
+    padding: 100px 300px 100px 300px;
+    
+}
+
+.sayHello{
+    
+    position: relative;
+    text-align: right;
+    font-family: 'Recoleta', sans-serif !important;
+    font-size: 75px;    
+    padding: 100px 300px 0 0;
+    z-index: 100;
+    
+}
+
+.sayPartnerships{
+    
+    position: relative;
+    text-align: right;
+    font-family: 'Recoleta', sans-serif !important;
+    font-size: 72px;
+    z-index: 100;
+    
+}
+
+.realLife{
+    position: relative;
+    text-align: right;
+    font-size: 28px;
+    padding-right: 300px;
+    z-index: 100;
+    
+}
+
+.realLifeCoaches{
+    position: relative;
+    text-align: right;
+    font-size: 28px;
+    z-index: 100;
+    
+}
+
+.realLifeFor{
+    position: relative;
+    text-align: right;
+    padding: 0 300px 20px 0;
+    font-size: 21px;
+    height: 40px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    
+}
+
+.realLifeForMedia{
+    
+    position: relative;
+    font-size: 21px;
+    height: 40px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    display: none;
+    
+}
+
+.forStudent{
+    
+    border-bottom: 3px solid #39b4b3;
+    margin-left: 40px;
+}
+
+.forInstructor{
+    
+    border-bottom: 3px solid #39b4b3;
+    margin-right: 40px;
+}
+
+.separatorDivRealLife{
+    
+    width: 3px;
+    height: 40px;
+    background-color: #39b4b3;
+}
+
+.separatorDivCoaches{
+    
+    width: 58px;
+    height: 3px;
+    background-color: #f04d24;
+    margin-left: 40px;
+}
+
+.separatorDivHome{
+    
+    width: 20px !important;
+    height: 3px;
+    background-color: #f04d24;
+}
+
+.sectionMichelle{
+    
+    position: relative;
+    border-bottom: 2px solid white;
+    
+}
+
+.divMichelle{
+    
+    position: absolute;
+    left: calc(40% - 480px);
+    bottom: 0;
+    z-index: 50;
+}
+
+
+.imgMichelle{
+    
+   width:  480px;
+}
+
+.imgCrystal{
+    
+   width:  680px;
+}
+
+.marginCulture{
+    
+    margin-top: 40px;
+}
+
+.divCirculoMichelle{
+    
+    position: absolute;
+    left: calc(45% - 723px);
+    bottom: 0;
+    z-index: 0;
+}
+
+.imgCirculoMichelle{
+    
+   width:  723px;
+}
+
+.divAnxiety{
+    
+    font-family: 'Recoleta', sans-serif !important;
+    font-size: 38px;
+    
+}
+
+.section_14a{
+    
+    position: relative;
+    min-height: 800px;
+    z-index: 100;    
+    background-color: white;
+}
+
+.divExperWoman{
+    
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    z-index: 50;
+}
+
+.imgExperWoman{
+    
+    height: 500px;
+    
+}
+
+.divreadySign{
+    
+    font-size: 21px;
+    text-align: center;
+    padding-top:50px;
+}
+
+.separatorVertical{
+    
+    height: 100%;
+    width: 3px;
+    background-color:#39b4b3;
+    margin: auto;
+}
+
+.separatorVerticalWhite{
+    
+    height: 100%;
+    width: 3px;
+    background-color:white;
+    margin: auto;
+}
+
+.separatorHorizontal{
+    
+    height: 2px;
+    width: 60%;
+    background-color: #39b4b3;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.separatorHorizontalMedia{
+    
+    height: 2px;
+    width: 100%;
+    background-color: #39b4b3;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.img_vertical{
+    
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnReady{
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.twoGuys{
+    position: relative;
+    min-height: 426px;
+}
+
+.guyFirstSession{
+
+    background: url(/linguameetinglaravel/public/assets/img/web/Homepage-before-after-color.png) no-repeat;
+    height: 426px;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+
+}
+
+
+.divgGuyLogoPlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fontRecoleta{
+    
+    font-family: 'Recoleta', sans-serif !important;
+}
+
+.fontWild{
+    
+    font-family: 'Oakland', sans-serif !important;
+}
+
+.divCarouselLanguages{
+    
+    width: 400px;
+    margin: auto;
+}
+
+.section_4{
+    
+    padding: 50px 200px 50px 200px;
+    text-align: center;
+}
+
+.languages9{
+    font-size: 21px;
+    color: #39b4b3;
+    
+    
+}
+
+.borderRed{
+    
+    border-bottom: 3px solid #f04d24;
+}
+
+.section_5{
+    
+    position: relative;
+    background-color: white;
+    height: 230px;
+    z-index: 200;
+    padding-top: 20px;
+}
+
+.section_6{
+    
+    position: relative;
+    min-height: 400px;
+    z-index: 100;
+    color: #186e74;
+}
+
+.divTextAnxiety{
+    position: relative;
+    z-index: 120
+}
+
+.divCircleLeft{
+    
+    position: absolute;
+    bottom: -80px;
+    left:0;
+    z-index: 0;
+}
+
+.imgCircleLeft{
+    
+   width:  409px;
+}
+
+.divAbsLogoPlay{
+    
+    position: absolute;
+    bottom: 5px;
+    z-index: 300;
+    left: calc(80% - 95px);
+    
+}
+
+.imgAbsPlay{
+    
+    width: 95px;
+}
+
+.textBtnLearnMore{
+    font-size: 16px;
+}
+
+.section_7{
+    
+    position: relative;
+    background-color: #39b4b3;
+    min-height: 450px;
+    z-index: 100;
+}
+
+.testimonialsCarouselDiv{
+    
+    width: 50%;
+    padding-top: 20px;
+    margin: auto;
+}
+
+.textAnxiety{
+    font-size: 54px;
+}
+
+.section_8{
+    
+    position: relative;
+    min-height: 400px;
+    z-index: 150;
+    padding: 50px 200px 50px 200px;
+}
+
+#watchVideoCrystal{
+    
+    position: absolute;
+    bottom: 0;
+    left: 68%;
+    z-index: 500;
+    display: block;
+    
+}
+
+#watchVideoCrystalIndex{
+    
+    position: absolute;
+    bottom: 0;
+    left: 68%;
+    z-index: 500;
+    display: block;
+    
+}
+
+#watchVideoCrystalMedia{
+    
+    display: none;
+    
+}
+
+
+.playCrystalMedia{
+    
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+}
+
+#linguaStory{
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 500;
+}
+
+#CaseStudyCrystal{
+    display: none;
+}
+
+.divLinkButton{
+    
+    margin: auto;
+    width: 180px;
+}
+
+.linguaStoryArrowLeft{
+    
+    position: absolute;
+    top: 48%;
+    left: 10%;
+    z-index: 500;
+}
+
+.linguaStoryArrowRight{
+    
+    position: absolute;
+    top: 48%;
+    right: 10%;
+    z-index: 500;
+}
+
+.imgStoryCrystal{
+    
+    height: 100px;
+}
+
+.imgArrowCrystal{
+    
+    height:80px;
+    margin-left: 80px;
+}
+
+.section_9{
+    
+    position: relative;
+    min-height: 300px;
+    z-index: 1000;
+}
+
+
+.divCrystal{
+    
+    position: absolute;
+    left: calc(40% - 480px);
+    bottom: -15px;
+    z-index: 50;
+    
+}
+
+.divCrystalHI{
+    
+    position: absolute;
+    left: calc(40% - 480px);
+    bottom: -15px;
+    z-index: 50;
+    
+}
+
+.divKateHI{
+    
+    position: absolute;
+    left: calc(40% - 480px);
+    bottom: -100px;
+    z-index: 50;
+    
+}
+
+.imgKateHI {
+    width: 680px;
+}
+
+.imgCrystalHI {
+    width: 680px;
+}
+
+
+.section_10{
+    
+    position: relative;
+    min-height: 700px;
+    z-index: 100;    
+    background: url(/linguameetinglaravel/public/assets/img/web/Instructor-quote-photo-bg.png) no-repeat;
+    background-position: center;
+}
+
+.boxTestInst{
+    
+    background-color: white;
+    padding: 60px 40px 60px 40px;
+    -webkit-box-shadow: 7px 6px 5px -1px rgba(79,78,79,1);
+    -moz-box-shadow: 7px 6px 5px -1px rgba(79,78,79,1);
+    box-shadow: 7px 6px 5px -1px rgba(79,78,79,1);
+    margin-bottom: 10px;
+}
+
+.boxTextAbout{
+    
+    background-color: white;
+    padding: 60px 40px 60px 40px;
+    -webkit-box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    -moz-box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    width: 300px;
+    margin: auto;
+    
+}
+
+.margin-topBtnLearn{
+    margin-top: 100px;
+}
+
+.marginTextWhatSay{
+    
+    margin-top: 45%;
+}
+
+.marginTopTestCarousel{
+    margin-top: 3%;
+}
+
+.instSlideWidth{
+    
+    font-size: 18px;
+}
+
+.section_11{
+    
+    position: relative;
+    min-height: 500px;
+    z-index: 100;
+}
+
+.unionCircles{
+    margin-top: 50px;
+    position: relative;
+    z-index: 100;
+    text-align: center;
+}
+
+.unioncirclesArrow{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.logoLingua{
+
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.unionCircles img{
+    height: 495px;
+}
+
+.logoLingua img{
+    
+    height: 40px;
+}
+
+.section_12{
+    
+    position: relative;
+    min-height: 500px;
+    z-index: 100;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.section_12 img{
+    height: 560px;
+}
+
+.listspeakingpractice{
+    
+    margin-top: 80px;
+}
+
+.section_13{
+    
+    position: relative;
+    min-height: 200px;
+    z-index: 100;
+}
+
+
+
+.liststudyabroad{
+    
+    margin-top: 80px;
+}
+
+.squareSolutions{
+    
+    background-color: white;
+    padding: 40px;
+    border-radius: 50px;
+    
+}
+
+
+#section_14{
+    background: url(/linguameetinglaravel/public/assets/img/web/Experiences-Inca-bg.png) no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 100;
+    
+}
+
+.section_14{
+    
+    position: relative;
+    height: 650px;
+    z-index: 100;
+    margin-top: 300px;
+    
+}
+
+.coachesInca{
+    
+    position: absolute;
+    z-index: 0;
+    top: -295px;
+    left: 10%;
+}
+
+.coachesIncaText{
+    
+    position: absolute;
+    z-index: 20;
+    top: -200px;
+    left: 21%;
+}
+.experiencesTrasncend{
+    
+    
+    padding-top: 180px;
+    padding-bottom: 100px;
+
+}
+
+
+.section_15{
+    
+    position: relative;
+    min-height: 500px;
+    z-index: 100;
+    padding: 0 300px 0 300px;
+    
+}
+
+.boxExpCarousel{
+    
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    min-height: 470px;
+    position: relative;
+}
+
+.expRoundCorner img{
+    border-radius: 10px;
+}
+
+.positionBottom{
+    
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+}
+
+.height150{
+    
+    height: 150px;
+}
+
+.setCourses{
+    
+    position: relative;
+    text-align: right;
+    font-family: 'Recoleta', sans-serif !important;
+    font-size: 75px;
+    z-index: 100;
+    
+}
+
+.btnScheduleHI{
+    position: absolute;
+    right: 40%;
+}
+
+
+.connectHI{
+    
+    width: 60%;
+}
+
+#section1_hi{
+    
+    position: relative;
+    border-bottom: 2px solid white;
+    min-height: 500px;
+    
+}
+
+.section2_hi{
+    
+    position: relative;
+    min-height: 400px;
+    z-index: 150;
+    padding: 50px 100px 50px 100px;
+}
+
+.section3_hi{
+    
+    position: relative;
+    min-height: 750px;
+    z-index: 100;    
+    /*background: url(assets/img/web/backgroundWhiteHI.png) no-repeat;*/
+    background: url(/linguameetinglaravel/public/assets/img/web/backgroundWhiteHI.png) no-repeat;
+    background-position: inherit;
+    background-size: 100%;
+}
+
+.boxFAQs{
+    
+    border-bottom: 1px solid #39b4b3;
+    padding-bottom: 15px;
+    
+}
+
+.boxSteps1{
+    
+    position: relative;
+    background-color: #186e74;
+    color: white;
+}
+
+.boxSteps2{
+    
+    position: relative;
+    background-color: #39b4b3;
+    color: white;
+}
+
+.boxSteps2Color{
+    
+    position: relative;
+    background-color: #39b4b3;
+    color: #186e74;
+}
+
+.boxSteps3{
+    
+    position: relative;
+    background-color: #8ACDCF;
+    color: white;
+}
+
+.boxSteps3White{
+    
+    position: relative;
+    background-color: white;
+    color: #186e74;
+}
+
+#section1_hs{
+
+    border-bottom: 2px solid white;
+    z-index: 200
+    
+}
+
+.section1_hs{
+    
+    position: relative;
+    
+}
+.divMichelleHS{
+    
+    position: absolute;
+    right: calc(40% - 480px);
+    bottom: -10px;
+    z-index: 50;
+}
+
+.imgMichelleHS {
+    width: 600px;
+}
+
+.setSuccessHS{
+    
+    position: relative;
+    text-align: left;
+    font-family: 'Recoleta', sans-serif !important;
+    font-size: 75px;
+    z-index: 100;
+    
+}
+
+
+.section2_hs{
+    
+    position: relative;
+    z-index: 500;
+    padding: 100px 300px 0 300px;
+}
+
+
+#linguaLove{
+    
+    position: absolute;
+    bottom: 20px;
+    left: 13%;
+    z-index: 500;
+}
+
+.boxTalking{
+    
+    width: 60%;
+    background-color: white;
+    padding: 50px 30px 50px 30px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    -webkit-box-shadow: 7px 0 5px -1px rgba(194,188,194,1);
+    -moz-box-shadow: 7px 0 5px -1px rgba(194,188,194,1);
+    box-shadow: 7px 0 5px -1px rgba(194,188,194,1);
+}
+
+.section3_hs{
+    
+    background-color: #39b4b3;
+    position: relative;
+    z-index: 200;
+}
+
+.borderBottomTextBasic{
+
+    border-bottom: 1px solid #39b4b3;
+
+}
+
+.borderBottomText{
+
+    border-bottom: 3px solid #39b4b3;
+
+}
+
+.borderBottomText2{
+
+    border-bottom: 3px solid #186e74 ;
+
+}
+
+.borderBottomTextWhite{
+
+    border-bottom: 5px solid white ;
+
+}
+
+.borderBottomTextWBase3{
+
+    border-bottom: 10px solid #edf4f4 ;
+
+}
+
+.borderLeftText{
+
+    border-left: 2px solid #39b4b3;
+
+}
+
+.borderRightText{
+
+    border-right: 3px solid #39b4b3;
+
+}
+
+.imgVoiceHI{
+    
+    height: 260px;
+    width: 200px;
+    
+}
+
+.loveStudentsDiv{
+    
+    font-size: 54px;
+    padding: 20px;
+}
+
+.stepsMarginHIW{
+    
+    margin-top: 60px;
+}
+
+/* HOW IT WORKS STUDENTS*/
+
+.watchVideo{
+    position: absolute;
+    top: 120px;
+    right: 20%;
+}
+
+.section4_hs{
+    
+    background-color: white;
+    position: relative;
+    z-index: 200;
+    padding: 50px 300px 50px 300px;
+    
+}
+
+.separatorDivHIW{
+    
+    width: 200px !important;
+    height: 3px;
+    background-color: #f04d24;
+}
+
+.section4_hsa{
+    
+    background-color: #f3f8f9;
+}
+
+.StepHIWStudent2, .StepHIWStudent3{
+    
+    display: none;
+    margin: auto;
+}
+
+.StepHIWStudent1{
+
+    margin: auto;
+}
+
+.imgCircleLeft{
+    
+   width:  409px;
+}
+
+.section5_hs{
+    
+    background-color: #fdf4f3;
+    
+}
+
+.boxVoices{
+    
+    width: 80%;
+    padding: 40px;
+    border-radius: 40px;
+    -webkit-box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    -moz-box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    background-color: white;
+    margin: auto
+}
+
+
+
+/* ABOUT */
+
+.headerAbout{
+    
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.section1_a{
+    
+    padding: 60px 300px 30px 300px
+    
+}
+
+
+#section1_a{
+    
+    border-bottom: 2px solid white;
+    position: relative;
+    
+}
+
+.linguaStory{
+    
+    margin-left: 140px;
+}
+
+
+.linguaStoryNext{
+    
+    margin-left: 100px;
+}
+
+.section3_a{
+    
+    background-color: #39b4b3;
+    position: relative;
+    z-index: 200;
+}
+
+.imgPopUpTeam{
+    
+    height: 200px;
+}
+
+/*Carrousel*/
+
+.slider {
+    width: 70%;
+    margin: 50px auto;
+}
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide div {
+    width: 100%;
+}
+
+.slick-slide img {
+
+    margin: auto;
+}
+
+.slick-slide height150 {
+    height: 150px;
+    margin: auto;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+
+.centerCarousel .slick-prev:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f104";
+    position: absolute;   
+    display: block;
+    left: -30px;
+    font-size: 38px;
+    top: -5px !important;
+    color: #f04d24 !important;
+}
+
+.centerCarousel .slick-next:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    position: absolute;   
+    display: block;
+    right: -30px;
+    font-size: 38px;
+    top: -8px !important;
+    color: #f04d24 !important;
+}
+
+.centerCarouselMedia .slick-prev:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f104";
+    position: absolute;   
+    display: block;
+    left: -30px;
+    font-size: 38px;
+    top: -5px !important;
+    color: #f04d24 !important;
+}
+
+.centerCarouselMedia .slick-next:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    position: absolute;   
+    display: block;
+    right: -30px;
+    font-size: 38px;
+    top: -8px !important;
+    color: #f04d24 !important;
+}
+
+.testimonialsInstCarousel .slick-prev:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f104";
+    position: absolute;   
+    display: block;
+    left: -30px;
+    font-size: 38px;
+    top: calc(50% - 57px);
+}
+
+.testimonialsInstCarousel .slick-next:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    position: absolute;   
+    display: block;
+    right: -30px;
+    font-size: 38px;
+    top: calc(50% - 57px);
+}
+
+.testimonialsCarousel .slick-prev:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f104";
+    position: absolute;   
+    display: block;
+    left: -30px;
+    font-size: 38px;
+    top: calc(50% - 57px);
+}
+
+.testimonialsCarousel .slick-next:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    position: absolute;   
+    display: block;
+    right: -30px;
+    font-size: 38px;
+    top: calc(50% - 57px);
+}
+
+
+.slick-slide {
+    transition: all ease-in-out .3s;
+    /*opacity: .2;*/
+}
+
+.slick-active {
+    /*opacity: .5;*/
+}
+
+.slick-current {
+    opacity: 1;
+}
+
+.arrowSliderLeft{
+
+    position: absolute;   
+    display: block;
+    left: -30px;
+    font-size: 38px;
+    top: -3px;
+}
+
+.arrowSliderRight{
+
+    position: absolute;   
+    display: block;
+    right: -30px;
+    font-size: 38px;
+    top: -5px;
+}
+
+.arrowSliderLeftTest{
+
+    position: absolute;   
+    display: block;
+    left: -30px;
+    font-size: 38px;
+    top: calc(50% - 57px);
+}
+
+.arrowSliderRightTest{
+
+    position: absolute;   
+    display: block;
+    right: -30px;
+    font-size: 38px;
+    top: calc(50% - 57px);
+}
+
+
+.languageSlideWidth{
+    
+  font-size: 30px;
+}
+
+.section6_a{
+    
+    position: relative;
+    border-bottom: 2px solid #39b4b3;
+    z-index: 150;
+}
+
+#section5_a{
+    
+    background-color: white;
+}
+
+.section8_a{
+    
+    background-color: #39b4b3;
+    color: white;
+}
+
+
+/**
+ PRICING
+**/
+
+.boxEstimator{
+    
+    border-radius: 20px;
+    background-color: white;
+    min-height: 600px;
+    width: 70%;
+    margin: auto;
+    -webkit-box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    -moz-box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    
+
+}
+
+.separatorDivPricing{
+    
+    width: 44px !important;
+    height: 3px;
+    background-color: #f04d24;
+}
+
+.boxEstimatorHead{
+    
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 20px;
+}
+
+.boxEstimatorBody{
+    
+    padding: 20px;
+}
+
+.section3_p{
+    
+    background-color: #1c6d72;
+    min-height: 600px;
+    position: relative;
+    margin-top: 100px;
+    
+}
+
+.iconBreakDown{
+    
+    position: absolute;
+    top: 0;
+    left: 50%;
+        transform: translate(-50%, -50%);
+}
+
+.section4_p{
+    
+    background-color: #34b3b1;
+    min-height: 600px;
+}
+
+.section5_p{
+    
+    background-color: #8acccd;
+    min-height: 600px;
+}
+
+
+.section6_p{
+    
+    background-color: #f2f8f9;
+    min-height: 600px;
+}
+
+.formPricingLingua{
+    
+    border: 1px solid #39b4b3;
+    border-radius: 10px;
+    width: 100%;    
+    display: block;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #186e74;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
+    
+}
+
+.formPricingLinguaError{
+    
+    border: 1px solid #f04d24;
+    border-radius: 10px;
+    width: 100%;    
+    display: block;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #186e74;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
+    
+}
+
+
+/*  EXPERIENCES */
+
+.section1b_exp{
+    
+    background: url(/linguameetinglaravel/public/assets/img/web/trazo_experience.png) no-repeat;
+    background-position: center;
+    background-size: 85%;
+    padding: 0 300px 100px 300px;
+}
+
+.boxExperience{
+    
+    border-radius: 20px;
+    background-color: white;
+    min-height: 180px;
+    
+}
+
+.boxExperienceModal{
+    
+    border-radius: 20px;
+    background-color: white;
+    min-height: 140px;
+    
+}
+
+.marginArrowExp{
+    
+    margin-left: 150px;
+}
+
+.imgHeightExperience{
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 180px;
+}
+
+.imgHeightExperienceModal{
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 130px;
+}
+
+.divBannerExp15{
+    
+    width: 15%;
+}
+
+.divInfoExp85{
+    
+    width: 85%;
+}
+
+.divBannerExp15Modal{
+    
+    width: 25%;
+}
+
+.divInfoExp85Modal{
+    
+    width: 75%;
+}
+
+.section3_exp{
+    position: relative;
+}
+
+.mediumCircleWhite{
+    
+    width: 500px;
+    height: 250px;
+    margin: auto;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+
+.section4_exp{
+    
+    padding: 50px 200px 25px 200px;
+
+}
+
+.paddingBoxExp{
+    
+    padding: 50px 100px 25px 100px;
+    border: 2px solid #819b9d;
+    position: relative;
+    
+}
+
+.imagExpBoxBorder{
+    
+    position: absolute;
+    top: -40px;
+    right: 10%;
+}
+
+.boxSquareExpBenWhite{
+    
+    padding: 30px;
+    background-color: white;
+    border-radius: 40px;
+    -webkit-box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    -moz-box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+}
+
+.boxSquareExpBenWhiteSmall{
+    
+    padding: 10px;
+    background-color: white;
+    -webkit-box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    -moz-box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    box-shadow: 7px 6px 5px -1px rgba(194,188,194,1);
+    margin-top: 20px;
+}
+
+.boxSquareExpBen{
+    
+    padding: 30px;
+}
+
+.section5_exp{
+    
+    position: relative;
+    background-color: #39b4b3;
+    min-height: 400px;
+    z-index: 100;
+}
+
+.arrowCollapse{
+    
+    position: absolute;
+    bottom: 20%;
+    right: 20%;
+    
+}
+
+.boxSelectedExp{
+    
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    
+}
+
+.imgboxSelectedExp{
+    
+    height: 300px;
+    border-radius: 20px;
+    
+    
+    
+}
+
+
+.section7_exp{
+    
+    position: relative;
+    border-bottom: 2px solid white;
+    
+}
+
+.divAbsLogoPlayExp {
+    position: absolute;
+    bottom: 100px;
+    z-index: 300;
+    left: calc(70% - 95px);
+}
+
+.imgDonate{
+    height:60px;
+}
+
+
+/* TESTIMONIALS */
+
+.section1_test{
+    
+    position: relative;
+    
+}
+
+.iconTestimonialsSup{
+    
+    position: absolute;
+    top: 6%;
+    left: 35%;
+}
+
+.boxTestimonial{
+    
+    background-color: white;
+    border-radius: 50px;
+    width: 450px;
+    margin: 40px auto;
+    padding: 40px;
+    font-size: 26px;
+    
+    
+}
+
+.boxTestimonialCoach{
+    
+    background-color: white;
+    border-radius: 50px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 40px;
+    
+    
+}
+
+.testimonialsVerticalLet{
+    
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.boxConnectTestimonial{
+    
+    position: relative;
+    height: 232px;
+    width: 40%;
+    margin: auto;
+    z-index: 100;    
+    background: url(/linguameetinglaravel/public/assets/img/web/backgroundConnectTestimonial.png) no-repeat;
+    background-position: inherit;
+    background-size: 100%;
+    border-radius: 40px;
+    font-size: 26px;
+    padding-bottom: 20px;
+}
+
+.boxConnectTestimonialStu{
+    
+    position: relative;
+    height: 232px;
+    width: 450px;
+    margin: auto;
+    z-index: 100;    
+    background: url(/linguameetinglaravel/public/assets/img/web/backgroundConnectTestimonial.png) no-repeat;
+    background-position: inherit;
+    background-size: 100%;
+    border-radius: 40px;
+    font-size: 25px;
+}
+
+.boxConnectTestimonialInst{
+    
+    position: relative;
+    min-height: 232px;
+    width: 450px;
+    margin: auto;
+    z-index: 100;    
+    background: url(/linguameetinglaravel/public/assets/img/web/backgroundConnectTestimonialDark.png) no-repeat;
+    background-position: inherit;
+    background-size: 100%;
+    border-radius: 40px;
+}
+
+.divgGuyLogoPlayTestInst {
+    position: absolute;
+    bottom: -80px;
+    right: -35px;
+    transform: translate(-50%, -50%);
+}
+
+
+/* LOGIN  */
+
+.section1_login{
+    
+    position: relative;
+    z-index: 100;
+}
+
+.imgMichelleLogin {
+    width: 680px;
+}
+
+.inputTextLogin{
+
+    padding: 5px;
+    width: 60%;
+    background-color: transparent !important;
+    border: none;
+    border-bottom: 2px solid #186e74;
+}
+
+.divMichelleLogin {
+    position: absolute;
+    left: calc(40% - 480px);
+    bottom: -50px;
+    z-index: 50;
+}
+
+/* REGISTER */
+
+.inputTextRegister{
+    padding: 5px;
+    width: 100%;
+    background-color: transparent !important;
+    border: none;
+    border-bottom: 2px solid #186e74;
+
+}
+
+.inputTextRegisterPassword{
+    padding: 5px;
+    width: 90%;
+    background-color: transparent !important;
+    border: none;
+    border-bottom: 2px solid #186e74;
+
+}
+
+
+.divFormWidth{
+    
+    width: 60%;
+  
+}
+
+.divFormWidthBtn{
+    
+    width: 30%;
+      
+}
+
+
+
+/* CONTACT */
+
+.boxContact{
+    
+    position: absolute;
+    width: 50%;
+    background-color: white;
+    padding: 40px;
+    border-radius: 30px;
+    z-index: 200;
+    top: 850px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.formContactLingua{
+    
+    border: 1px solid #186e74;
+    border-radius: 10px;
+    width: 100%;    
+    display: block;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #39b4b3;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
+    
+}
+
+.formContactLinguaSmall{
+    
+    border: 1px solid #186e74;
+    border-radius: 10px;
+    width: 50%;
+    display: block;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #39b4b3;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
+}
+
+.inputFileContact{
+
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.marginArrowContact{
+    
+    margin-left: 20px;
+}
+
+.section2_contact{
+    
+    position: relative;
+    min-height: 1100px;
+    z-index: 100;    
+    background: url(/linguameetinglaravel/public/assets/img/web/backgroundGreenContact.png) no-repeat;
+    background-position: inherit;
+    background-size: 100%;
+}
+
+.marginContactBox{
+    
+    margin-top: 700px;
+}
+
+
+/* COACHES */
+
+.section6_hi{
+    
+    position: relative;
+}
+
+.watchVideoMaribel{
+    
+    position: absolute;
+    bottom: 25%;
+    left: 68%;
+    z-index: 500;
+    display: block;
+    
+}
+
+.imgAbsPlayMaribel {
+    width: 120px;
+}
+
+
+.section1_co{
+    
+    position: relative;
+    z-index: 200;
+    border-bottom: 2px solid white;
+    
+}
+
+
+.section1b_co{
+    
+    position: relative;
+    
+    
+}
+
+
+.divCircleCoaches{
+    
+    position: absolute;
+    position: absolute;
+    left: calc(40% - 600px);
+    bottom: 50px;
+    z-index: 50;
+}
+
+.section2_co{
+    
+    position: relative;
+    z-index: 200;
+}
+
+.imgCoachesHeight{
+    
+    height: 400px;
+}
+
+.textAsked{
+    
+    position: absolute;
+    top: 0;
+    left: 45%;
+    z-index: 200;
+}
+
+.divAbsLogoPlayCoaches{
+    
+        position: absolute;
+    bottom: 50px;
+    z-index: 300;
+    left: calc(70% - 95px);
+
+}
+
+.imgAbsPlayCoach{
+    
+    width: 150px;
+    
+}
+
+.section3_co{
+    
+    position: relative;
+    min-height: 750px;
+    z-index: 100;    
+    background: url(/linguameetinglaravel/public/assets/img/web/backgroundWhiteHI.png) no-repeat;
+    background-position: inherit;
+    background-size: 100%;
+}
+
+
+/* CASE STUDY */
+
+.section2_cs{
+    
+    position: relative;
+    z-index: 200;
+}
+
+#linguaStoryCS{
+    
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+    z-index: 500;
+}
+
+#linguaStoryCSKate{
+    
+    position: absolute;
+    top: 35%;
+    right: 30%;
+    z-index: 500;
+    
+}
+
+.boxChallengeCS{
+    
+    border-top: 14px solid #edf4f4;
+    border-bottom: 14px solid #edf4f4;
+    border-left: 14px solid #edf4f4;
+    border-right: 7px solid #edf4f4;
+    padding: 40px;
+    
+}
+
+.boxChallengeCSInverse{
+    border-top: 14px solid #edf4f4;
+    border-bottom: 14px solid #edf4f4;
+    border-left: 7px solid #edf4f4;
+    border-right: 14px solid #edf4f4;
+    padding: 40px;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    
+}
+
+.section4_cs{
+    
+    position: relative;
+    min-height: 750px;
+    z-index: 100;    
+    background: url(/linguameetinglaravel/public/assets/img/web/backgroundCaseStudy.png) no-repeat;
+    background-position: inherit;
+    background-size: 100%;
+}
+
+#section4_cs, #section6_cs{
+    
+    background-color: white
+}
+
+.section6_cs{
+    
+    position: relative;
+    min-height: 600px;
+    z-index: 100;    
+    background: url(/linguameetinglaravel/public/assets/img/web/backgroundCaseStudyReverse.png) no-repeat;
+    background-position: inherit;
+    background-size: 100%;
+    
+}
+
+#imgOutcomesDivMedia{
+    
+    display: none;
+}
+
+#imgOutcomesDiv{
+    
+    display: block;
+    
+}
+
+/* SUPPORT */
+
+.inputSearch{
+
+    width: 50%;
+}
+
+.boxSupport{
+    
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    
+    width: 100%;
+}
+
+
+.ulListNew{
+  --icon-space: 1.5em;
+  list-style: none;
+  padding: 0;
+}
+
+.ulListHIW{
+  --icon-space: 1.5em;
+  list-style: none;
+  padding: 0;
+}
+
+.ulListCS{
+  --icon-space: 1.5em;
+  list-style: none;
+  padding: 0;
+}
+
+.ulListCSK{
+  --icon-space: 1.5em;
+  list-style: none;
+  padding: 0;
+}
+
+.ulListNew li {
+  padding-left: var(--icon-space);
+}
+
+.ulListNew li:before {
+  
+  content: url('/linguameetinglaravel/public/assets/img/web/arrowList.png');
+  display: inline-block;
+  margin-left: calc( var(--icon-space) * -1 );
+  width: var(--icon-space);
+  color: #39b4b3;
+}
+
+.ulListHIW li {
+  padding-left: var(--icon-space);
+}
+
+.ulListHIW li:before {
+  
+  content: url('/linguameetinglaravel/public/assets/img/web/arrowListRed.png');
+  display: inline-block;
+  margin-left: calc( var(--icon-space) * -1 );
+  width: var(--icon-space);
+  color: #39b4b3;
+}
+
+.ulListCS li {
+  padding-left: var(--icon-space);
+}
+
+.ulListCS li:before {
+  
+  content: url('/linguameetinglaravel/public/assets/img/web/arrowRightCS.png');
+  display: inline-block;
+  margin-left: calc( var(--icon-space) * -1 );
+  width: var(--icon-space);
+  color: #39b4b3;
+}
+
+.ulListCSK li {
+  padding-left: var(--icon-space);
+}
+
+.ulListCSK li:before {
+  
+  content: url('/linguameetinglaravel/public/assets/img/web/crossRightCS.png');
+  display: inline-block;
+  margin-left: calc( var(--icon-space) * -1 );
+  width: var(--icon-space);
+  color: #39b4b3;
+}
+
+
+
+/**
+TEXT
+**/
+
+
+.text-9{
+    
+    font-size: 9px;
+}
+
+.text-21{
+
+    font-size: 21px;
+}
+
+
+.text-22{
+    
+    font-size: 22px;
+}
+
+
+.text-23{
+    
+    font-size: 23px;
+}
+
+.text-26{
+    
+    font-size: 26px;
+}
+
+
+.text-28{
+    
+    font-size: 28px;
+}
+
+.text-32{
+    
+    font-size: 32px;
+}
+
+.text-36{
+    
+    font-size: 36px;
+}
+
+
+.text-38{
+    
+    font-size: 38px;
+}
+
+.text-43{
+    
+    font-size: 43px;
+}
+
+.text-47{
+    
+    font-size: 47px;
+}
+
+.text-47coaches{
+    
+    font-size: 47px;
+}
+
+
+.text-54{
+    font-size: 54px;
+}
+
+.text-62{
+    font-size: 62px;
+}
+
+.text-65{
+    font-size: 65px;
+}
+
+
+.text-70{
+    font-size: 70px;
+}
+
+.text-72{
+    font-size: 72px;
+}
+
+.text-78{
+    font-size: 78px;
+}
+
+/*
+Media queries
+*/
+
+@media (max-width: 1600px){
+
+    .marginContactBox {
+        margin-top: 800px;
+    }
+
+    .watchVideoMaribel{
+
+        bottom: 15%;
+        left: 70%;
+    }
+
+    .sayHello{
+        
+        padding: 100px 100px 0 0;
+    }
+    
+    .section3_co {
+
+        background-position: center;
+        background-size: cover;
+    }
+    
+
+    .realLife{
+
+        padding-right: 100px;
+    }
+
+    .realLifeFor {
+        padding: 0 100px 20px 0;
+    }
+
+    .divCirculoMichelle {
+
+        left: calc(52% - 723px);
+    }
+
+    .paddingSection {
+        padding: 50px 100px 50px 100px;
+    }
+
+
+    .section_4{
+        
+        padding: 50px 0 50px 0;
+        
+    }
+    
+    .section_7{
+        
+        padding-bottom: 50px;
+        
+    }
+
+    #linguaStory{
+        
+        left: -180px;
+    }
+    
+    .section_15{
+        
+       padding: 0 50px 0 50px; 
+    }
+    
+    .slider{
+        width: 90%;
+    }
+    
+    .footerBlock1{
+        
+        padding: 100px 100px 50px 100px;
+    }
+    
+    .footerBlock2{
+        
+        padding: 100px 100px 50px 100px;
+    }
+    
+    
+    .footerBlock3 {
+        padding: 10px 100px 20px 100px;
+    }
+    
+    .imgMichelleHS {
+        width: 400px;
+    }
+    
+    .boxTalking {
+        width: 80%;
+
+    }
+    
+    .section2_hs {
+
+        padding: 100px 200px 0 200px;
+    }
+
+    #linguaLove {
+
+        bottom: 10px;
+        left: 10%;
+    }
+}
+
+@media (max-width: 1350px){
+
+    .watchVideo{
+        position: absolute;
+        top: 150px;
+        right: 15%;
+    }
+    
+    .watchVideo img{
+        height: 200px;
+    }
+
+    .watchVideoMaribel{
+
+        bottom: 15%;
+        left: 75%;
+    }
+    
+    #Image-Maps-Com-image-maps{
+        
+        display: none;
+    }
+    
+    #sectionCoachsMapDivMedia{
+        display: block;
+    }
+    
+    .boxConnectTestimonial {
+
+        height: 232px;
+        width: 40%;
+
+        background-position: inherit;
+        background-size: contain;
+
+        font-size: 22px;
+    }
+
+
+    .KvZmB img{
+
+        height: 30px;
+
+    }
+    
+    .divExperWoman{
+
+        position: absolute;
+        right: 20px;
+        bottom: 0;
+        z-index: 50;
+    }
+
+    .imgExperWoman{
+
+        height: 450px;
+
+    }
+    
+    #watchVideoCrystal{
+        
+        left: 60%;
+    }
+    
+    .section3_hi {
+
+        background-position: center;
+        background-size: auto;
+
+    }
+    
+    .section2_hs {
+
+        padding: 50px 100px 0 100px;
+    }
+
+    .section1b_exp {
+
+        padding: 0 150px 50px 150px;
+    }
+    
+    .text-72 {
+        font-size: 68px;
+    }
+    
+    .text-78 {
+        font-size: 68px;
+    }
+    
+    .divBannerExp15 {
+        width: 20%;
+    }
+    
+    .divInfoExp85 {
+        width: 80%;
+    }
+    
+    .imagExpBoxBorder {
+
+        right: 0;
+    }
+
+    .paddingBoxExp {
+        padding: 50px 30px 25px 30px;
+    }
+
+    .section1_a {
+        padding: 60px 150px 30px 150px;
+    }
+    
+    .boxTestimonial {
+
+        width: 350px;
+        padding: 30px;
+    }
+
+    
+    .iconTestimonialsSup {
+
+        left: 25%;
+    }
+
+}
+
+@media (max-width: 1100px){
+    
+    
+    .section2_contact {
+
+        background-size: cover;
+    }
+
+
+    .boxContact {
+
+        width: 70%;
+
+    }
+
+    .formContactLinguaSmall {
+
+        width: 70%;
+
+    }
+    
+    .imgAbsPlayCoach{
+        
+        width: 100px;
+    }
+    .imgCoachesHeight {
+        height: 300px;
+    }
+    
+    .textAsked img{
+        
+        height: 200px;
+    }
+
+    .boxConnectTestimonial {
+
+        width: 50%;
+
+        font-size: 20px;
+    }
+
+    
+    .boxTestimonial {
+
+        font-size: 20px;
+    }
+
+    .KvZmB img{
+
+        height: 30px;
+
+    }
+    
+    body{
+        font-size: 14px !important;
+    }
+    
+    #watchVideoCrystal{
+        
+        left: 50%;
+        bottom: -30px;
+    }
+    
+    .text-54 {
+        font-size: 50px;
+    }
+
+    .loveStudentsDiv{
+
+        font-size: 40px;
+
+        margin-top: 60px;
+    }
+
+    .listspeakingpractice {
+
+        font-size: 18px;
+    }
+
+    .text-28 {
+        font-size: 25px;
+    }
+    
+    .boxTestInst {
+
+        padding: 30px 20px 30px 20px;
+    }
+    
+    .section2_hi {
+
+        padding: 50px 50px 50px 50px;
+    }
+
+    .imgKateHI {
+        width: 580px;
+    }
+    
+    .imgCrystalHI {
+        width: 580px;
+    }
+    
+    .section4_hs {
+
+        padding: 50px 150px 50px 150px;
+    }
+
+    .divBannerExp15 {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .divInfoExp85 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .imgHeightExperience {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+    }
+    
+    .imagExpBoxBorder img{
+        
+        height: 300px;
+    }
+
+    .boxSquareExpBenWhite {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+
+}
+
+@media (max-width: 991px){
+
+    #imgNotShowMobile{
+
+        display: none;
+
+    }
+
+    .varBarOptions{
+        
+        display: block;
+    }
+    
+    .boxEstimator {
+
+        width: 85%;
+    }
+    
+    .divBannerExp15Modal {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .divInfoExp85Modal {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+
+}
+
+@media (max-width: 900px){
+
+    .watchVideo{
+
+        top: 100px;
+        right: 12%;
+    }
+
+    .watchVideo img{
+        height: 150px;
+    }
+
+
+    .imgPopUpTeam {
+        height: 100px;
+    }
+
+    .imgAbsPlayMaribel {
+        width: 100px;
+    }
+
+    .inputSearch {
+        width: 100%;
+    }
+
+    .text-47coaches{
+        
+        font-size: 40px;
+    }
+
+    .section4_cs {
+
+        background-position: center;
+        background-size: cover;
+    }
+
+    .section6_cs {
+        background-position: center;
+        background-size: cover;
+    }
+
+    .boxConnectTestimonial {
+
+        height: 232px;
+        width: 60%;
+
+        font-size: 18px;
+    }
+
+
+    .iconTestimonialsSup{
+        
+        display: none;
+        
+    }
+    .boxTestimonial {
+
+        width: 250px;
+        padding: 30px;
+    }
+    
+    .sayHello{
+
+        text-align: center;
+        font-size: 65px;
+        padding: 40px 20px 20px 20px;
+
+    }
+    
+    .sayPartnerships {
+        position: relative;
+        text-align: center;
+        font-family: 'Recoleta', sans-serif !important;
+        font-size: 65px;
+    }
+
+    .realLife{
+        
+        padding: 0;
+        text-align: center;
+    }
+
+    .realLifeFor {
+
+        display: none;
+    }
+    
+    .realLifeForMedia {
+
+        display: block;
+    }
+
+    .text-72{
+        
+        font-size: 65px;
+    }
+    
+    .text-78 {
+        font-size: 65px;
+    }
+    
+    .setSuccessHS{
+
+        font-size: 65px;
+
+    }
+
+    .text-70 {
+        font-size: 63px;
+    }
+    
+    .setCourses{
+
+        font-size: 60px;
+
+    }
+
+    .divMichelle {
+        position: absolute;
+        left: calc(50% - 480px);
+        bottom: 0;
+        z-index: 50;
+    }
+
+    .divCirculoMichelle {
+        left: calc(62% - 723px);
+    }
+    
+    .divAnxiety{
+        
+        font-size: 28px;
+    }
+    
+    .divreadySign{
+        font-size: 18px;
+    }
+
+    .section_4 {
+        padding: 20px 0 20px 0;
+    }
+    
+    
+    .arrowSliderLeft {
+
+        font-size: 25px;
+
+    }
+
+    .arrowSliderRight {
+        font-size: 25px;
+
+    }
+    
+    .centerCarousel .slick-prev:before {
+        font-size: 25px;
+        left: 0px;
+    }
+
+    .centerCarousel .slick-next:before {
+        font-size: 25px;
+        right: 0px;
+        top: -5px !important;
+    }
+    
+    .centerCarouselMedia .slick-prev:before {
+        font-size: 18px;
+        left: 10px;
+        top: 0px !important;
+    }
+
+    .centerCarouselMedia .slick-next:before {
+        font-size: 18px;
+        right: 10px;
+        top: 0px !important;
+    }
+
+    .languageSlideWidth {
+        font-size: 20px;
+    }
+
+
+    .section_5 {
+
+        height: 200px;
+    }
+
+    .text-21 {
+        font-size: 16px;
+    }
+
+    .text-54 {
+        font-size: 34px;
+    }
+    
+    .textAnxiety {
+        font-size: 34px;
+    }
+
+    .text-28 {
+        font-size: 20px;
+    }
+    
+    .testimonialsCarouselDiv{
+        
+        width: 80%;
+    }
+    
+    .arrowSliderRightTest {
+        position: absolute;
+        display: block;
+        right: -20px;
+        font-size: 28px;
+        top: calc(50% - 57px);
+    }
+
+    .arrowSliderLeftTest {
+        position: absolute;
+        display: block;
+        left: -20px;
+        font-size: 28px;
+        top: calc(50% - 57px);
+    }
+
+    .text-23 {
+        font-size: 18px;
+    }
+    
+    #watchVideoCrystal {
+            left: 55%;
+            bottom: -30px;
+    }
+
+    .section_8 {
+
+        padding: 50px 100px 50px 100px;
+    }
+    
+    .divCrystal {
+
+        left: calc(45% - 480px);
+    }
+
+    .textNormalMedia{
+        
+        font-size: 14px;
+    }
+    
+    
+    .section_12 img {
+        height: 360px;
+    }
+
+    .marginCulture{
+
+        margin-top: 0px;
+    }
+
+    .liststudyabroad {
+        margin-top: 40px;
+    }
+
+    .coachesIncaText {
+
+        left: 31%;
+    }
+    
+    #experiencesCarouselHomeMedia{
+        
+        display: block;
+    }
+    
+    #experiencesCarouselHome{
+        
+        display: none;
+    }
+    
+    .section2_hi {
+
+        padding: 25px 25px 25px 25px;
+    }
+
+    .imgKateHI {
+        width: 480px;
+    }
+    
+    .imgCrystalHI {
+        width: 480px;
+    }
+
+    .divKateHI {
+
+        left: calc(55% - 480px);
+        bottom: -50px;
+    }
+
+    .divCrystalHI{
+
+        left: calc(55% - 480px);
+        bottom: -50px;
+
+    }
+    
+    .boxVoices {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .text-65 {
+        font-size: 45px;
+    }
+    
+    .boxTalking {
+        width: 90%;
+
+    }
+    
+    .section2_hs {
+
+        padding: 50px 50px 0 50px;
+    }
+    
+    #linguaLove {
+        bottom: 0;
+        left: 5%;
+    }
+    
+    .section1b_exp {
+
+        padding: 0 50px 50px 50px;
+    }
+    
+    .arrowCollapse {
+
+        right: 5%;
+    }
+    
+    .linguaStory {
+        margin-left: 40px;
+    }
+    
+    .linguaStoryNext {
+        margin-left: 40px;
+    }
+
+    .section1_a {
+        padding: 30px 50px 30px 50px;
+    }
+
+
+}
+
+@media (min-width: 767px){
+
+
+    #CaseStudyKateMedia{
+        
+        display: none !important;
+    }
+    
+    #CaseStudyCrystalMedia{
+        
+        display: none !important;
+    }
+
+    #CaseStudyKate{
+        
+        display: block;
+    }
+    #CaseStudyCrystal{
+        
+        display: none;
+    }
+    
+    .boxTextAbout {
+
+        width: 250px;
+        margin: auto;
+    }
+
+}
+
+@media (max-width: 766px){
+
+    .imgAbsPlayMaribel {
+        width: 90px;
+    }
+    
+    .imgBuildingText{
+        
+        display: none;
+    }
+
+    .textAsked {
+
+        left: 65%;
+    }
+
+    #imgOutcomesDivMedia{
+
+        display: block;
+    }
+
+    #imgOutcomesDiv{
+
+        display: none;
+
+    }
+
+
+    #linguaStoryCS{
+        
+        display: none;
+    }
+    
+    #linguaStoryCSKate{
+        
+        display: none;
+    }
+
+    .boxConnectTestimonial {
+
+        display: none;
+    }
+    
+    .boxConnectTestimonialInst{
+        display: none;
+        
+    }
+    
+    .boxConnectTestimonialStu{
+        display: none;
+        
+    }
+    
+    .boxConnectTestimonialMedia{
+        
+        display: block;
+        padding-bottom: 40px;
+    }
+
+    .boxTestimonial {
+
+        width: 95%;
+        padding: 40px;
+        font-size: 16px;
+    }
+
+    
+    .boxConnectTestimonialStu{
+        
+        width: 100%;
+        font-size: 22px;
+    }
+
+    #divMaribelAbout{
+        display: none;
+    }
+    
+    .footerBlock1 {
+        padding: 50px 50px 25px 50px;
+    }
+    .footerBlock2 {
+        padding: 50px 50px 25px 50px;
+    }
+
+    .footerBlock3 {
+        padding: 10px 50px 20px 50px;
+    }
+
+
+    .text_centerMedia{
+
+        text-align: center;
+    }
+    
+    .margin_autoMedia{
+
+        margin: auto;
+    }
+
+
+    #divReadyGet{
+        display: none;
+    }
+    
+    #divReadyGetMedia{
+        
+        display: block;
+    }
+    
+    .section_5 {
+
+        height: 180px;
+    }
+    
+    .marginTopMedia{
+        
+        margin-top: 30px;
+    }
+    
+    .divCrystal {
+
+        display: none;
+    }
+    
+    .divCrystalMedia{
+        display: block;
+    }
+    #watchVideoCrystalMedia{
+        display: block;
+    }
+    
+    .whatVideoCrystalNot{
+        
+        display: none;
+    }
+
+    #watchVideoCrystal {
+        left: 50%;
+        bottom: 70px;
+    }
+
+
+    .marginTextWhatSay {
+        margin-top: 10%;
+    }
+
+    
+
+    .unionCircles {
+        margin-top: 30px;
+    }
+
+    .unionCircles img {
+        height: 295px;
+    }
+    
+    
+    .listspeakingpractice {
+        margin-top: 20px;
+    }
+
+    .liststudyabroad {
+        margin-top: 0px;
+    }
+    
+    .paddinConnectCultures{
+        padding-left: 0px !important;
+    }
+    
+    .coachesInca img{
+        
+        height: 200px;
+    }
+    
+    .coachesInca {
+
+        top: -200px;
+        left: 10%;
+    }
+
+    .coachesIncaText {
+        left: 31%;
+        top: -150px;
+    }
+    
+    .coachesIncaText img{
+        height: 200px;
+    }
+    
+    .section_14{
+        
+        margin-top: 150px;
+        
+    }
+    
+    #section1HIWMedia{
+        display: block;
+    }
+    
+    #section1HIW{
+        display: none;
+    }
+    
+    .setCourses{
+
+        text-align: center;
+
+    }
+    
+    #CaseStudyKateMedia{
+        
+        display: block;
+    }
+
+    #CaseStudyKate{
+        
+        display: none !important;
+    }
+    #CaseStudyCrystal{
+        
+        display: none !important;
+    }
+    
+    .section3_hi {
+
+        background-size: cover;
+
+    }
+
+    .stepsMarginHIW{
+
+        margin-top: 10px;
+    }
+    
+    .divMichelleHS{
+        
+        display: none;
+    }
+
+    .setSuccessHS{
+
+        text-align: center;
+
+    }
+
+    #section2HISMedia{
+        
+        display: block;
+    }
+    
+    #section2HIS{
+        
+        display: none;
+    }
+    
+    .section4_hs {
+
+        padding: 50px 50px 50px 50px;
+    }
+
+    .boxEstimator {
+        width: 100%;
+    }
+    
+    .imagExpBoxBorder{
+        
+        display: none;
+    }
+    
+    #OurMissionLet{
+        display: none;
+    }
+
+}
+
+@media (max-width: 600px){
+    
+    .text-62 {
+    font-size: 42px;
+}
+    
+    .formContactLinguaSmall {
+
+        width: 100%;
+
+    }
+    
+    .watchVideo{
+
+        top: 80px;
+    }
+
+    .watchVideo img{
+        height: 100px;
+    }
+    
+    
+    .imgAbsPlayMaribel {
+        width: 70px;
+    }
+    
+    .text-47coaches{
+        
+        font-size: 32px;
+    }
+
+    #divReadyGet{
+        display: none;
+    }
+    
+    #divReadyGetMedia{
+        
+        display: block;
+    }
+ 
+    
+    #section_5Media{
+        
+        display: block;
+    }
+    
+    #section_5{
+        
+        display: none;
+    }
+
+        
+    .section_12 img {
+        height: 260px;
+    }
+
+}
+
+
+@media (max-width: 560px){
+    
+    .textAsked{
+        
+        display: none;
+    }
+    
+    .divMichelleLogin{
+        
+        display: none;
+    }
+
+    .sayHello{
+
+        font-size: 45px;
+
+    }
+    
+    .sayPartnerships {
+        font-size: 45px;
+    }
+
+    .text-32 {
+        font-size: 22px;
+    }
+
+    .text-72{
+
+        font-size: 45px;
+    }
+    
+    .text-78 {
+        font-size: 45px;
+    }
+    
+    .setSuccessHS{
+
+        font-size: 45px;
+
+    }
+
+    .text-70 {
+        font-size: 43px;
+    }
+    
+    .setCourses{
+
+        font-size: 45px;
+
+    }
+    
+    .divMichelle {
+        display: none;
+    }
+
+    .divCirculoMichelle {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 450px;
+    }
+
+    .imgCirculoMichelle{
+
+        width: 100%;
+        
+    }
+    
+    .imgAbsPlay{
+        
+        width: 60px;
+    }
+    
+    .section_4 {
+        padding: 0;
+        margin-top: 40px;
+    }
+    
+    .languages9 {
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .arrowSliderLeft {
+
+        font-size: 18px;
+        left: -15px;
+
+    }
+
+    .arrowSliderRight {
+        font-size: 18px;
+        right: -15px;
+
+    }
+    
+
+    .languageSlideWidth {
+        font-size: 15px;
+    }
+
+    .section_8 {
+        padding: 50px 30px 50px 30px;
+    }
+    
+    .unionCircles {
+        margin-top: 10px;
+    }
+
+    .unionCircles img {
+        height: 195px;
+    }
+
+    .section_15 {
+        padding: 0 20px 0 20px;
+    }
+
+    .guyFirstSession {
+        background: url(/linguameetinglaravel/public/assets/img/web/first-and-later.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+
+    }
+
+    .mediumCircleWhite {
+        width: 300px;
+        height: 180px;
+
+        border-top-left-radius: 200px;
+        border-top-right-radius: 200px;
+
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+    
+    .text-22 {
+        font-size: 17px;
+    }
+    
+    .imgboxSelectedExp {
+        height: 200px;
+    }
+    
+    .divFormWidth{
+    
+    width: 70%;
+  
+}
+
+.divFormWidthBtn{
+    
+    width: 20%;
+      
+}
+
+}
+
+@media (max-width: 470px){
+    
+    .text-62 {
+    font-size: 32px;
+}
+    
+    .marginContactBox {
+        margin-top: 900px;
+    }
+    
+    .boxContact {
+
+        width: 90%;
+
+    }
+    
+    .watchVideo{
+
+        right: 8%;
+        top: 50px;
+    }
+
+    .watchVideo img{
+        height: 80px;
+    }
+    
+    .text-43 {
+    font-size: 23px;
+}
+    
+    .boxTextAbout {
+
+        padding: 30px 20px 30px 20px;
+        width: 200px;
+    }
+
+    #section_4Media{
+        
+        display: block;
+    }
+    
+    #section_4{
+        
+        display: none;
+    }
+
+    .sayHello{
+
+        font-size: 35px;
+
+    }
+    
+    .sayPartnerships {
+        font-size: 35px;
+    }
+
+
+    .text-72{
+        
+        font-size: 35px;
+    }
+    
+    .text-78 {
+        font-size: 35px;
+    }
+    
+    .setSuccessHS{
+
+        font-size: 35px;
+
+    }
+    
+    .text-70 {
+    font-size: 33px;
+}
+    
+    .setCourses{
+
+        font-size: 35px;
+
+    }
+    
+    .realLifeForMedia {
+        
+        font-size: 14px;
+    }
+
+
+    .realLife {
+        
+        font-size: 18px;
+    }
+    .borderBottomText {
+        
+        border-bottom: 2px solid #39b4b3;
+    }
+    
+    .divAnxiety{
+        
+        font-size: 20px;
+    }
+    
+    .divreadySign{
+        font-size: 15px;
+    }
+
+    .paddingSection {
+        padding: 20px 30px 20px 30px;
+    }
+    
+    .languageSlideWidth {
+        font-size: 12px;
+    }
+    
+    .section_5 {
+ 
+        height: 150px;
+    }
+    
+    .text-28 {
+        font-size: 18px;
+    }
+    
+    .testimonialsCarouselDiv{
+        
+        width: 95%;
+    }
+    
+
+    .text-23 {
+        font-size: 16px;
+    }
+    
+    .playCrystalMedia {
+
+        left: 55%;
+    }
+    
+    .coachesInca img{
+        
+        height: 150px;
+    }
+    
+    .coachesInca {
+
+        top: -150px;
+        left: 10%;
+    }
+
+    .coachesIncaText {
+        left: 31%;
+        top: -100px;
+    }
+    
+    .coachesIncaText img{
+        height: 150px;
+    }
+
+    .linguaStoryArrowLeft {
+        position: absolute;
+        top: 48%;
+        left: 5%;
+        z-index: 500;
+    }
+
+    .linguaStoryArrowRight {
+        position: absolute;
+        top: 48%;
+        right: 5%;
+        z-index: 500;
+    }
+    
+    .boxTalking {
+        width: 100%;
+
+    }
+    
+    .section2_hs {
+        padding: 50px 20px 0 20px;
+    }
+
+    .section4_hs {
+
+        padding: 20px 20px 20px 20px;
+    }
+
+}
+
+@media (max-width: 340px){
+    
+    .imgAbsPlayMaribel {
+        width: 50px;
+    }
+
+    .text-26 {
+        font-size: 21px;
+    }
+
+    .sayHello{
+
+        font-size: 30px;
+
+    }
+    
+    .sayPartnerships {
+        font-size: 30px;
+    }
+
+    .text-18 {
+    font-size: 15px;
+}
+
+    .text-72{
+
+        font-size: 30px;
+    }
+    
+    .text-78 {
+        font-size: 30px;
+    }
+    
+    .setSuccessHS{
+
+        font-size: 30px;
+
+    }
+
+    .text-70 {
+        font-size: 27px;
+    }
+    
+    .setCourses{
+
+        font-size: 30px;
+
+    }
+    
+    .realLifeForMedia {
+        
+        font-size: 12px;
+    }
+
+
+    .realLife {
+        
+        font-size: 16px;
+    }
+    
+    .navbar-toggler-icon{
+        font-size: 14px !important;
+    }
+
+    .KvZmB img {
+        height: 20px;
+    }
+    
+    .languages9 {
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    .text-21 {
+        font-size: 14px;
+    }
+
+    .text-54 {
+        font-size: 24px;
+    }
+    
+    .textAnxiety {
+        font-size: 24px;
+    }
+
+    .btnBasicWhiteLongGreen {
+        width: 220px;
+
+    }
+    
+    .boxTestInst {
+        padding: 20px 10px 20px 10px;
+    }
+    
+    .section_12 img {
+        height: 160px;
+    }
+
+    .coachesInca {
+
+        display: none;
+    }
+
+    .coachesIncaText {
+        display: none;
+    }
+    
+    .section_14 {
+        margin-top: 40px;
+    }
+    
+    #watchVideoCrystal {
+
+        bottom: 30px;
+    }
+    
+    .mediumCircleWhite {
+        width: 200px;
+        height: 150px;
+        border-top-left-radius: 140px;
+        border-top-right-radius: 140px;
+        padding-top: 10px;
+    }
+    
+    .imgboxSelectedExp {
+        height: 100px;
+    }
+
+}
+
+
+
+
+/*old css*/
+
+/* --- SECTIONS ---*/
+
+
+/* --- HOME --- */
+
+#title-responsive{
+		display: none;
+}
+
+.section{
+    text-align:center;
+    overflow: hidden;
+    background-size: cover;	
+}
+.sectionElena{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#section0{
+    padding-top: 0px !important;
+    overflow: hidden;
+    background-color: white;
+	position: relative;
+}
+
+.section2{
+    
+    background-color: white;
+}
+
+.video-wrapper{
+	height: 600px;
+}
+
+#video{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-color: white; /* in case the video doesn't fit the whole page*/
+    background-position: center center;
+    background-size: contain;
+    object-fit: fill; /*cover video background */
+    z-index:3;
+}
+
+video{
+	width: 100%;
+	margin: auto;
+	
+}
+
+.video-controls{
+	position: absolute;
+    top: 0;
+    right: 20px;
+    padding: 1rem;
+	z-index: 3;
+}
+
+.video-control{
+	color: #fff;
+	margin-left: 1rem;
+	font-size: 30px;
+}
+
+.video-controls a{
+	text-decoration: none;
+}
+
+.audio{
+	display: none;
+}
+
+#section0 .layer{
+
+    position: absolute;
+    z-index: 4;
+    top: 100px;
+    left: 60px;
+    width: 45%;
+    margin: auto;
+    margin-top: 10%;
+	background-color: rgba(128,128,128,0.5);
+    padding: 30px;
+	border-radius: 10px;
+    /* 
+    * Preventing flicker on some browsers 
+    * See http://stackoverflow.com/a/36671466/1081396  or issue #183
+    */
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.layer h1{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#section0 .layerExp{
+
+    position: absolute;
+    z-index: 4;
+    bottom: 25%;
+    left: 60px;
+    width: 35%;
+    margin: auto;
+    margin-top: 10%;
+    background-color: rgba(128,128,128,0.5);
+    padding: 30px;
+    border-radius: 10px;
+    /* 
+    * Preventing flicker on some browsers 
+    * See http://stackoverflow.com/a/36671466/1081396  or issue #183
+    */
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.layerExp h1{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.btn-layer{
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+    min-height: 80px;
+}
+
+.layer-languages{
+    clear: both;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.layer-languagesExp{
+    clear: both;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.imgDonate{
+    height:60px;
+}
+
+.btn-loginReg1{
+    background-color: #007aa5;
+    width: 120px;
+    height: 50px;
+    float: left;
+    border-radius: 5px;
+    padding-top: 10px;
+}
+
+.btn-loginReg2{
+    background-color: #007aa5;
+    width: 120px;
+    height: 50px;
+    float: right;
+    border-radius: 5px;
+    padding-top: 10px;
+}
+
+.btn-loginReg1 a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+.btn-loginReg1 a:hover{
+	color: #35b4b4;
+	text-decoration: none;
+}
+
+.btn-loginReg2 a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.btn-loginReg2 a:hover{
+	color: #35b4b4;
+	text-decoration: none;
+}
+
+/* Hiding video controls 
+	* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+	* --------------------------------------- */
+video::-webkit-media-controls {
+    display:none !important;
+}
+video::-webkit-media-controls-enclosure {
+  display:none !important;
+}
+
+.text-introduces{
+
+    width: 100%;
+    text-align: center;
+    background-color: #ecfffb;
+}
+
+.text-introduces div{
+    margin: auto;
+    width: 80%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.list-prices{
+    text-align: left;
+}
+
+.circle {
+    background: white;
+    border-radius: 200px;
+    color: white;
+    height: 200px;
+    font-weight: bold;
+    width: 200px;
+    display: table;
+    margin: 20px auto;
+    border: 4px solid #007aa5;
+}
+
+.circleCoach {
+    background: white;
+    border-radius: 104px;
+    color: white;
+    height: 104px;
+    font-weight: bold;
+    width: 104px;
+    display: table;
+    margin: auto;
+    
+}
+
+.circleCoachBig {
+    background: white;
+    border-radius: 163px;
+    color: white;
+    height: 163px;
+    font-weight: bold;
+    width: 163px;
+    display: table;
+    margin: auto;
+    
+}
+
+.circleExp {
+    background: white;
+    border-radius: 200px;
+    color: white;
+    height: 200px;
+    font-weight: bold;
+
+    display: table;
+    margin: 20px auto;
+    border: 4px solid #007aa5;
+}
+
+.circle-mini {
+    background: white;
+    border-radius: 200px;
+    color: white;
+    height: 100px;
+    font-weight: bold;
+    width: 100px;
+    display: table;
+    margin: 20px auto;
+    border: 4px solid #007aa5;
+}
+
+
+.circle p {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.video-youtube iframe{
+    width: 90%;
+    height: 400px;
+}
+
+.elena-div{
+    margin: auto;
+    width: 90%;
+}
+
+.section2-div1{
+    
+    position: relative;
+    min-height: 500px;
+    background: url("/linguameetinglaravel/public/assets/img/web/section2-div1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.container-icons{
+    
+    position: relative;
+    padding-top: 15%;
+    padding-bottom: 60px;
+
+}
+
+.background_colorF67777{
+    
+    background-color: #F67777 !important;
+}
+
+
+
+.btnIcon{
+    
+    margin-top: 3px;
+    width: 50px;
+    padding: 5px;
+    border-radius:2px;
+
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(1);
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.carousel-control-prev {
+    left: -10% !important;
+}
+
+.carousel-control-next {
+    right: -10% !important;
+}
+
+.container-icons img{
+    height: 70px;
+}
+
+.section2-div2{
+    height: 50%;
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.section3-div1{
+    background: url(/linguameetinglaravel/public/assets/img/web/section3-div1.png) #C2C0B4 no-repeat center center fixed;
+	min-height: 500px;
+}
+
+.section3-div2{
+	margin-top: 50px;
+	font-size: 18px;	
+	padding-bottom: 50px;
+}
+
+#section3{
+    background-color: #C2C0B4;
+}
+
+.our-prices{
+    padding-bottom: 20px;
+}
+
+.our-prices:after{
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 80%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 1px solid #38B1B4; /* This creates the border. Replace black with whatever color you want. */
+    
+}
+
+.border-right{
+    width: 80%;
+    border-right: 1px solid #38B1B4;
+}
+
+.section4-div1{
+    background-color: rgba(194,192,180,0.5);
+	min-height: 500px;
+}
+
+.section4-div2{
+	margin-top: 50px;
+	font-size: 18px;
+	text-align: left;
+	padding-bottom: 50px;
+}
+
+.section5-div1{
+    background-color: #b9cae1;
+	min-height: 500px;
+}
+
+.section6-div1{
+	margin-top: 50px;
+	font-size: 18px;
+	height: 60%;
+	padding-bottom: 50px;
+	
+}
+
+.section6-div1a{
+	margin:auto;
+	text-align: center;
+}
+
+.section6-div2{
+	min-height: 200px;
+}
+
+.section6-half-background{
+	background-color: #007aa5;
+}
+
+
+.section6-prices{
+    min-height: 400px;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+
+
+.half-section{
+    height: 50%;
+}
+
+
+
+.item-texts{
+	width: 100%;
+	background-color: #007aa5;
+	color: white;
+	padding: 20px;
+	min-height: 150px;
+	
+}
+
+.item-textsExp{
+	width: 100%;
+	/*background-color: #007aa5;*/
+	/*color: white;*/
+	padding: 20px;
+	min-height: 150px;
+	
+}
+
+.item-right{
+	text-align: right;
+}
+
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img{
+width: 100%; /* use this, or not */
+margin: auto;
+}
+
+.carousel-control.left{
+    background-image: none !important;
+    color: #007aa5;
+    font-size: 30px;
+}
+
+.carousel-control.right{
+    background-image: none !important;
+    color: #007aa5;
+    font-size: 30px;
+    
+}
+
+.carousel-indicators li{
+    
+    background-color: #007aa5 !important;
+}
+
+.carousel-control{
+    
+    width: 0 !important;
+    opacity: 1 !important;
+}
+
+/* --- WORKS --- */
+
+#works06{
+	display: none;
+}
+
+.works-section0-div1{
+    
+    background-color: white;
+    height: 300px;
+    
+}
+
+.works-section0-div2{
+    
+    /*background-color: #c2c0b4;*/
+	min-height: 400px;
+	background-color:rgba(194, 192, 180, 0.5);
+	position: relative;
+	padding-bottom: 40px;
+    
+}
+
+.works-section0-div2 h3{
+	padding-top: 250px;
+	padding-bottom: 40px;
+}
+
+.works-img01{
+    padding: 40px;
+    border-top: 1px solid #0C6971;
+    border-bottom: 1px solid #0C6971;
+	position: relative;
+}
+
+.works-img02 {
+    padding: 40px;
+    border-bottom: 1px solid #0C6971;
+    position: relative;
+}
+
+.circle-number{
+	position: absolute;
+    top: -20px;
+    left: 25%;
+    width: 50%;
+}
+
+.circle-wraper{
+	position: relative;
+	padding: 0px !important;
+}
+
+.circle-rectangle{
+	width: 100%;
+	height: 1px;
+	margin-bottom: 40px;
+}
+
+#section0 .works-layer{
+
+    position: absolute;
+    z-index: 4;
+    top: 20px;
+	left: 50%;
+	transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    
+}
+
+.works-layer div{
+	height: 500px;
+}
+
+#section2 .works-layer{
+
+    position: absolute;
+    z-index: 4;
+    top: 20px;
+    width: 100%;
+    margin: auto;
+    /* 
+    * Preventing flicker on some browsers 
+    * See http://stackoverflow.com/a/36671466/1081396  or issue #183
+    */
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.works-section1-div1{
+    
+    min-height: 380px;
+	margin-top: 20px;
+}
+
+.works-section1-div2{
+
+	background-color: #116b71;
+}
+
+.works-section4-div2{
+
+	background-color: #116b71;
+	margin-top: 50px;
+	min-height: 200px;
+}
+
+.works-section2-div1{
+	height: 300px;
+}
+
+.works-section2-div2{
+	min-height: 400px;
+	position: relative;
+	padding-bottom: 40px;
+	background-color:rgba(194, 192, 180, 0.5);
+}
+
+.works-section2-div2 h3{
+	padding-top: 350px;
+}
+
+.item-texts-works{
+	width: 100%;
+	background-color: #116b71;
+	color: white;
+	padding: 20px;
+	min-height: 200px;
+	
+}
+
+.works-section4-div1{
+	text-align: left !important;
+	margin-top: 80px;
+}
+
+.section3-works{
+	min-height: 400px;
+}
+
+.show-circle-responsive{
+	display: none;
+}
+
+.works-section3-div1{
+	min-height: 400px;
+    margin-top: 40px;
+}
+
+.section1-works{
+	min-height: 800px;
+	position: relative;
+	padding-bottom: 60px;
+}
+
+.section1-works2 {
+    min-height: 800px;
+    position: relative;
+}
+
+/* --- COACHES --- */
+
+.close{
+	opacity: 1 !important;
+	color: white !important;
+}
+.btn-coach {
+    background-color: #116b71;
+    width: 250px;
+    height: 50px;
+    padding-top: 10px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+
+.btn-coach a{
+    color: white;
+    text-decoration: none;
+}
+
+
+.btn-coach a:hover{
+	color: #35b4b4;
+	text-decoration: none;
+}
+
+.coaches-section0-div1{
+	min-height: 550px;
+	text-align: left;
+}
+
+.coaches-title{
+	color: #116b71;
+	font-size: 45px;
+	margin-top: 150px;
+}
+
+.coaches-img{
+	margin-top: 50px;
+	text-align: center;
+}
+
+.coach-profiles{
+	background-color: #ecfffb;
+	height: 80px;
+	margin-top: 40px;
+	color: #007bb7;
+	padding-top: 20px
+}
+
+#coach-more{
+	display: none;
+}
+
+.rectantulo-coaches{
+	height: 6px;
+    width: 50%;
+    margin: auto;
+}
+
+.nombre-coach{
+	
+	color: #007aa5;
+}
+
+.card-coach{
+	border: 1px solid #cccccc;
+	padding: 0px 20px 20px 20px;
+	margin-top: 20px;
+	min-height: 780px;
+}
+
+.card-coach-mini{
+	border: 1px solid #cccccc;
+	padding: 0px 20px 20px 20px;
+	margin-top: 20px;
+}
+
+.bandera-coach{
+    height: 23px;
+}
+
+.bandera-coach span{
+    padding-left: 5px;
+}
+
+.arrow_calendar_left{
+    font-size: 30px;
+    text-align: right;
+}
+
+.arrow_calendar_right{
+    font-size: 30px;
+    text-align: left;
+}
+
+.boxCalendar{
+    
+    width: 200px;
+    background-color: #F67777;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin: auto;
+    
+}
+
+#view-more{
+    color: white !important;
+    text-decoration: none;
+    font-size: 20px;
+	cursor: pointer;
+}
+
+#coach-profilesh1{
+	display: none;
+}
+
+
+/*--- TEAM ---*/
+
+.team-title{
+	color: #007aa5;
+	font-size: 45px;
+	margin-top: 150px;
+}
+
+.team-member-title{
+	background-color: #c2c0b4;
+	height: 80px;
+	margin-top: 40px;
+	color: #007aa5;
+	padding-top: 20px;
+	margin-bottom: 0px !important;
+}
+
+
+.btn-contact2 {
+    background-color: #116b71;
+    width: 250px;
+    height: 50px;
+    padding-top: 10px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.btn-contact2 a:hover{
+	color: #35b4b4;
+	text-decoration: none;
+}
+
+.btn-contact2 a:active{
+	color: #35b4b4;
+	text-decoration: none;
+}
+
+.btn-contact2 a{
+    color: white;
+    text-decoration: none;
+}
+
+.team-img{
+	margin-top: 20px;
+    text-align: center;
+    min-height: 200px;
+}
+
+.team-img img{
+	height: 600px;
+}
+
+.card-team{
+	position: relative;
+	border: 1px solid #00968f;
+	border-radius: 12px;
+	margin-top: 20px;
+	min-height: 650px;
+}
+
+.rect-grande-team{
+	height: 81px;
+	margin-top: 80px;
+}
+
+.padding-team{
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.nombre-team{
+	
+	padding-top: 80px;
+}
+
+.desc-team{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.profes-team{
+	
+}
+
+.img-team-ab{
+	position: absolute;
+    top: 5px;
+    left: 25%;
+    width: 50%;
+}
+
+.rectangle {    
+    color: white;
+    height: 200px;
+    font-weight: bold;
+    width: 200px;
+    margin: 20px auto;
+}
+
+.rect-peq-team{
+	position: absolute;
+	height: 12px;
+	bottom: -6px;
+	left: 25%;
+	width: 50%;
+}
+
+.partners-containers{
+	background-color: #e6e5e3;
+	min-height: 900px;
+	padding-bottom: 40px;
+}
+
+.experiences-containers{
+	background-color: #e6e5e3;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.last-parters-div{
+	height: 28px;
+	background-color: #c2c0b4;
+}
+
+.card-partners{
+	
+	position: relative;
+	border: 1px solid #cccccc;
+	padding: 40px 20px 0px 20px;
+	border-radius: 12px;
+	background-color: white;
+	margin-top: 40px;
+	min-height: 860px;
+	
+}
+
+
+.contact-media span{
+	padding-right: 10px;
+}
+
+.contact-media i{
+	padding-right: 10px;
+}
+/* --- SUPPORT ---*/
+
+.support-message{
+	background-color: #8db4b4;
+	min-height: 100px;
+    margin-top: 40px;
+	text-align: left;
+	padding: 20px 40px 20px 40px;
+}
+
+.text-download{
+	font-size: 14px;
+}
+
+.support-welcome{
+	text-align: left;
+	padding-left: 40px;
+}
+
+.card-support{
+	border: 1px solid #8db4b4;
+	padding: 20px 20px 20px 20px;
+	text-align: left;
+}
+
+.btn-contact{
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+}
+
+.btn-contact a:hover{
+	color: #35b4b4;
+	text-decoration: none;
+}
+
+.btn-contact a:active{
+	color: #35b4b4;
+	text-decoration: none;
+}
+
+.btn-contact a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.tech-faq{
+	text-align: left;
+	min-height: 300px;
+}
+
+.tech-faq h3 span{
+	padding-left: 20px;
+}
+
+.response-event{
+	display: none;
+}
+
+.eventFaq{
+	cursor: pointer;
+}
+
+.eventIssue{
+	cursor: pointer;
+}
+
+.response-event ul{
+	list-style-image: none !important;
+}
+
+
+/* CONTACT */
+.sectionBform form{
+	border: 1px solid #666666;
+	padding: 20px;
+	text-align: left;
+	position: relative
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+	background-color: #007aa5;
+	border-radius: 0px !important;
+	color: white;
+	
+}
+
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.contact-title{
+	text-align: right;
+}
+
+.section-contact{
+	min-height: 500px;
+}
+
+
+/* --- POLICY ---*/
+.section-policy{
+	
+	text-align: left;
+}
+
+
+/*--- REGISTER ---*/
+.s1, .s2, .s3 {
+    display: inline-block;
+	z-index: 2;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.ch1 {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Open Sans Bold', sans-serif;
+}
+
+.btn_register_sel{
+	border-radius: 5em;
+    padding: 11px 17px;
+    clear: both;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 15px;
+	background: #35b5b5;
+    border: 1px solid #35b5b5;
+    color: #fff;
+	z-index: 2;
+}
+
+.btn_register_notsel{
+	background: #fff;
+    color: #444;
+    border: 2px solid #faeabf;
+	border-radius: 5em;
+    padding: 11px 17px;
+    clear: both;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 15px;
+	z-index: 2;
+}
+
+.line_numbers{
+	background: #ebeaef;
+    height: 6px;
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 40px;
+	z-index: 1;
+}
+
+#step2{
+	display: none;
+}
+
+#step2Flex{
+	display: none;
+}
+
+#step3{
+	display: none;
+}
+
+#paypalCreditCard{
+	display: none;
+}
+
+.height100{
+    
+    height: 100px;
+}
+
+.height133{
+    
+    height: 133px;
+}
+
+.width100{
+    
+    width: 100%;
+}
+
+/* --- LOGIN ---*/
+
+.card-login {
+    background-color:#F7F7F7;
+    padding: 20px 25px 30px;
+    margin: 50px auto 50px auto;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+
+}
+.boxBlue{
+    background-color: rgba(53, 180, 180,0.5);
+}
+
+.boxBlueSummary{
+    background-color: rgba(53, 180, 180,0.2);
+}
+
+.boxGreySummary{
+    background-color: rgba(207, 207, 207,0.3);
+}
+
+.boxGreyDark{
+    background-color: rgb(87, 87, 87) !important;
+}
+
+.boxGrey{
+    
+    min-height: 120px;
+    background-color: #E8E8E8;
+    border-radius: 3px;
+    
+}
+
+.backgroundColorE8E8E8{
+    
+    background-color: #E8E8E8;
+}
+
+.boxCoach{
+    
+    background-color: white !important;
+    padding: 10px !important;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+.boxCoachBig{
+    
+    background-color: white !important;
+    padding: 30px !important;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+#classroom_coaching{
+    
+    border: none !important;
+}
+
+.miniBoxSessions{
+    
+    height: 23px;
+    width: 108px;
+    margin: auto;
+}
+
+.boxWhite{
+    
+    background-color: white !important;
+    padding: 20px !important;
+    border-radius: 2px;
+}
+
+.boxWhite .row{
+    
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.boxWhite .boxBlueSummary {
+    
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.boxWhite .boxGreySummary {
+    
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.boxSection{
+    
+    background-color: white;
+    padding: 10px;
+}
+
+.cicleSessions{
+    background-color: #35B4B4;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    padding: 16px;
+    height: 80px;
+    width: 80px;
+}
+
+.borderWeek{
+    
+    border-bottom: 2px solid #DDDFE1;
+}
+
+.card-login>.card-header {
+	color: #00415d;
+	border-color: #fff;
+	text-align:center;
+}
+.card-login>.card-header a{
+	text-decoration: none;
+	color: #666;
+	font-weight: bold;
+	font-size: 15px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.card-login>.card-header a.active{
+	color: #116b71;
+	font-size: 18px;
+}
+/*
+ * Card component
+ */
+.card {
+    background-color: #F7F7F7 !important;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: auto;
+    margin-top: 50px;
+	width: 50%;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cardExp {
+    background-color: white;
+    /* just in case there no content*/
+    margin: auto;
+    margin-top: 50px;
+	width: 100%;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cardExpSelect {
+    background-color: #F7F7F7;
+    margin: auto;
+    width: 60%;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cardCoachReg{
+	
+	background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 5px 10px;
+    margin: auto;
+	width: 95%;
+	margin-top: 20px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #email,
+.form-signin #password {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text]
+{
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    background-color: #35b4b4;
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 20px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: #116b71;
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+
+
+
+
+
+/* --- FOOTER ---*/
+footer{
+	background-color: #35b4b4;
+}
+
+/* footer social icons */
+ul.social-network, ul.social-network2 {
+	list-style: none;
+	display: inline;
+	margin-left:0 !important;
+	padding: 0;
+}
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+}
+
+ul.social-network2 li {
+	display: inline;
+	margin: 0 5px;
+}
+
+ul.social-network2 li a > i {
+	font-size: 25px
+}
+
+
+/* footer social icons */
+.social-network a.icoYoutube:hover {
+	color: #186e74;
+}
+.social-network a.icoFacebook:hover {
+	color:#186e74;
+}
+.social-network a.icoTwitter:hover {
+	color:#186e74;
+}
+
+.social-network a.icoLinkedin:hover {
+	color:#186e74;
+}
+.social-network a.icoYoutube:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+	color:#186e74;
+}
+a.socialIcon:hover, .socialHoverClass {
+	color:#186e74;
+}
+
+.social-circle li a {
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	text-align:center;
+	width: 50px;
+	height: 50px;
+	font-size:30px;
+}
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.social-circle i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+.btn-policy{
+    background-color: #007aa5;
+    width: 120px;
+    height: 50px;
+    padding-top: 10px;
+}
+
+.btn-policy a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+.btn-policy a:hover{
+	color: #35b4b4;
+	text-decoration: none;
+}
+
+.btn-policyC{
+    background-color: white;
+    width: 120px;
+    height: 50px;
+    padding-top: 10px;
+}
+
+.btn-policyC a{
+    color: #007aa5;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.background_color6{
+	background-color: #aba4bf;
+}
+
+.btn-policyC a:hover{
+	color: #35b4b4;
+	text-decoration: none;
+}
+
+.border_2{
+	border: 1px solid #007aa5;
+}
+
+.border_white{
+	border: 5px solid white;
+}
+
+.weekDays-selector input {
+  display: none!important;
+}
+
+.weekDays-selector input[type=checkbox] + label {
+  display: inline-block;
+  border-radius: 6px;
+  background: #dddddd;
+  height: 40px;
+  width: 30px;
+  margin-right: 3px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.weekDays-selector input[type=checkbox]:checked + label {
+  background: #f05c4e;
+  color: #ffffff;
+}
+
+#politicsInstructor{
+    display: none;
+}
+
+
+@media (min-width: 1500px){
+	
+	.video-wrapper{
+		height: 800px;
+	}
+
+	#video{
+		height: 800px;
+
+	}
+}
+
+/* --- MEDIA QUERY --- */
+
+@media (max-width: 1000px){
+
+	.section3-div2{
+		margin-top: 150px
+	}
+
+	.card {
+		width: 100%;
+	}
+	
+	.video-wrapper {
+		height: 500px;
+	}
+	#video{
+		height: 500px;
+	}
+	
+	#section0 .layer{
+		width: 50%;
+		top: 20px;
+
+	}
+        
+        #section0 .layerExp{
+		width: 30%;
+		bottom: 25%;
+
+	}
+
+
+	
+	.list-prices{
+	    text-align: center;
+	}
+	
+	.circle-number{
+		top: 20px;
+	}
+	
+	.show-circle-responsive{
+		display: block;
+	}
+	
+	.show-circle-all{
+		display: none;
+	}
+	
+	.list-prices{
+		padding-bottom: 40px;
+	}
+
+	#video{
+		height: 500px;
+
+	}
+	
+	.card-coach{
+		min-height: 500px;
+	}
+	
+	
+	
+}
+
+
+
+
+@media (max-width: 770px){
+	
+    #video{
+		display: none !important;
+    }
+	.audio-stop{
+		display: none !important;
+	}
+	
+	.audio{
+		display: none !important;
+	}
+	
+	#title-normal{
+		display: none;
+	}
+	
+	#title-responsive{
+		display: block;
+	}
+	
+
+
+	
+	.section3-div2{
+		margin-top: 40px;
+		padding-bottom: 40px;
+	}
+	.section4-div2{
+		margin-top: 40px;
+		padding-bottom: 40px;
+	}
+	
+	.section6-div1{
+		margin-top: 40px;
+		padding-bottom: 40px;
+	}
+	
+
+
+	
+	.text-introduces{
+		margin-top: 20px;
+		
+	}
+	
+	.text-introduces div{
+		width: 90%;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+
+	.circle{
+		margin: auto;
+	}
+
+	
+	.layer-languages{
+		font-size: 25px;
+	}
+	
+	.layer h1{
+		font-size: 35px;
+	}
+        
+        .layerExp h1{
+		font-size: 25px;
+	}
+	
+	.item-texts{
+		padding: 20px;
+	}
+	
+	.section6-half-background{
+		height: 35%;
+	}
+
+	
+	.coaches-title{
+		margin-top: 10px;
+	}
+	
+	.team-title{
+		margin-top: 10px;
+	}
+	
+	.btn-coach{
+		font-size: 16px !important;
+		padding-top: 13px;
+	}
+	
+}
+
+
+@media (max-width: 500px){
+	
+
+	.rectangle{
+		width: 150px;
+		height: 150px;
+	}
+	
+	.nombre-team{
+		padding-top: 40px;
+	}
+	
+	.desc-team{
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	
+	.card-team{
+		min-height: 550px;
+	}
+	
+	.works-section0-div2 h3{
+		padding-top: 120px;
+	}
+	
+	.works-section2-div2 h3 {
+		padding-top: 180px;
+	}
+	
+}
+
+@media (max-width: 400px){
+	
+	.btn-policy a {
+		font-size: 16px;
+		padding-top: 13px;
+	}
+	
+	.btn-policy {
+		padding-top: 13px;
+	}
+	
+	#section0 .works-layer{
+
+		width: 100%;
+		margin: auto;
+
+	}
+	.btn-coach {
+		width: 200px;
+	}
+	
+}
+
+@media screen and (max-width: 240px){
+    .g-recaptcha {
+	transform:scale(0.58);
+-webkit-transform:scale(0.58);
+	transform-origin:0 0;
+-webkit-transform-origin:0 0;
+    }
+}
+
+
+@media screen and (min-width: 319px) and (max-width: 320px){
+    .g-recaptcha {
+	transform:scale(0.79);
+-webkit-transform:scale(0.79);
+	transform-origin:0 0;
+-webkit-transform-origin:0 0;
+    }
+}
