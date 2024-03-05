@@ -19,6 +19,23 @@
 <!-- Incluir SheetJS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 
+<div class="row margin-top-10">
+    <div class="col-md-12">
+        <div class="text-left">
+            @if(session('success'))
+                <div id="successMessage" class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div id="errorMessage" class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
 
 <button onclick="exportTableToExcel()">Exportar a Excel</button>
 
@@ -46,6 +63,20 @@ function exportTableToExcel() {
     var workbook = XLSX.utils.table_to_book(table, {sheet:"Sheet JS"});
     XLSX.writeFile(workbook, "ExportacionTabla.xlsx");
 }
+
+setTimeout(function() {
+        var successMessage = document.getElementById('successMessage');
+        if (successMessage) {
+            successMessage.style.display = 'none';
+        }
+}, 3000);
+
+setTimeout(function() {
+        var errorMessage = document.getElementById('errorMessage');
+        if (errorMessage) {
+            errorMessage.style.display = 'none';
+        }
+}, 3000);
 </script>
 
 

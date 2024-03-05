@@ -108,10 +108,11 @@ class CourseRepository
                 $query->where('instructor_id', $instructor->id);
             })
             ->orderBy('name')
-            /* ->get() */;
-
-            dd($query->toSql());
-            dd($query->getBindings());
+            ->get();
+            // dd($query);
+            return $query;
+            // dd($query->toSql());
+            // dd($query->getBindings());
 
     }
 

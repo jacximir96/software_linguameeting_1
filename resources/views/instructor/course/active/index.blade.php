@@ -2,7 +2,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="row">
     <div class="col-md-12">
         <span class="text-corporate-dark-color box_sessions_tag"><strong>Active Courses </strong></span>
@@ -14,7 +13,7 @@
 
 
     <div class="col-md-12">
-
+        <button onclick="exportTableToExcel()">Exportar a Excel</button>
         <a href="{{route('get.instructor.course.index')}}">
         <div class="text-corporate-dark-color text-right cursor_pointer">
             <strong>See course view</strong>
@@ -49,14 +48,15 @@
     <div class="card-body">
 
 
-        <table id="table-instructor" class="table" data-ordering="false" style="width:100%">
+        <table id="table-instructor" class="table">
             <thead>
                 <tr>
-                    <th class="">CREATED</th>
-                    <th class="">SESSIONS</th>
-                    <th class="">COURSE</th>
-                    <th>SECTION</th>
+                    
+                    {{-- <th class="">SESSIONS</th> --}}
+                    <th class="">COURSE NAME</th>
+                    {{-- <th>SECTION</th> --}}
                     <th>COACHING PERIOD</th>
+                    <th class="">CREATED</th>
                     <th>REGISTERED STUDENTS</th>
                     <th>CLASS ID/INSTRUCTIONS</th>
                     <th>INSTRUCTOR</th>
@@ -69,16 +69,14 @@
                 @forelse ($data->commonResponse()->sections() as $section)
                 @if ($section->course->isActive())
                 <tr>
-                    <td class="text-corporate-color">
-                        <u style="text-decoration:none;"><strong>{{$section->course->created_at->format('M d, y')}}</strong></u>
-                    </td>
-                    <td><u>1</u></td>
+                    
+                    {{-- <td><u>1</u></td> --}}
                     <td class="cursor_pointer">
                         <a class="a-title" href="{{route('get.instructor.course.show', $section->course_id)}}" title="Show course"><u> {{$section->course->name}}</u></a>
                     </td>
-                    <td>
+                    {{-- <td>
                         <u style="text-decoration:none;">{{$section->name}}</u>
-                    </td>
+                    </td> --}}
 
                     @if($section->course->isFlex())
                     <td>{{$section->course->firstDate()->format('m/d/y')}} - {{$section->course->lastDate()->format('m/d/y')}}  </td>
@@ -90,8 +88,14 @@
                         <td>MM/DD/YY - MM/DD/YY</td>
                         @endif
                     @endif
-                    <td class="text-center">{{$section->enrollment()->count()}}/{{$section->num_students}}</td>
-                    <td class="text-center">
+
+                    <td>
+                        <u style="text-decoration:none;"><strong>{{$section->course->created_at->format('M d, y')}}</strong></u>
+                    </td>
+
+                    <td>{{$section->enrollment()->count()}}/{{$section->num_students}}</td>
+                    
+                    <td>
                         <a class="a-title" href="{{route('get.common.course.section.file.instructions.download', $section->id)}}"><u>{{$section->code}}</u></a>
                     </td>
                     <td>{{$section->instructor->writeFullName()}}</td>
@@ -108,7 +112,7 @@
                             <option value="{{route('get.admin.course.coaching_form.update.course_information', $section->course->id)}}">
                                 Edit Coaching Form
                             </option>
-                            <option value="modalCloseCourse"  data-idSection={{$section->course_id}}>Close course</option>
+                            <option value="modalCloseCourse"  data-idSection={{$section->course_id}} data-idCode={{$section->code}}>Close course</option>
                             <option value="modalDuplicateCourse">Duplicate Coaching Form</option>
                         </select>
 
@@ -208,6 +212,7 @@
             <form method="POST" id="formCloseCourse" action="{{route('post.admin.course.coaching_form.close.course', 1)}}">
             @csrf
             <input type="text" name="idSection" id="idSection" hidden>
+            <input type="text" name="idCode" id="idCode" hidden>
                 <div class="modal-body">
                     <h4 class="modal-tittle" style="color:white;"><span class="title-form">CLOSE COURSE</span></h4>
                     <p>Now that your course has ended, it will be moved to Past Courses.</p>
@@ -222,6 +227,16 @@
     </div>
 </div>
 
+
+<script>
+    $(document).ready(function() {
+        $('#table-instructor').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+        });
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("cancelButton").addEventListener("click", function() {
@@ -252,15 +267,11 @@
 </script>
 
 <script>
-jQuery(document).ready(function () {
-
-    jQuery.ajaxSetup({cache: false});
-
-    new DataTable('#table-instructor', {
-    });
-
-
-});
+    function exportTableToExcel() {
+    var table = document.getElementById("table-instructor");
+    var workbook = XLSX.utils.table_to_book(table, {sheet:"Sheet JS"});
+    XLSX.writeFile(workbook, "ExportacionTabla.xlsx");
+}
 </script>
 
 @endsection

@@ -24,6 +24,9 @@ jQuery(document).ready(function () {
             var idSectionValue = $("option[value='modalCloseCourse']:selected").data("idsection");
             $("#idSection").val(idSectionValue);
 
+            var idCodeValue = $("option[value='modalCloseCourse']:selected").data("idcode");
+            $("#idCode").val(idCodeValue);
+
             $("#modalCloseCourse").modal('show');
         } else {
             var href = jQuery(this).val();
