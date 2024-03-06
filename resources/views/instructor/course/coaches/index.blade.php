@@ -203,7 +203,7 @@
                     <div class="modal-body text-18">
 
                         <div class="text-corporate-dark-color text-20" id="nameUpdate">
-                       <strong>Linguameeting Feedback {{$coach->name}} {{$coach->lastname}}</strong>
+                            <strong>Feedback {{$coach->name}} {{$coach->lastname}}</strong>
                         </div>
 
                         <div class="row margin-top-20">
@@ -218,15 +218,19 @@
 
                         </div>
 
-                        [s/if $coach->feedbacks|count<=0/s]
+
+                        {{-- [s/if $coach->feedbacks|count<=0/s]
                         <div class="text-16 row margin-top-20">
                             <div class="col-md-12">
                                 No Feedback.
-                            </div>
+                            </div>  
 
                         </div>
-                        [s//if/s]
+                        [s//if/s] --}}
 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-corporate-color colorWhite" data-dismiss="modal">Close</button>
                     </div>
 
                 </div>

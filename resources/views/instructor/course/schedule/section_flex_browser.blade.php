@@ -7,17 +7,30 @@
             <div class="card-body padding-05-rem">
                 <div class="row">
                     <div class="col-6 text-center">
-                        <a href="{{ route('get.instructor.course.schedule.index', ['direction' => 'back']) }}">
-                            <i class="fa fa-arrow-left fa-2x text-muted"></i>
-                        </a>
+                        <form method="GET" action="{{ route('get.instructor.course.schedule.index') }}">
+                            <input type="hidden" name="direction" value="back">
+                            @isset($courseSelected)
+                                <input type="hidden" name="course_id" value="{{ $courseSelected->id }}">
+                            @endisset
+                            <button type="submit" class="btn btn-link">
+                                <i class="fa fa-arrow-left fa-2x text-muted"></i>
+                            </button>
+                        </form>
                     </div>
                     <div class="col-6 text-center">
-                        <a href="{{ route('get.instructor.course.schedule.index', ['direction' => 'next']) }}">
-                            <i class="fa fa-arrow-right fa-2x text-muted"></i>
-                        </a>
+                        <form method="GET" action="{{ route('get.instructor.course.schedule.index') }}">
+                            <input type="hidden" name="direction" value="next">
+                            @isset($courseSelected)
+                                <input type="hidden" name="course_id" value="{{ $courseSelected->id }}">
+                            @endisset
+                            <button type="submit" class="btn btn-link">
+                                <i class="fa fa-arrow-right fa-2x text-muted"></i>
+                            </button>
+                        </form>
                     </div>
+                    
                 </div>
-            </div>
+            </div>          
         </div>
     </div>
 </div>

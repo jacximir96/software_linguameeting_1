@@ -14,13 +14,13 @@
             <div class="col-sm-8">
 
                 <a href="#" target="_blank" class="mr-2" title="Show coach">
-                    Maria Centeno
+                    {{$session['name_user']}} {{$session['lastname']}}
                 </a>
                 <span class="d-block">
-                    <img src="{{asset('assets/img/flags/am.png')}}"
+                    <img src="{{ asset('assets/img/flags/' . $session['flag'] . '.png') }}"
                          title="Flag of Ecuador"
                          class="img-thumbnail flag-icon-25 me-20" />
-                    Ecuador
+                         {{$session['countryName']}}
                 </span>
             </div>
 
