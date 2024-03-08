@@ -26,7 +26,7 @@ class IndexController extends Controller
                         ->join('course', 'section.course_id', '=', 'course.id')
                         ->join('user', 'session.coach_id', '=', 'user.id')
                         ->join('country','user.country_id','=','country.id')
-                        ->select('session.day', 'session.start_time', 'session.end_time', 'course.id', 'course.name as name_course', 'session.coach_id', 'user.name as name_user', 'user.lastname', 'user.url_photo', 'country.name as countryName', 'country.iso2 as flag')
+                        ->select('session.day', 'session.start_time', 'session.end_time', 'course.id', 'course.name as name_course', 'session.coach_id', 'user.name as name_user', 'user.lastname', 'user.url_photo', 'country.name as countryName', 'country.iso2 as flag', 'section.id as idSection')
                         ->where('instructor_id', $instructor)
                         ->distinct()
                         ->get();
@@ -107,14 +107,32 @@ class IndexController extends Controller
                 }
             }else{
                 $courseCounts = [];
+
                 foreach ($courses as $course) {
                     if (!isset($courseCounts[$course->id])) {
                         $courseCounts[$course->id] = 1;
                     }
-                    
+
                     $courseCount = $courseCounts[$course->id]; 
                     $totalCourses = $courses->where('id', $course->id)->count(); 
-                    
+
+                    $students = DB::table('section')
+                                ->join('enrollment', 'section.id', '=', 'enrollment.section_id')
+                                ->join('user', 'enrollment.student_id', '=', 'user.id')
+                                ->select('user.*')
+                                ->where('section.instructor_id', '=', $instructor)
+                                ->where('enrollment.section_id', '=', $course->idSection)
+                                ->get();
+
+                    $studentData = []; 
+                    foreach ($students as $student) {
+                        $studentData[] = [
+                            'id' => $student->id,
+                            'name' => $student->name,
+                            'lastname' => $student->lastname,
+                        ];
+                    }
+
                     $days[] = [
                         'day' => $course->day,
                         'coach_id' => $course->coach_id,
@@ -126,15 +144,15 @@ class IndexController extends Controller
                         'lastname' => $course->lastname,
                         'countryName' => $course->countryName,
                         'flag' => $course->flag,
-                        'session' => "$courseCount/$totalCourses", 
+                        'session' => "$courseCount/$totalCourses",
+                        'students' => $studentData, 
                     ];
-                    
+
                     $courseCounts[$course->id]++; 
-                    
                     $courseSelected = null;
                 }
             }
-            
+
         if($request->has('course_id')){
             $days = [];
             $courseCounts = [];

@@ -36,13 +36,13 @@
         <div class="row mt-2 text-start">
 
                 <div class="col-12">
-                    <p class="ps-2">
-                        <a href="#">
-                            <a href="#" target="_blank" class="mr-2" title="Show student">
-                                Antonio Pérez
+                    @foreach ($session['students'] as $student)
+                        <p class="ps-1">
+                            <a href="#" target="_blank" title="Show student">
+                                {{$student['name']}} {{$student['lastname']}}
                             </a>
-                        </a>
-                    </p>
+                        </p>
+                    @endforeach
                 </div>
 
         </div>
