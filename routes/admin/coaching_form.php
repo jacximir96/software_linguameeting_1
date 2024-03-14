@@ -19,6 +19,10 @@ Route::prefix('course')->group(function () {
             Route::post('/zero-step', [\App\Http\Controllers\Admin\Course\CoachingForm\Wizard\StartController::class, 'create'])
                 ->name('post.admin.course.coaching_form.create.zero_step');
 
+            Route::get('/duplicate-course-information', [\App\Http\Controllers\Admin\Course\CoachingForm\Wizard\StartController::class, 'duplicate'])
+                ->name('get.admin.course.coaching_form.create.duplicate.course_information');
+
+                
 
             /*step 1 - academic dates*/
             Route::get('/academic-dates', [\App\Http\Controllers\Admin\Course\CoachingForm\Wizard\AcademicDatesCreateController::class, 'configView'])

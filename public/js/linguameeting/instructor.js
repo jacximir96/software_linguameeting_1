@@ -17,7 +17,12 @@ jQuery(document).ready(function () {
 
     $('.actionsChange').change(function () {
 
-        if(this.value == "modalDuplicateCourse") {
+        if (this.value == "modalDuplicateCourse") {
+
+            var idDuplicateValue = $("option[value='modalDuplicateCourse']:selected").data("idduplicate");
+
+            $("#idDuplicate").val(idDuplicateValue);
+
             $("#modalDuplicateCourse").modal('show');
         }
         else if (this.value == "modalCloseCourse") {

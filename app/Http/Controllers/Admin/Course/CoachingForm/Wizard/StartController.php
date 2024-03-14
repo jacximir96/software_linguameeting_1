@@ -8,7 +8,12 @@ use App\Src\CourseDomain\CoachingForm\Action\WizardCreateAction;
 use App\Src\CourseDomain\CoachingForm\Presenter\Breadcrumb\CoachingFormBreadcrumb;
 use App\Src\CourseDomain\CoachingForm\Request\StartRequest;
 use App\Src\CourseDomain\CoachingForm\Service\StartForm;
+use App\Src\CourseDomain\CoachingWeek\Model\CoachingWeek;
 use App\Src\CourseDomain\Course\Model\Course;
+use App\Src\CourseDomain\CourseCoordinator\Model\CourseCoordinator;
+use App\Src\CourseDomain\Holiday\Model\Holiday;
+use App\Src\CourseDomain\Section\Model\Section;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class StartController extends Controller
@@ -68,5 +73,46 @@ class StartController extends Controller
 
             return back()->withInput();
         }
+    }
+
+    public function duplicate(Request $request){
+
+        $courseOld = Course::find($request->idDuplicate);
+
+        $courseSelected = Course::find($request->idDuplicate);
+            $courseSelected = $courseSelected->replicate();
+            $courseSelected->semester_id= $request->term_activeCourse;
+            $courseSelected->year= $request->year_activeCourse;
+            $courseSelected->start_date= $request->startDate_activeCourse;
+            $courseSelected->end_date= $request->endDate_activeCourse;
+            $courseSelected->save();
+        
+        $sectionGet = Section::where('course_id', '=', $courseOld->id)->get();
+        foreach($sectionGet as $section){
+            $sectionModificado = $section->replicate();
+            $sectionModificado->course_id = $courseSelected->id;
+            $sectionModificado->save();
+        }
+
+        $coachingWeekGet = CoachingWeek::where('course_id', '=', $courseOld->id)->get();
+        foreach($coachingWeekGet as $coachingWeek){
+            $coachingWeekModificado = $coachingWeek->replicate();
+            $coachingWeekModificado->course_id = $courseSelected->id;
+            $coachingWeekModificado->save();
+        }
+
+        $holidaysGet = Holiday::where('course_id', '=', $courseOld->id)->get();
+        foreach($holidaysGet as $holiday){
+            $holidayModificado = $holiday->replicate();
+            $holidayModificado->course_id = $courseSelected->id;
+            $holidayModificado->save();
+        }
+
+        $coordinatorGet = CourseCoordinator::where('course_id', '=', $courseOld->id)->first();
+            $coodinatorModificado = $coordinatorGet->replicate();
+            $coodinatorModificado->course_id = $courseSelected->id;
+            $coodinatorModificado->save();
+
+        return redirect()->route('get.admin.course.coaching_form.create.update.academic_dates', $courseSelected->id);
     }
 }

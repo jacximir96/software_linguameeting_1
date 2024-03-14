@@ -33,8 +33,6 @@
     </div>
 
 </div>
-
-
 @endif
 
 <div class="row">
@@ -143,10 +141,13 @@
     </div>
 
 </div>
+
 @endforelse
 
 
 </div>
+
+@if ( count($data->courses())>0)
 
 <div class="modal fade bd-example-modal-lg" id="modalDuplicateCourse" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -239,6 +240,7 @@
         </div>
     </div>
 
+@endif
 
 <script>
     setTimeout(function() {
@@ -267,6 +269,7 @@
         var duplicateCourseBtns = document.querySelectorAll(".duplicate-course-btn");
         duplicateCourseBtns.forEach(function(btn) {
             btn.addEventListener("click", function() {
+                
                 $('#modalDuplicateCourse').modal('show');
             });
         });

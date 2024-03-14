@@ -4,12 +4,15 @@ namespace App\Http\Controllers\Admin\Course\CoachingForm\Wizard;
 
 use App\Http\Controllers\Admin\Breadcrumable;
 use App\Http\Controllers\Controller;
+use App\Src\CourseDomain\Assignment\Model\Assignment;
 use App\Src\CourseDomain\CoachingForm\Action\AcademicDatesUpdateAction;
 use App\Src\CourseDomain\CoachingForm\Exception\WizardSessionNotExists;
 use App\Src\CourseDomain\CoachingForm\Presenter\Breadcrumb\CoachingFormBreadcrumb;
 use App\Src\CourseDomain\CoachingForm\Request\AcademicDatesRequest;
 use App\Src\CourseDomain\CoachingForm\Service\Wizard\Form\AcademicDatesUpdateForm;
+use App\Src\CourseDomain\CoachingWeek\Model\CoachingWeek;
 use App\Src\CourseDomain\Course\Model\Course;
+use App\Src\CourseDomain\Section\Model\Section;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -19,6 +22,7 @@ class AcademicDateUpdateController extends Controller
 
     public function configView(Course $course)
     {
+        
         try {
 
             $this->removeCoachingFormInfoSession();

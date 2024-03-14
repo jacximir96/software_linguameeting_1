@@ -113,7 +113,7 @@
                                 Edit Coaching Form
                             </option>
                             <option value="modalCloseCourse"  data-idSection={{$section->course_id}} data-idCode={{$section->code}}>Close course</option>
-                            <option value="modalDuplicateCourse">Duplicate Coaching Form</option>
+                            <option value="modalDuplicateCourse" data-idDuplicate={{$section->course_id}}>Duplicate Coaching Form</option>
                         </select>
 
                     </td>
@@ -135,15 +135,16 @@
 
 </div>
 
+
 <div class="modal fade bd-example-modal-lg" id="modalDuplicateCourse" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-content">
-            <form action="{{route('get.admin.course.coaching_form.duplicate.course_information', $section->course->id)}}">
+            <form action="{{route('get.admin.course.coaching_form.create.duplicate.course_information', $section->course->id)}}" id="formDuplicateCourse">
             @csrf
                 <div class="modal-header">
                     <h4 class="modal-tittle" style="color:white;"><span class="title-form">DUPLICATE COURSE</span></h4>
                 </div>
-
+                <input type="text" name="idDuplicate" id="idDuplicate" hidden>
                 <div class="modal-body" id="modal-container">
                     <div class="form-group">
                         <div class="row">
@@ -205,6 +206,8 @@
         </div>
     </div>
 </div>
+
+
 
 <div class="modal fade bd-example-modal-lg" id="modalCloseCourse" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
