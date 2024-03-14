@@ -5,8 +5,13 @@
                                'id' =>'assignments-form-course'
                                ]) }}
 <div class="row mt-4">
-    <div class="col-12">
+    <div class="col-9">
         <span class="title-field-form "><i class="fa fa-comments fa-fw"></i> Conversation Guides</span>
+    </div>
+    <div class="col-3" style="text-align: center">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#view{{$section->id}}">
+            <i class="fa fa-users"></i>&nbsp;&nbsp;View Attendance
+        </button>
     </div>
     <div class="col-12 mt-2">
         @include('admin.course.coaching-form.course-assignment.guide-links.select_guide')

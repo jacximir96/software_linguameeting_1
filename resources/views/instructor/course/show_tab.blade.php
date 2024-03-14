@@ -59,7 +59,7 @@
                     <div class="modal-dialog modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-tittle" style="color:white;"><span class="title-form" style="text-transform: uppercase">STUDENTS IN {{$section->name}}</span></h4>
+                                <h4 class="modal-tittle" style="color:white;"><span class="title-form" style="text-transform: uppercase; font-size:19px; font-weight:bold">STUDENTS IN {{$section->name}}</span></h4>
                             </div>
 
                             <div class="modal-body">
