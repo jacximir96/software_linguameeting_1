@@ -24,6 +24,7 @@ use App\Src\TimeDomain\Date\Service\PaginatorPeriod;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use App\Src\InstructorDomain\Canvas\Repository\CanvasRepository;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 
 class ShowController extends Controller
@@ -68,7 +69,7 @@ class ShowController extends Controller
             $students = DB::table('section')
                             ->join('enrollment', 'section.id', '=', 'enrollment.section_id')
                             ->join('user', 'enrollment.student_id', '=', 'user.id')         
-                            ->select('enrollment.id','enrollment.student_id', 'user.name', 'user.lastname')
+                            ->select('enrollment.id','enrollment.student_id', 'enrollment.section_id', 'user.name', 'user.lastname')
                             ->where('section.course_id', $course->id)
                             ->get();
 
@@ -87,6 +88,13 @@ class ShowController extends Controller
             $this->configSchedule($course);
 
             $guideByDefault = $this->obtainGuideByDefault($course);
+         
+            $studentsInSection = new Collection;
+
+            foreach ($course->section as $section) {
+                $studentsInSection[$section->id] = $students->where('section_id', $section->id);
+            }
+
 
             view()->share([
                 'canvas_id' => $canvas_id,
@@ -94,6 +102,7 @@ class ShowController extends Controller
                 'course' => $course,
                 'students' => $students,
                 'guide' => $guideByDefault,
+                'studentsInSection' => $studentsInSection,
                 'linguaMoney' => new LinguaMoney(),
                 'loadExpanderJs' => true,
                 'reviewsStatsCollection' => $reviewsStatsCollection,
