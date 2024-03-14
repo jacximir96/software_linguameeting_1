@@ -19,10 +19,12 @@ use App\Src\CourseDomain\Course\Model\Course;
 use App\Src\CourseDomain\Course\Repository\CourseRepository;
 use App\Src\PaymentDomain\Money\Service\LinguaMoney;
 use App\Http\Controllers\Admin\Course\CoachingForm\Wizard\Summarizable;
+use App\Src\CourseDomain\Section\Model\Section;
 use App\Src\TimeDomain\Date\Service\PaginatorPeriod;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use App\Src\InstructorDomain\Canvas\Repository\CanvasRepository;
+use Illuminate\Support\Facades\DB;
 
 class ShowController extends Controller
 {
@@ -52,7 +54,7 @@ class ShowController extends Controller
 
     public function __invoke(Course $course)
     {
-
+       
         try {
 
             $instructor = user();
@@ -62,6 +64,13 @@ class ShowController extends Controller
 
             $course->load($this->courseRepository->relationsWithSections());
             $canvas = $this->canvasRepository->canvasInstructor($course, $instructor);
+
+            $students = DB::table('section')
+                            ->join('enrollment', 'section.id', '=', 'enrollment.section_id')
+                            ->join('user', 'enrollment.student_id', '=', 'user.id')         
+                            ->select('enrollment.id','enrollment.student_id', 'user.name', 'user.lastname')
+                            ->where('section.course_id', $course->id)
+                            ->get();
 
             $canvas_id = "";
             if ( ! empty($canvas)) {
@@ -83,6 +92,7 @@ class ShowController extends Controller
                 'canvas_id' => $canvas_id,
                 'coaches' => $coaches,
                 'course' => $course,
+                'students' => $students,
                 'guide' => $guideByDefault,
                 'linguaMoney' => new LinguaMoney(),
                 'loadExpanderJs' => true,
