@@ -15,10 +15,18 @@ use App\Src\CourseDomain\Holiday\Model\Holiday;
 use App\Src\CourseDomain\Section\Model\Section;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Src\CourseDomain\Section\Service\SectionCodeGenerator;
 
 class StartController extends Controller
 {
     use Breadcrumable;
+
+    private SectionCodeGenerator $sectionCodeGenerator;
+
+    public function __construct(SectionCodeGenerator $sectionCodeGenerator)
+    {
+        $this->sectionCodeGenerator = $sectionCodeGenerator;
+    }
 
     public function configView()
     {
@@ -91,6 +99,7 @@ class StartController extends Controller
         foreach($sectionGet as $section){
             $sectionModificado = $section->replicate();
             $sectionModificado->course_id = $courseSelected->id;
+            $sectionModificado->code = $this->sectionCodeGenerator->generateCode();
             $sectionModificado->save();
         }
 
@@ -107,11 +116,6 @@ class StartController extends Controller
             $holidayModificado->course_id = $courseSelected->id;
             $holidayModificado->save();
         }
-
-        $coordinatorGet = CourseCoordinator::where('course_id', '=', $courseOld->id)->first();
-            $coodinatorModificado = $coordinatorGet->replicate();
-            $coodinatorModificado->course_id = $courseSelected->id;
-            $coodinatorModificado->save();
 
         return redirect()->route('get.admin.course.coaching_form.create.update.academic_dates', $courseSelected->id);
     }

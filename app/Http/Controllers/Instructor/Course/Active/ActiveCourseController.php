@@ -29,6 +29,7 @@ class ActiveCourseController extends Controller
         $course_id = intval($id);
         $course_id = intval($request->idSection);
         $course_code = intval($request->idCode);
+        
         $close = true;
         
         $course = CourseModel::select('id','university_id','is_flex','closed_date')->where('id','=',$course_id)->first();
@@ -85,15 +86,15 @@ class ActiveCourseController extends Controller
                 
                 $today_uni->subDays(14);
 
-                $courseSection = DB::table('section')
-                                    ->join('course', 'section.course_id', '=', 'course.id')
-                                    ->select('course.*')
-                                    ->where('section.instructor_id', $instructor->id)
-                                    ->where('section.code', '=', $course_code)
-                                    ->first();
-                
+                // $courseSection = DB::table('section')
+                //                     ->join('course', 'section.course_id', '=', 'course.id')
+                //                     ->select('course.*')
+                //                     ->where('section.instructor_id', $instructor->id)
+                //                     ->where('section.code', '=', $course_code)
+                //                     ->first();
+                // dd($courseSection);
                 $updateCourse = DB::table('course')
-                                    ->where('id', $courseSection->id)
+                                    ->where('id', $course_id)
                                     ->update(['end_date' => $today_uni]);
             }
             if($updateCourse != 0){

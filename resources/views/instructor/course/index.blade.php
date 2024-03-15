@@ -55,21 +55,20 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1" >
 
-                    <div class="dropdown-item cursor_pointer">See course Instructionss</div>
+                    <a class="dropdown-item cursor_pointer" href="{{route('get.instructor.course.show', $course->id)}}">See course Instructionss</a>
 
-                    <div class="dropdown-item cursor_pointer" href="{{route('get.common.course.section.file.instructions.download', $course->id)}}">
+                    <a class="dropdown-item cursor_pointer" href="{{route('get.common.course.section.file.instructions.download', $course->id)}}">
                         Download Instructions
-                    </div>
-                    <a class="dropdown-item cursor_pointer" href="{{route('get.admin.course.coaching_form.course_assignment', $course->id)}}">
+                    </a>
+                    <a class="dropdown-item cursor_pointer">
                         Add Conversation Guides
                     </a>
                     <div class="dropdown-item cursor_pointer">Add make-up session to all</div>
                     <div class="dropdown-item cursor_pointer">Download attendance report</div>
-                    <div class="dropdown-item cursor_pointer" href="{{route('get.admin.course.coaching_form.update.course_information', $course->id)}}">
-                        Edit Coaching Form
-                    </div>
-                        <div class="dropdown-item cursor_pointer close-course-btn" data-id="{{$course->id}}">Close course</div>
-                        <div class="dropdown-item cursor_pointer duplicate-course-btn">Duplicate Coaching Form</div>      
+
+                    <a href="{{route('get.admin.course.coaching_form.update.course_information', $course->id)}}" class="dropdown-item cursor_pointer">Edit Coaching Form</a>
+                        <div class="dropdown-item cursor_pointer close-course-btn" data-id="{{$course->id}}" data-Code={{$course->code}}>Close course</div>
+                        <div class="dropdown-item cursor_pointer duplicate-course-btn"  data-Duplicate={{$course->id}}>Duplicate Coaching Form</div>      
                     </div>
 
                 </div>
@@ -152,12 +151,12 @@
 <div class="modal fade bd-example-modal-lg" id="modalDuplicateCourse" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-content">
-            <form method="POST" action="{{route('get.admin.course.coaching_form.update.course_information', $course->id)}}" enctype="multipart/form-data">
+            <form action="{{route('get.admin.course.coaching_form.create.duplicate.course_information', $course->id)}}" enctype="multipart/form-data">
             @csrf
                 <div class="modal-header">
                     <h4 class="modal-tittle" style="color:white;"><span class="title-form">DUPLICATE COURSE</span></h4>
                 </div>
-
+                <input type="text" name="idDuplicate" id="idDuplicate" hidden>
                 <div class="modal-body" id="modal-container">
                     <div class="form-group">
                         <div class="row">
@@ -226,6 +225,7 @@
                 <form method="POST" action="{{route('post.admin.course.coaching_form.close.course', 1)}}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" name="idSection" id="idSection" hidden>
+                <input type="text" name="idCode" id="idCode" hidden>
                     <div class="modal-body">
                         <h4 class="modal-tittle" style="color:white;"><span class="title-form">CLOSE COURSE</span></h4>
                         <p>Now that your course has ended, it will be moved to Past Courses.</p>
@@ -263,13 +263,17 @@
             btn.addEventListener("click", function() {
                 var courseId = btn.getAttribute("data-id");
                 document.getElementById("idSection").value = courseId;
+
+                var courseCode = btn.getAttribute("data-Code");
+                document.getElementById("idCode").value = courseCode;
                 $('#modalCloseCourse').modal('show');
             });
         });
         var duplicateCourseBtns = document.querySelectorAll(".duplicate-course-btn");
         duplicateCourseBtns.forEach(function(btn) {
             btn.addEventListener("click", function() {
-                
+                var duplicateId = btn.getAttribute("data-Duplicate");
+                document.getElementById("idDuplicate").value = duplicateId;
                 $('#modalDuplicateCourse').modal('show');
             });
         });
