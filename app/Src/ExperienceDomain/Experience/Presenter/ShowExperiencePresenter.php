@@ -1,6 +1,7 @@
 <?php
 namespace App\Src\ExperienceDomain\Experience\Presenter;
 
+use App\Src\CourseDomain\Course\Model\Course;
 use App\Src\CourseDomain\Course\Repository\CourseInstructorRepository;
 use App\Src\ExperienceDomain\Experience\Model\Experience;
 use App\Src\ExperienceDomain\Experience\Repository\ExperienceRepository;
@@ -37,7 +38,7 @@ class ShowExperiencePresenter
 
         foreach ($instructorCourses as $instructorCourse) {
             $studentsByCourse = $this->experienceRegisterRepository->registerByExperienceAndCourse($experience, $instructorCourse);
-
+            
             foreach ($studentsByCourse as $studentByCourse) {
 
                 if (in_array($studentByCourse->user->id, $processedStudents)) {
@@ -54,6 +55,45 @@ class ShowExperiencePresenter
                 }
             }
         }
+
+
+        return new ShowExperienceResponse($studentsList);
+    }
+
+    public function handle2(User $instructor, Experience $experience, Course $course):ShowExperienceResponse{
+        
+        //1º) obtener los cursos del instructor
+        $instructorCourse = $this->courseInstructorRepository->obtainActivesForInstructor($instructor)->where('id', $course->id)->first();
+        
+        $instructorCoursesIds = $instructorCourse->pluck('id')->toArray();
+
+        //2º) obtener estudiantes de la experiencia de los cursos de los instructores
+        $studentsList = new StudentsList();
+
+        $processedStudents = []; 
+        
+        
+            $studentsByCourse = $this->experienceRegisterRepository->registerByExperienceAndCourse($experience, $instructorCourse);
+            
+            foreach ($studentsByCourse as $studentByCourse) {
+
+                if (in_array($studentByCourse->user->id, $processedStudents)) {
+                    continue;
+                }
+                
+                foreach ($studentByCourse->user->enrollment as $enrollment) {    //este foreach es porque un estudiante puede tener más de una matrícula y nos quedamos con la que realmente es del instructor
+                    
+                    if($enrollment->section->course_id === $course->id){
+                        if (in_array($enrollment->section->course_id, $instructorCoursesIds)) {
+                            $item = new StudentItem($studentByCourse->user, $enrollment);
+                            $studentsList->addItem($item);
+                            $processedStudents[] = $studentByCourse->user->id;
+                        }
+                    }
+                    
+                }
+            }
+        
 
 
         return new ShowExperienceResponse($studentsList);

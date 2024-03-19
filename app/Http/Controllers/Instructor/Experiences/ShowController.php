@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Instructor\Experiences;
 
 use App\Http\Controllers\Admin\Breadcrumable;
 use App\Http\Controllers\Controller;
+use App\Src\CourseDomain\Course\Model\Course;
 use App\Src\CourseDomain\Course\Repository\CourseRepository;
 use App\Src\ExperienceDomain\Experience\Model\Experience;
 use App\Src\ExperienceDomain\Experience\Presenter\ShowExperiencePresenter;
@@ -28,18 +29,31 @@ class ShowController extends Controller
     }
 
 
-    public function __invoke(Experience $experience)
+    public function __invoke(Experience $experience, Course $course)
     {
+        if ($course->id === null) {
+            $instructor = user();
 
-        $instructor = user();
+            $presenter = app(ShowExperiencePresenter::class);
+            $viewData = $presenter->handle($instructor, $experience);
 
-        $presenter = app(ShowExperiencePresenter::class);
-        $viewData = $presenter->handle($instructor, $experience);
+            view()->share([
+                'viewData' => $viewData,
+            ]);
+        }
+        else{
+            $instructor = user();
 
-        view()->share([
-            'viewData' => $viewData,
-        ]);
+            $presenter = app(ShowExperiencePresenter::class);
+            $viewData = $presenter->handle2($instructor, $experience, $course);
 
+            view()->share([
+                'viewData' => $viewData,
+            ]);
+        }
+        
+        
+        
         return view('instructor.experiences.modal_students_experience');
     }
 

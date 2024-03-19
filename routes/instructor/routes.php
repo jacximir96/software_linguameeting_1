@@ -97,7 +97,7 @@ Route::prefix('experiences')->group(function () {
 
     Route::get('list/{status?}', \App\Http\Controllers\Instructor\Experiences\ListController::class)->name('get.instructor.experiences.list');
 
-    Route::get('show/{experience}', \App\Http\Controllers\Instructor\Experiences\ShowController::class)->name('get.instructor.experiences.show');
+    Route::get('show/{experience}/{course?}', \App\Http\Controllers\Instructor\Experiences\ShowController::class)->name('get.instructor.experiences.show');
 
     Route::prefix('search')->group(function () {
         Route::post('', \App\Http\Controllers\Instructor\Experiences\SearchController::class)->name('post.instructor.experiences.search');

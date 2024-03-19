@@ -40,7 +40,7 @@ class SearchController extends Controller
 
     public function __invoke(InstructorSearchExperienceRequest $request)
     {
-
+       
         $instructor = user();
 
         $presenter = app(InstructorSearchPresenter::class);
@@ -49,8 +49,9 @@ class SearchController extends Controller
         view()->share([
             'experienceTimezone' => $this->experienceTimezone(),
             'experiences' => $viewData->experiencesList()->get(),
+            'course_id' => $request->course_id,
         ]);
-
+       
         return view('instructor.experiences.experience_table');
     }
 
