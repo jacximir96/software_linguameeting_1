@@ -33,20 +33,28 @@ class ShowExperiencePresenter
         //2º) obtener estudiantes de la experiencia de los cursos de los instructores
         $studentsList = new StudentsList();
 
-        foreach ($instructorCourses as $instructorCourse){
+        $processedStudents = []; 
 
-            $studentsByCourse = $this->experienceRegisterRepository->registerByExperienceAndCourse ($experience, $instructorCourse);
+        foreach ($instructorCourses as $instructorCourse) {
+            $studentsByCourse = $this->experienceRegisterRepository->registerByExperienceAndCourse($experience, $instructorCourse);
 
-            foreach ($studentsByCourse as $studentByCourse){
+            foreach ($studentsByCourse as $studentByCourse) {
 
-                foreach ($studentByCourse->user->enrollment as $enrollment){ //este foreach es porque un estudiante puede tener más de una matrícula y nos quedamos con la que realmente es del instructor
-                    if (in_array($enrollment->section->course_id, $instructorCoursesIds)){
+                if (in_array($studentByCourse->user->id, $processedStudents)) {
+                    continue;
+                }
+
+                foreach ($studentByCourse->user->enrollment as $enrollment) {    //este foreach es porque un estudiante puede tener más de una matrícula y nos quedamos con la que realmente es del instructor
+                    if (in_array($enrollment->section->course_id, $instructorCoursesIds)) {
                         $item = new StudentItem($studentByCourse->user, $enrollment);
                         $studentsList->addItem($item);
+
+                        $processedStudents[] = $studentByCourse->user->id;
                     }
                 }
             }
         }
+
 
         return new ShowExperienceResponse($studentsList);
     }
