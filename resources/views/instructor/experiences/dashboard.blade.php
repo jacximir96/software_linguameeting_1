@@ -69,7 +69,7 @@
                         <div class="input-group rounded">
                             <select class="form-select " aria-label="" id="course-id">
                                 <option value="">Filters</option>
-                                @foreach ($viewData->activeCoursesSortByName() as $activeCourse)
+                                @foreach ($viewData->courses as $activeCourse)
                                     <option value="{{$activeCourse->id}}">{{$activeCourse->name}}</option>
                                 @endforeach
                             </select>

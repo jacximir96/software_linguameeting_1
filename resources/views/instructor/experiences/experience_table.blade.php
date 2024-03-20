@@ -22,7 +22,7 @@
            data-modal-reload="no"
            data-modal-height="h-95"
            data-modal-title="Show Students">
-            <u>{{$itemExperience->experience()->title}}asdsadsa</u>
+            <u>{{$itemExperience->experience()->title}}</u>
         </a>
 
     </td>

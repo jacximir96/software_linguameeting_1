@@ -10,6 +10,7 @@ use App\Src\Shared\Service\IdCollection;
 use App\Src\StudentDomain\Enrollment\Repository\EnrollmentRepository;
 use App\Src\UserDomain\User\Model\User;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 class DashboardInstructorPresenter
 {
@@ -52,6 +53,22 @@ class DashboardInstructorPresenter
                 }
             }
         }
+        
+        $courses = []; 
+        foreach ($experiences as $experience) {
+            $result = DB::table('experience_register')
+                        ->join('user', 'experience_register.user_id', '=', 'user.id')
+                        ->join('enrollment', 'user.id', '=', 'enrollment.student_id')
+                        ->join('section', 'enrollment.section_id', '=', 'section.id')
+                        ->join('course', 'section.course_id', '=', 'course.id')
+                        ->select('course.id', 'course.name')
+                        ->where('experience_register.experience_id', '=', $experience->id)
+                        ->get();
+            
+            $courses[] = $result;
+        }
+
+        $courses = collect($courses)->flatten()->all();
 
         //3º) contar el número de estudiantes de cada experiencia por cada curso del instructor.
         $experiencesList = new ExperiencesList();
@@ -77,7 +94,7 @@ class DashboardInstructorPresenter
 
         $attendedStats = $this->obtainStats($instructorCourses, $totalAttendances);
 
-        return new DashboardInstructorResponse($experiencesList, $instructorCourses, $attendedStats);
+        return new DashboardInstructorResponse($experiencesList, $instructorCourses, $attendedStats, $courses);
     }
 
     private function obtainStats (Collection $instructorCourses, int $totalAttendances):AttendedStats{

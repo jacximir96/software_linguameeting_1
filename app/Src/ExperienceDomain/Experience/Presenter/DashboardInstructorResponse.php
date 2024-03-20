@@ -12,11 +12,13 @@ class DashboardInstructorResponse
 
     private AttendedStats $attendedStats;
 
+    public $courses;
 
-    public function __construct (ExperiencesList $experiencesList, Collection $activeCourses, AttendedStats $attendedStats){
+    public function __construct (ExperiencesList $experiencesList, Collection $activeCourses, AttendedStats $attendedStats, $courses){
         $this->experiencesList = $experiencesList;
         $this->activeCourses = $activeCourses;
         $this->attendedStats = $attendedStats;
+        $this->courses = $courses;
     }
 
     public function experiencesList(): ExperiencesList
