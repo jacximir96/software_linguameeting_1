@@ -11,12 +11,14 @@ class CourseInstructorRule implements Rule
 
     public function passes($attribute, $value)
     {
-
+        
         $course = Course::find($value);
-
+        
         $universities = user()->university;
-return false;
+        
+// return false;
         foreach ($universities as $university){
+
             if ($university->id == $course->university_id){
                 return true;
             }
