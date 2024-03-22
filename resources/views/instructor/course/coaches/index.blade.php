@@ -170,19 +170,19 @@
 
                         <div class="row margin-top-20">
                             <div class="text-16 col-md-12">
-                                <textarea class="form-control" id="feedbackInst[s/$coach->id_user/s]" rows="8" name="feedbackInst[s/$coach->id_user/s]">asdfasdf</textarea>
+                                <textarea class="form-control" id="feedbackInst[s/$coach->id_user/s]" rows="8" name="feedbackInst[s/$coach->id_user/s]"></textarea>
                             </div>
 
                         </div>
 
-                        [s/if $coach->date_evaluation_other!=''/s]
+                        {{-- [s/if $coach->date_evaluation_other!=''/s]
                         <div class="row margin-top-20">
                             <div class="text-16 col-md-12 text-center">
                                 Last feedback: 16 Sep 2021 - 03:24 PM
                             </div>
 
                         </div>
-                        [s//if/s]
+                        [s//if/s] --}}
 
                     </div>
 
