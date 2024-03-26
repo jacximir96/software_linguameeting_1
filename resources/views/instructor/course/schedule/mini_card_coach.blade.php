@@ -37,9 +37,13 @@
             </div>
         </div>
         <div class="card-footer text-center">
-            <a href="#"
-            class="text-corporate-dark-color fw-bold small text-decoration-underline select-session-coach"
-            data-coach-id="38">Filter Sessions</a>
+            <form method="GET">
+                <input type="hidden" value="{{$coach->id}}">
+                @isset($courseSelected)
+                    <input name="course_id" value="{{ $courseSelected->id }}">
+                @endisset
+                <button type="submit" class="text-corporate-dark-color fw-bold small text-decoration-underline" style="border: none; background-color: transparent;" type="submit"  name="filtro" value="{{$coach->id}}">Filter Sessions</button>
+            </form>
         </div>
     </div>
     <div style="width: 10px"></div>
