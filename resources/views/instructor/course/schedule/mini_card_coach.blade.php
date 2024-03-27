@@ -1,5 +1,12 @@
 @foreach ($coaches as $coach)
-    <div class="card h-100">
+<div class="card h-100" 
+@isset($idCoach)
+@if ( $coach->id == $idCoach) style="border-color: yellow" @endif
+@endisset
+
+
+
+>
         <div class="card-header p-2 d-flex flex-row align-items-center justify-content-between bg-corporate-color-light text-corporate-dark-color fw-bold">
             <a href="#" class="mr-2" target="_blank" title="Show coach">
                 {{$coach->name}} {{$coach->lastname}}
@@ -38,11 +45,11 @@
         </div>
         <div class="card-footer text-center">
             <form method="GET">
-                <input type="hidden" value="{{$coach->id}}">
+                <input type="hidden" name="coach_id" value="{{$coach->id}}">
                 @isset($courseSelected)
-                    <input name="course_id" value="{{ $courseSelected->id }}">
+                    <input type="hidden" name="course_id" value="{{ $courseSelected->id }}">
                 @endisset
-                <button type="submit" class="text-corporate-dark-color fw-bold small text-decoration-underline" style="border: none; background-color: transparent;" type="submit"  name="filtro" value="{{$coach->id}}">Filter Sessions</button>
+                <button type="submit" class="text-corporate-dark-color fw-bold small text-decoration-underline" style="border: none; background-color: transparent;" type="submit">Filter Sessions</button>
             </form>
         </div>
     </div>

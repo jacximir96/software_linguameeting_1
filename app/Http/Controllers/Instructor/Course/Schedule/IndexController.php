@@ -48,6 +48,7 @@ class IndexController extends Controller
             if($request->has('course')){
                 
                 if($request->course === 'all'){
+                    
                     $courseCounts = [];
                     foreach ($courses as $course) {
                         if (!isset($courseCounts[$course->id])) {
@@ -91,11 +92,11 @@ class IndexController extends Controller
                             'students' => $studentData, 
                         ];
                         $courseCounts[$course->id]++; 
-
+                        $idCoach = null;
                         $courseSelected = null;
                     }                
                 }else{
-                 
+                    
                     $courseCounts = [];
                     foreach ($courses as $course) {
                         if ($course->id == $request->course) {
@@ -148,11 +149,100 @@ class IndexController extends Controller
                                                 ->first();
                         }
                     }
+
+                    $idCoach = null;
+
                 }
            
-            }else{
-              
-                if($request->has('filtro')){
+            }else{  
+                
+                if($request->has('coach_id')){
+                    $idCoach = $request->coach_id;
+                    
+                    if($request->course_id != null){  
+                        $courseCounts = [];
+                        $days = [];
+                    foreach ($courses as $course) {
+                        if (!isset($courseCounts[$course->id])) {
+                            $courseCounts[$course->id] = 1;
+                        }
+
+                        $courseCount = $courseCounts[$course->id]; 
+                        $totalCourses = $courses->where('id', $course->id)->count(); 
+
+                        $students = DB::table('section')
+                                    ->join('enrollment', 'section.id', '=', 'enrollment.section_id')
+                                    ->join('user', 'enrollment.student_id', '=', 'user.id')
+                                    ->select('user.*')
+                                    ->where('section.instructor_id', '=', $instructor)
+                                    ->where('enrollment.section_id', '=', $course->idSection)
+                                    ->get();
+
+                        $studentData = []; 
+                        foreach ($students as $student) {
+                            $studentData[] = [
+                                'id' => $student->id,
+                                'name' => $student->name,
+                                'lastname' => $student->lastname,
+                            ];
+                        }
+
+                        if($course->coach_id == $request->coach_id  && $course->id == $request->course_id){
+                            
+                            $days[] = [
+                                'day' => $course->day,
+                                'coach_id' => $course->coach_id,
+                                'start_time' => $course->start_time,
+                                'end_time' => $course->end_time,
+                                'id' => $course->id,
+                                'idSession' => $course->idSession,
+                                'name_course' => $course->name_course,
+                                'name_user' => $course->name_user,
+                                'lastname' => $course->lastname,
+                                'countryName' => $course->countryName,
+                                'flag' => $course->flag,
+                                'session' => "$courseCount/$totalCourses",
+                                'students' => $studentData, 
+                            ];
+                        }
+
+                        $courseCounts[$course->id]++; 
+                        
+                        
+                        $courseSelected = DB::table('course')
+                                        ->select('course.*')
+                                        ->where('course.id', '=', $request->course_id)
+                                         ->first();
+                    }
+                    
+                    $coursesList = DB::table('coach_info')
+                    ->join('session', 'coach_info.user_id', '=', 'session.coach_id')
+                    ->join('section', 'session.course_id', '=', 'section.course_id')
+                    ->join('user','coach_info.user_id','=','user.id')
+                    ->join('course','section.course_id','=','course.id')
+                    ->select('course.*',    )
+                    ->where('section.instructor_id', '=', $instructor)
+                    ->distinct()
+                    ->get(); 
+                    
+                    $coaches = DB::table('coach_info')
+                        ->join('session', 'coach_info.user_id', '=', 'session.coach_id')
+                        ->join('section', 'session.course_id', '=', 'section.course_id')
+                        ->join('user','coach_info.user_id','=','user.id')
+                        ->join('country','user.country_id','=','country.id')
+                        ->select('user.id', 'user.name', 'user.lastname', 'user.url_photo', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description')
+                        ->where('section.instructor_id', '=', $instructor)
+                        ->distinct()
+                        ->get();     
+                        
+                        
+            
+                    $breadcrumb = new IndexBreadcrumb();
+                    $this->buildBreadcrumbInstanceAndSendToView($breadcrumb);  
+                    return view('instructor.course.schedule.index', compact('days', 'coursesList', 'startOfWeek', 'coaches', 'courseSelected', 'idCoach'));
+
+                    }else{
+                        
                     $courseCounts = [];
                     $days = [];
                     foreach ($courses as $course) {
@@ -180,7 +270,7 @@ class IndexController extends Controller
                             ];
                         }
 
-                        if($course->coach_id == $request->filtro){
+                        if($course->coach_id == $request->coach_id){
                             $days[] = [
                                 'day' => $course->day,
                                 'coach_id' => $course->coach_id,
@@ -201,11 +291,12 @@ class IndexController extends Controller
                         $courseCounts[$course->id]++; 
                         $courseSelected = null;
                     }
-                }else{
-                  
-                
-                    $courseCounts = [];
+                    $idCoach = $request->coach_id;
+                    }
 
+                }else{
+     
+                    $courseCounts = [];
                     foreach ($courses as $course) {
                         if (!isset($courseCounts[$course->id])) {
                             $courseCounts[$course->id] = 1;
@@ -246,7 +337,7 @@ class IndexController extends Controller
                             'session' => "$courseCount/$totalCourses",
                             'students' => $studentData, 
                         ];
-
+                        $idCoach = null;
                         $courseCounts[$course->id]++; 
                         $courseSelected = null;
                     }
@@ -259,12 +350,6 @@ class IndexController extends Controller
             $courseCounts = [];
             foreach ($courses as $course) {
                 if ($course->id == $request->course_id) {
-
-
-
-
-
-
                     if($request->has('filtro')){
                         $courseCounts = [];
                         $days = [];
@@ -321,8 +406,6 @@ class IndexController extends Controller
                     
                         }
                     }else{
-
-                    
 
 
                     if (!isset($courseCounts[$course->id])) {
@@ -403,6 +486,6 @@ class IndexController extends Controller
     $breadcrumb = new IndexBreadcrumb();
     $this->buildBreadcrumbInstanceAndSendToView($breadcrumb);  
     
-    return view('instructor.course.schedule.index', compact('days', 'coursesList', 'startOfWeek', 'coaches', 'courseSelected'));
+    return view('instructor.course.schedule.index', compact('days', 'coursesList', 'startOfWeek', 'coaches', 'courseSelected', 'idCoach'));
     }
 }
