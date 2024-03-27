@@ -92,9 +92,9 @@ class IndexController extends Controller
                             'students' => $studentData, 
                         ];
                         $courseCounts[$course->id]++; 
+                    }      
                         $idCoach = null;
-                        $courseSelected = null;
-                    }                
+                        $courseSelected = null;          
                 }else{
                     
                     $courseCounts = [];
@@ -236,7 +236,7 @@ class IndexController extends Controller
                         ->get();     
                         
                         
-            
+                       
                     $breadcrumb = new IndexBreadcrumb();
                     $this->buildBreadcrumbInstanceAndSendToView($breadcrumb);  
                     return view('instructor.course.schedule.index', compact('days', 'coursesList', 'startOfWeek', 'coaches', 'courseSelected', 'idCoach'));
@@ -295,7 +295,7 @@ class IndexController extends Controller
                     }
 
                 }else{
-     
+
                     $courseCounts = [];
                     foreach ($courses as $course) {
                         if (!isset($courseCounts[$course->id])) {
@@ -337,10 +337,12 @@ class IndexController extends Controller
                             'session' => "$courseCount/$totalCourses",
                             'students' => $studentData, 
                         ];
-                        $idCoach = null;
+                       
                         $courseCounts[$course->id]++; 
-                        $courseSelected = null;
+                        
                     }
+                    $idCoach = null;
+                    $courseSelected = null;
                 }
          
             }
@@ -485,7 +487,7 @@ class IndexController extends Controller
 
     $breadcrumb = new IndexBreadcrumb();
     $this->buildBreadcrumbInstanceAndSendToView($breadcrumb);  
-    
+ 
     return view('instructor.course.schedule.index', compact('days', 'coursesList', 'startOfWeek', 'coaches', 'courseSelected', 'idCoach'));
     }
 }
