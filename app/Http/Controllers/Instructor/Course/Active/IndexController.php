@@ -8,7 +8,7 @@ use App\Src\UserDomain\Role\Service\RoleChecker;
 use App\Http\Controllers\Admin\Instructor\Presentable;
 use App\Http\Models\SemesterModel;
 use Carbon\Carbon;
-
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -39,12 +39,20 @@ class IndexController extends Controller
         $today = Carbon::now();
         $arrayYears = array($today->year, $today->year + 1);
 
+        $denyIds = DB::table('deny_access_course')
+        ->where('user_id', $instructor->id)
+        ->pluck('course_id')
+        ->toArray();
+
+        $sections = $data->commonResponse()->sections()->whereNotIn('course_id', $denyIds);
+
         view()->share([
             'checkerRole' => $this->checkerRole,
             'data' => $data,
             'courseSelected' => $course_id,
             'semesters' => $semesters,
-            'arrayYears' => $arrayYears
+            'arrayYears' => $arrayYears,
+            'sections' => $sections,
         ]);
         
         return view('instructor.course.active.index');

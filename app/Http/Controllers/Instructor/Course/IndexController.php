@@ -8,7 +8,7 @@ use App\Src\UserDomain\Role\Service\RoleChecker;
 use App\Http\Models\SemesterModel;
 use Carbon\Carbon;
 use App\Http\Controllers\Admin\Instructor\Presentable;
-
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -39,11 +39,19 @@ class IndexController extends Controller
         $breadcrumb = new IndexBreadcrumb();
         $this->buildBreadcrumbInstanceAndSendToView($breadcrumb);
 
+        $denyIds = DB::table('deny_access_course')
+        ->where('user_id', $instructor->id)
+        ->pluck('course_id')
+        ->toArray();
+    
+        $courses = $data->courses()->whereNotIn('id', $denyIds);
+
         view()->share([
             'checkerRole' => $this->checkerRole,
             'semesters' => $semesters,
             'data' => $data,
-            'arrayYears' => $arrayYears
+            'arrayYears' => $arrayYears,
+            'courses' => $courses,
         ]);
         
         return view('instructor.course.index');

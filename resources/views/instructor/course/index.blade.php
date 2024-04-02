@@ -38,7 +38,7 @@
 <div class="row">
     
     @php($count = 1)
-    @forelse ($data->courses() as $course)  
+    @forelse ($courses as $course)  
 
     
     <div class="col-md-3">

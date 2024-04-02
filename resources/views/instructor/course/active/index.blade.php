@@ -66,7 +66,7 @@
 
             <tbody>
 
-                @forelse ($data->commonResponse()->sections() as $section)
+                @forelse ($sections as $section)
                 @if ($section->course->isActive())
                 <tr>
                     
