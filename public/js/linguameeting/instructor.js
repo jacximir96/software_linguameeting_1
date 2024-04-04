@@ -25,6 +25,18 @@ jQuery(document).ready(function () {
 
             $("#modalDuplicateCourse").modal('show');
         }
+        else if (this.value == "modalMakeup") {
+
+            var idMakeup = $("option[value='modalMakeup']:selected").data("idmakeup");
+
+            var idClass = $("option[value='modalMakeup']:selected").data("idclass");
+            console.log(idMakeup);
+            console.log(idClass);
+
+            $("#modalMakeup").modal('show');
+            
+
+        }
         else if (this.value == "modalCloseCourse") {
             var idSectionValue = $("option[value='modalCloseCourse']:selected").data("idsection");
             $("#idSection").val(idSectionValue);

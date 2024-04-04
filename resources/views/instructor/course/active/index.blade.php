@@ -1,6 +1,6 @@
 
 @extends('layouts.app')
-
+@include('common.activeStyle')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -10,7 +10,7 @@
 
 <div class="row margin-top-20">
 
-
+    
 
     <div class="col-md-12">
         <button onclick="exportTableToExcel()">Exportar a Excel</button>
@@ -23,7 +23,6 @@
     </div>
 
 </div>
-
 
 <div class="row margin-top-10">
     <div class="col-md-12">
@@ -46,7 +45,7 @@
 <div class="card float-none margin-top-10 card-list-courses-instructor">
 
     <div class="card-body">
-
+        
 
         <table id="table-instructor" class="table">
             <thead>
@@ -65,10 +64,10 @@
             </thead>
 
             <tbody>
-
+                
                 @forelse ($sections as $section)
                 @if ($section->course->isActive())
-                <tr>
+                <tr style="vertical-align: middle;">
                     
                     {{-- <td><u>1</u></td> --}}
                     <td class="cursor_pointer">
@@ -100,24 +99,27 @@
                     </td>
                     <td>{{$section->instructor->writeFullName()}}</td>
                     <td>
-                        <select class="form-select form-select-sm actionsChange select-close-course" aria-label=".form-select-sm example">
-                            <option value="">Actions </option>
-                            <option value="{{route('get.instructor.course.show', $section->course_id)}}">See course information</option>
-                            <option value="{{route('get.common.course.section.file.instructions.download', $section->id)}}">Download Instructions</option>
-                            <option value="{{route('get.admin.course.coaching_form.course_assignment', $section->course->id)}}?sectionToExpand={{$section->id}}">
-                                Add conversation guides
-                            </option>
-                            <option value="">Add make-up for purchase for all</option>
-                            <option value="">Download attendance report</option>
-                            <option value="{{route('get.admin.course.coaching_form.update.course_information', $section->course->id)}}">
-                                Edit Coaching Form
-                            </option>
-                            <option value="modalCloseCourse"  data-idSection={{$section->course_id}} data-idCode={{$section->code}}>Close course</option>
-                            <option value="modalDuplicateCourse" data-idDuplicate={{$section->course_id}}>Duplicate Coaching Form</option>
-                        </select>
-
+                        <div class="custom-select">
+                            <div class="select-selected">Seleccionar una opción</div>
+                            <div class="select-items">
+                                <div><a href="{{route('get.instructor.course.show', $section->course_id)}}" style="text-decoration: none; color:black">&nbsp;&nbsp;See course Instructions</a></div>
+                                <div><a href="{{route('get.common.course.section.file.instructions.download', $section->id)}}" style="text-decoration: none; color:black">&nbsp;&nbsp;Download Instructions</a></div>
+                                <div><a href="{{route('get.admin.course.coaching_form.course_assignment', $section->course->id)}}?sectionToExpand={{$section->id}}" style="text-decoration: none; color:black">&nbsp;&nbsp;Add Conversation Guides</a></div>
+                                <div><a href="{{route('get.instructor.course.makeup.assign', $section->course_id)}}"
+                                    title="Add make-up all students"
+                                    class="open-modal text-dark"
+                                    data-modal-size="modal-md"
+                                    data-modal-reload="yes"
+                                    data-reload-type="parent"
+                                    data-modal-title="Add Make-up" style="text-decoration: none; color:black">&nbsp;&nbsp;Add make-up session to all</a>
+                                </div>
+                                <div>&nbsp;&nbsp;Download attendance report</div>
+                                <div><a href="{{route('get.admin.course.coaching_form.update.course_information', $section->course->id)}}" style="text-decoration: none; color:black">&nbsp;&nbsp;Edit Coaching Form</a></div>
+                                <div class="close-course-btn" data-idSection={{$section->course_id}} data-idCode={{$section->code}}>&nbsp;&nbsp;Close course</div>
+                                <div class="duplicate-course-btn" data-idDuplicate={{$section->course_id}}>&nbsp;&nbsp;Duplicate Coaching Form</div>
+                            </div>
+                        </div>
                     </td>
-
                 </tr>
                 @endif
                 @empty
@@ -136,10 +138,44 @@
 </div>
 
 
+<div class="modal fade bd-example-modal-lg" id="modalMakeup" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-content">
+            <form action="{{route('get.admin.course.coaching_form.update.course_information', 2650)}}" method="POST">
+                @csrf
+                <div class="modal-header  bg-text-corporate-color text-white">
+                    <h5 class="modal-title">Add Make-up</h5>
+                </div>
+                <div class="modal-body" style="margin-left: 10px; margin-right: 10px">
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            Add purchase make-up to course: <span class="fw-bold fst-italic font-primary">aqui va el course name</span>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-6 ">
+                            @include('common.form-field.number', ['field' => 'number_makeups', 'label' => 'Make-ups Numbers', 'min' => 1, 'step' => 1, 'required' => true])
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 text-end">
+                            <button class="btn btn-primary btn-sm btn-bold px-4" type="submit">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>    
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="modal fade bd-example-modal-lg" id="modalDuplicateCourse" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-content">
-            <form action="{{route('get.admin.course.coaching_form.create.duplicate.course_information', $section->course->id)}}" id="formDuplicateCourse">
+            <form action="{{route('get.admin.course.coaching_form.create.duplicate.course_information', 1)}}" id="formDuplicateCourse">
             @csrf
                 <div class="modal-header">
                     <h4 class="modal-tittle" style="color:white;"><span class="title-form">DUPLICATE COURSE</span></h4>
@@ -230,6 +266,58 @@
     </div>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var closeCourseBtns = document.querySelectorAll(".close-course-btn");
+        closeCourseBtns.forEach(function(btn) {
+            btn.addEventListener("click", function() {
+                var courseId = btn.getAttribute("data-idSection");
+                document.getElementById("idSection").value = courseId;
+
+                var courseCode = btn.getAttribute("data-idCode");
+                document.getElementById("idCode").value = courseCode;
+                $('#modalCloseCourse').modal('show');
+            });
+        });
+        var duplicateCourseBtns = document.querySelectorAll(".duplicate-course-btn");
+        duplicateCourseBtns.forEach(function(btn) { 
+            btn.addEventListener("click", function() {
+                var duplicateId = btn.getAttribute("data-idDuplicate");
+                document.getElementById("idDuplicate").value = duplicateId;
+                $('#modalDuplicateCourse').modal('show');
+            });
+        });
+    });
+    
+</script>
+
+
+<script>
+    document.addEventListener("click", function(e) {
+      var customSelects = document.getElementsByClassName("custom-select");
+      for (var i = 0; i < customSelects.length; i++) {
+        var select = customSelects[i].getElementsByTagName("div");
+        if (e.target == select[0]) {
+          select[1].classList.toggle("show");
+        } else if (!customSelects[i].contains(e.target)) {
+          select[1].classList.remove("show");
+        }
+      }
+    });
+    
+    var options = document.querySelectorAll(".custom-select .select-items div");
+    options.forEach(function(option) {
+      option.addEventListener("click", function() {
+        var text = this.innerText;
+        var parent = this.parentElement.parentElement;
+        parent.getElementsByClassName("select-selected")[0].innerText = text;
+        parent.getElementsByClassName("select-items")[0].classList.remove("show");
+        parent.querySelector('.selected').classList.remove('selected');
+        this.classList.add('selected');
+      });
+    });
+    
+</script>
 
 <script>
     $(document).ready(function() {

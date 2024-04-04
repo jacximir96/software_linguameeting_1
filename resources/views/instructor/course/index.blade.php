@@ -55,7 +55,7 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1" >
 
-                    <a class="dropdown-item cursor_pointer" href="{{route('get.instructor.course.show', $course->id)}}">See course Instructionss</a>
+                    <a class="dropdown-item cursor_pointer" href="{{route('get.instructor.course.show', $course->id)}}">See course Instructions</a>
 
                     <a class="dropdown-item cursor_pointer" href="{{route('get.common.course.section.file.instructions.download', $course->id)}}">
                         Download Instructions
@@ -63,7 +63,17 @@
                     <a class="dropdown-item cursor_pointer">
                         Add Conversation Guides
                     </a>
-                    <div class="dropdown-item cursor_pointer">Add make-up session to all</div>
+                    <div class="dropdown-item cursor_pointer">
+                        <a href="{{route('get.instructor.course.makeup.assign', $course->id)}}"
+                            title="Add make-up all students"
+                            class="open-modal text-dark"
+                            data-modal-size="modal-md"
+                            data-modal-reload="yes"
+                            data-reload-type="parent"
+                            data-modal-title="Add Make-up">
+                             Add make-up session to all
+                         </a>
+                    </div>
                     <div class="dropdown-item cursor_pointer">Download attendance report</div>
 
                     <a href="{{route('get.admin.course.coaching_form.update.course_information', $course->id)}}" class="dropdown-item cursor_pointer">Edit Coaching Form</a>

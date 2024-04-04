@@ -29,9 +29,8 @@ Route::prefix('api')->group(function () {
         });
 
         Route::prefix('makeup')->group(function () {
-
-            Route::post('assign/{enrollment}',\App\Http\Controllers\Student\Api\Makeup\AssignMakeupController::class)
-                ->name('post.instructor.api.students.makeup.assign');
+            Route::get('{course}', [\App\Http\Controllers\Instructor\Course\Makeup\AssignMakeUpController::class, 'configView'] )->name('get.instructor.course.makeup.assign');
+            Route::post('{course}', [\App\Http\Controllers\Instructor\Course\Makeup\AssignMakeUpController::class, 'assign'])->name('post.instructor.course.makeup.assign');
         });
     });
 });
