@@ -41,9 +41,10 @@ class IndexController extends Controller
 
         $denyIds = DB::table('deny_access_course')
         ->where('user_id', $instructor->id)
+        ->where('deleted_at', null)
         ->pluck('course_id')
         ->toArray();
-    
+       
         $courses = $data->courses()->whereNotIn('id', $denyIds);
 
         view()->share([
@@ -53,7 +54,7 @@ class IndexController extends Controller
             'arrayYears' => $arrayYears,
             'courses' => $courses,
         ]);
-        
+
         return view('instructor.course.index');
     }
 }

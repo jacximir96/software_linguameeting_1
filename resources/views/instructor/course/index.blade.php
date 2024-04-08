@@ -161,7 +161,7 @@
 <div class="modal fade bd-example-modal-lg" id="modalDuplicateCourse" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-content">
-            <form action="{{route('get.admin.course.coaching_form.create.duplicate.course_information', $course->id)}}" enctype="multipart/form-data">
+            <form action="{{route('get.admin.course.coaching_form.create.duplicate.course_information', 1)}}" enctype="multipart/form-data">
             @csrf
                 <div class="modal-header">
                     <h4 class="modal-tittle" style="color:white;"><span class="title-form">DUPLICATE COURSE</span></h4>
