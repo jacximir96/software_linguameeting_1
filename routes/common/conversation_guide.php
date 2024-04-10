@@ -9,5 +9,11 @@ Route::prefix('conversation-guide')->group(function () {
         
         Route::get('/downloadChapter-file/{chapter?}', [\App\Http\Controllers\ConversationGuide\Guide\DownloadGuideChapterController::class, 'downloadChapter'])
             ->name('get.common.conversation_guide.chapter.file.downloadChapter');
+
+        Route::get('/showChapter-file/{chapter?}', [\App\Http\Controllers\ConversationGuide\Guide\DownloadGuideChapterController::class, 'showChapter'])
+            ->name('get.common.conversation_guide.chapter.file.showChapter');
+
+        Route::get('/downloadAllChapter-file/{chapter?}', [\App\Http\Controllers\ConversationGuide\Guide\DownloadGuideChapterController::class, 'downloadAllChapter'])
+            ->name('get.common.conversation_guide.chapter.file.downloadAllChapter');
     });
 });
