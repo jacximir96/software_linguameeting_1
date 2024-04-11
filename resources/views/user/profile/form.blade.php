@@ -30,7 +30,7 @@
 
             @include('user.profile.fields.personal_info')
 
-            <div class="row mt-3">
+            
 
                 <div class="col-sm-6 col-lg-4 col-xl-3">
                     @include('common.form-field.select', [  'field' => 'timezone_id',

@@ -16,11 +16,4 @@
                                                 'optionsField' => 'countryOptions',
                                                 'placeholder' => 'Select Country'])
     </div>
-
-    <div class="col-sm-6 col-lg-4 col-xl-3">
-        @include('common.form-field.select', [  'field' => 'country_id',
-                                                'label' => 'Where do you live?',
-                                                'optionsField' => 'countryOptions',
-                                                'placeholder' => 'Select Country'])
-    </div>
-</div>
+    
