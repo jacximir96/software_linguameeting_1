@@ -49,7 +49,9 @@
 
                 <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
 
-                    @include('instructor.course.card.schedule', ['coaches' => $coaches])
+                    {{-- @include('instructor.course.card.schedule', ['coaches' => $coaches]) --}}
+
+                    @include('instructor.course.card.scheduleActive')
 
                 </div>
             </div>

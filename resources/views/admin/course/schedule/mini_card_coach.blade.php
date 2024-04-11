@@ -1,7 +1,7 @@
-<div class="card h-100">
+ <div class="card h-100">
     <div class="card-header p-2 d-flex flex-row align-items-center justify-content-between bg-corporate-color-light text-corporate-dark-color fw-bold">
-        <a href="{{route('get.admin.coach.show', $coach->id)}}" class="mr-2" target="_blank" title="Show coach">
-            {{$coach->writeFullName()}}
+        <a href="#" class="mr-2" target="_blank" title="Show coach">
+            {{$coach->name}} {{$coach->lastname}}
         </a>
     </div>
     <div class="card-body padding-05-rem">
@@ -13,10 +13,9 @@
 
                 <div class="">
                     <p class="mb-0">
-                        <img src="{{asset('assets/img/flags/'.$coach->country->flagFile())}}"
-                             title="Flag of {{$coach->country->name}}"
-                             class="img-thumbnail flag-icon-25 me-20" />
-                        {{$coach->country->name}}
+                        <img src="{{ asset('assets/img/flags/' . $coach->flag . '.png') }}"
+                            class="img-thumbnail flag-icon-25 me-20" />
+                        {{$coach->countryName}}
                     </p>
                     <p class="mb-0">
                         <i class="fa fa-star small rating-color"></i>
@@ -29,19 +28,24 @@
             </div>
             <div class="col-12">
                 <p class="small text-muted mb-0">
-                    @if ($coach->hobby->count())
+                    {{-- @if ($coach->hobby->count())
                         <span class="text-corporate-dark-color fw-bold">Le gusta</span> {{$coach->hobby->implode(function ($hobby){return $hobby->description;},', ')}}
                     @else
                         <span class="subtitle-color">Without Hobbies</span>
-                    @endif
+                    @endif --}}
+                    <span class="text-corporate-dark-color fw-bold">Le gusta</span>
                 </p>
             </div>
         </div>
     </div>
     <div class="card-footer text-center">
-        <a href="#"
-           class="text-corporate-dark-color fw-bold small text-decoration-underline select-session-coach"
-           data-coach-id="{{$coach->id}}">Filter Sessions</a>
+        <form method="GET" class="courseActive_id" action="{{route('get.instructor.course.show', $course->id)}}">
+            <input type="hidden" name="coach_id" value="{{$coach->id}}">
+            @isset($courseSelected)
+                <input type="hidden" name="course_id" value="{{ $courseSelected->id }}">
+            @endisset
+            <button type="submit" class="text-corporate-dark-color fw-bold small text-decoration-underline" style="border: none; background-color: transparent;" type="submit">Filter Sessions</button>
+        </form>
     </div>
 </div>
 
