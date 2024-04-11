@@ -29,7 +29,8 @@ class IndexController extends Controller
                 ->join('section', 'session.course_id', '=', 'section.course_id')
                 ->join('user','coach_info.user_id','=','user.id')
                 ->join('country','user.country_id','=','country.id')
-                ->select('user.id', 'user.name', 'user.lastname', 'user.url_photo', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description')
+                ->leftJoin('profile_image', 'user.id', '=', 'profile_image.user_id')
+                ->select('user.id', 'user.name', 'user.lastname', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description', 'profile_image.filename', 'profile_image.original_name', 'profile_image.mime')
                 ->where('section.instructor_id', '=', $userId)
                 ->distinct();
                 
@@ -39,7 +40,8 @@ class IndexController extends Controller
                 ->join('section', 'session.course_id', '=', 'section.course_id')
                 ->join('user','coach_info.user_id','=','user.id')
                 ->join('country','user.country_id','=','country.id')
-                ->select('user.id', 'user.name', 'user.lastname', 'user.url_photo', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description')
+                ->leftJoin('profile_image', 'user.id', '=', 'profile_image.user_id')
+                ->select('user.id', 'user.name', 'user.lastname', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description', 'profile_image.filename', 'profile_image.original_name', 'profile_image.mime')
                 ->where('section.instructor_id', '=', $userId)
                 ->where('section.course_id', '=', $request->course)
                 ->distinct();
@@ -51,7 +53,8 @@ class IndexController extends Controller
             ->join('section', 'session.course_id', '=', 'section.course_id')
             ->join('user','coach_info.user_id','=','user.id')
             ->join('country','user.country_id','=','country.id')
-            ->select('user.id', 'user.name', 'user.lastname', 'user.url_photo', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description')
+            ->leftJoin('profile_image', 'user.id', '=', 'profile_image.user_id')
+            ->select('user.id', 'user.name', 'user.lastname', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description', 'profile_image.filename', 'profile_image.original_name', 'profile_image.mime')
             ->where('section.instructor_id', '=', $userId)
             ->distinct();
             

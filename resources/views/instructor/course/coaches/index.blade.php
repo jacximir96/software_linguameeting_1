@@ -70,9 +70,9 @@
 
                     <div class="mean_stars margin-top10 margin-auto" data-rate-value="4.8">
                     </div>
-                    @if ($coach->url_photo != '')
+                    @if ($coach->filename != '')
                         <div class="margin-top-20">
-                            <img src="{{asset('assets/'.$coach->url_photo)}}" class="img_coach_attendance"/>
+                            <img src="{{ url('storage/profile/photo/' . $coach->filename) }}" class="img_coach_attendance"/>
                         </div>
                     @else
                         <div class="margin-top-20">
@@ -92,9 +92,9 @@
                     <div class="modal-body">
                         <div class="text-center">
 
-                            @if ($coach->url_photo != '')
+                            @if ($coach->filename != '')
                                 <div class="margin-top-20">
-                                    <img src="{{asset('assets/'.$coach->url_photo)}}" class="img_coach_attendance"/>
+                                    <img src="{{ url('storage/profile/photo/' . $coach->filename) }}" class="img_coach_attendance"/>
                                 </div>
                             @else
                                 <div class="margin-top-20">
