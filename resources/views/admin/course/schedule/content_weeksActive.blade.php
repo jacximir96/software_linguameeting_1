@@ -82,7 +82,7 @@
                         {{-- @isset($courseSelected)
                             <input type="hidden" name="course_id" value="{{ $courseSelected->id }}">
                         @endisset --}}
-                        <button type="submit" class="text-corporate-dark-color fw-bold small text-decoration-underline" style="border: none; background-color: transparent;" type="submit">Filter Sessions</button>
+                        <button type="submit" class="text-corporate-dark-color fw-bold small text-decoration-underline" style="border: none; background-color: transparent;" type="submit">Filter Sessions1</button>
                     </form>
                 </div>
             </div>
