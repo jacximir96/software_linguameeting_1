@@ -12,7 +12,7 @@ class IndexBreadcrumb implements IBreadcrumb
     {
         $breadcrumb = Breadcrumb::buildWithDashboard();
 
-        $tag = new ItemTag('Coaches');
+        $tag = new ItemTag('Coach List');
         $breadcrumb->push($tag);
 
         return $breadcrumb;

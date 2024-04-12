@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="margin-top-10">
-                        <img src="{{ asset('assets/img/flags/' . $coach->flag . '.png') }}" class="flag_coach_attendance"/>
+                        <img src="{{ asset('assets/img/flags/' . strtolower($coach->flag). '.png') }}" class="flag_coach_attendance"/>
                     </div>
 
                     <div class="margin-top-10 cursor_pointer text-corporate-color text-14" data-toggle="modal" data-target="#modal{{$coach->id}}">
