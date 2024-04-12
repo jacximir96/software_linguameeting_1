@@ -10,22 +10,30 @@
             <span class="subtitle-color fw-bold "></span>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-7 col-xl-4 mt-2 mb-2">
+        <div class="col-12 col-sm-6 col-md-7 col-xl-5 mt-2 mb-2">
             @if ($form->hasChaptersOptions())
-                {{Form::select('chapter_id['.$flexSession->number().']', $form->chaptersOptions(), null,
+                <div class="d-flex align-items-center">
+                    {{Form::select('chapter_id['.$flexSession->number().']', $form->chaptersOptions(), null,
                                 [   'class'=>'form-input-chapter-id flex-small-group-chapter-id form-control form-select ',
+                                    'style' => 'margin-right: 25px;', 
                                     'placeholder' => 'Select Conversation Guide',
                                     'data-url-update' => route('post.common.course.assignment.api.guide.update.flex.small', [$section->id, $flexSession->number()])
                                     ])}}
+                    
+                    <input name="chapter" type="text" hidden>
+                    <a href="#" class="download-link">
+                        <i class="fa fa-download"></i>
+                    </a>
+                </div>
             @endif
         </div>
 
-        <input name="chapter" type="text" hidden>
+        {{-- <input name="chapter" type="text" hidden>
         <div class="col-12 col-sm-6 col-md-7 col-xl-1 mt-2 mb-2 text-sm-end">
             <a href="#" class="download-link">
                 <i class="fa fa-download"></i>
             </a>
-        </div>
+        </div> --}}
 
         <div class="col-12 col-sm-6 col-md-5 col-xl-3 mt-2 mt-sm-0 p-0 text-sm-center">
             <a href="{{route('get.common.course.assignment.flex.edit',[$section->id, $flexSession->number()])}}"

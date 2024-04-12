@@ -8,16 +8,27 @@
         <div class="col-12 col-sm-6 col-md-6 col-xl-3 mt-2 mt-sm-0 text-start text-sm-end text-xl-start p-xl-0">
             <span class="subtitle-color fw-bold ">{{toDate($coachingWeek->start_date)}} - {{toDate($coachingWeek->end_date)}}</span>
         </div>
+
         <div class="col-12 col-sm-6 col-md-6 col-lg-7 col-xl-4 mt-2 mb-2">
-            @if ($viewData->chaptersOptions ()->count())
-                {{Form::select('chapter_id['.$section->id.'-'.$coachingWeek->id.']', $viewData->chaptersOptions(), null,
-                                [
-                                    'class'=>'form-input-chapter-id week-one-on-one-chapter-id form-control form-select ',
-                                    'placeholder' => 'Select Conversation Guide',
-                                    'data-url-update' => route('post.common.course.assignment.api.guide.update.week.one_on_one', [$section->id, $coachingWeek->id])
-                                ])}}
+            @if ($viewData->chaptersOptions()->count())
+            <div class="d-flex align-items-center">
+                {{ Form::select('chapter_id['.$section->id.'-'.$coachingWeek->id.']', $viewData->chaptersOptions(), null, [
+                'class'=>'form-input-chapter-id week-one-on-one-chapter-id form-control form-select',
+                'style' => 'margin-right: 25px;', 
+                'placeholder' => 'Select Conversation Guide',
+                'data-url-update' => route('post.common.course.assignment.api.guide.update.week.one_on_one', [$section->id, $coachingWeek->id])
+                ]) }}
+
+                <input name="chapter" type="text" hidden>
+                <a href="#" class="download-link">
+                    <i class="fa fa-download"></i>
+                </a>
+            </div>
             @endif
         </div>
+
+        
+
         <div class="col-12 col-sm-6 col-md-6 col-lg-5 col-xl-3 mt-2 mt-sm-0 text-sm-end text-xl-center">
             <a href="{{route('get.common.course.assignment.week.edit',[$section->id, $coachingWeek->id])}}"
                class="open-modal btn border-1 rounded small p-0"
@@ -50,3 +61,33 @@
         </div>
     </div>
 @endif
+
+
+<script>
+    $(document).ready(function() {
+        function setInitialValues() {
+            $('select.form-input-chapter-id').each(function() {
+                var selectedValue = $(this).val();
+                var $textInput = $(this).closest('.row').find('input[type="text"]');
+                $textInput.val(selectedValue);
+            });
+        }
+        setInitialValues();
+
+        $('select.form-input-chapter-id').change(function() {
+            var selectedValue = $(this).val();
+            var $textInput = $(this).closest('.row').find('input[type="text"]');
+            $textInput.val(selectedValue);
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('.download-link').click(function(event) {
+            event.preventDefault();
+            var selectedValue = $(this).closest('.row').find('input[type="text"]').val();
+            var downloadUrl = "{{ route('get.common.conversation_guide.chapter.file.downloadChapter') }}?chapter=" + selectedValue;
+            window.location.href = downloadUrl;
+        });
+    });
+</script>
