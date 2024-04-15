@@ -104,7 +104,7 @@ Route::prefix('experiences')->group(function () {
 });
 
 
-Route::prefix('resources')->group(function () {
+Route::prefix('asignments')->group(function () {
 
     Route::get('', \App\Http\Controllers\Instructor\Resources\IndexController::class)->name('get.instructor.resources.index');
 });

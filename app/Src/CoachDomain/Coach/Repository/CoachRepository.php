@@ -191,13 +191,16 @@ class CoachRepository implements SearchRepository
         return User::query()
             ->active()
             ->noDemo()
-            ->whereHas('session', function ($query) use ($course){
+            // ->whereHas('session', function ($query) use ($course){
+            //     $query->where('course_id', $course->id);
+            // })
+            ->whereHas('coaches', function ($query) use ($course){
                 $query->where('course_id', $course->id);
             })
             ->orderBy('lastname')->orderBy('name')
             ->get();
 
-
+            
     }
 
     public function search(CriteriaSearch $criteria, OrderListing $orderListing)

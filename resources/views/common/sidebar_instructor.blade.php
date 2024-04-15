@@ -28,7 +28,7 @@
 
     <a class="nav-link" href="{{route('get.instructor.resources.index')}}">
         <div class="sb-nav-link-icon"><i class="fas fa-question-circle"></i></div>
-        Resources
+        Asignments
     </a>
 
     <a class="nav-link" href="{{route('get.instructor.canvas.index')}}">

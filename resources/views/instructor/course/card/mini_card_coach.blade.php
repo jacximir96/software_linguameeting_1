@@ -7,7 +7,12 @@
     <div class="card-body padding-05-rem">
         <div class="row">
             <div class="col-3">
-                <i class="fa fa-user fa-3x"></i>
+                @if ($coach->profileImage)  
+                    <img src="{{ asset(trim($coach->profileImage->url()->get(), '/')) }}" class="img-fluid" alt="Coach Photo">
+                @else
+                    {{-- <img src="{{asset('assets/img/web/anonymous_user.png')}}" class="img-fluid" alt="Coach Photo"> --}}
+                    <i class="fa fa-user fa-3x"></i>
+                @endif
             </div>
             <div class="col-9">
 

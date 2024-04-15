@@ -1,8 +1,8 @@
 <div class="row">
 
     <div class="col-3">
-        @if ($coach->profileImage)
-            <img src="{{asset($coach->profileImage->url()->get())}}" class="img-fluid" alt="Coach Photo">
+        @if ($coach->profileImage)  
+            <img src="{{ asset(trim($coach->profileImage->url()->get(), '/')) }}" class="img-fluid" alt="Coach Photo">
         @else
             <img src="{{asset('assets/img/web/anonymous_user.png')}}" class="img-fluid" alt="Coach Photo">
         @endif

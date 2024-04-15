@@ -2,6 +2,7 @@
 
 namespace App\Src\UserDomain\User\Model;
 
+use App\Src\CourseDomain\CourseCoach\Model\CourseCoach;
 use App\Src\CourseDomain\DenyAccess\Model\DenyAccess;
 use App\Src\HelpDomain\Issue\Model\Issue;
 use App\Src\Localization\Country\Model\Country;
@@ -54,6 +55,11 @@ class User extends Authenticatable implements Auditable, MustVerifyEmail, UserPa
     public function countryLive()
     {
         return $this->belongsTo(Country::class, 'country_live_id');
+    }
+
+    public function coaches()
+    {
+        return $this->belongsTo(CourseCoach::class,'id', 'coach_id');
     }
 
     public function denyAccess()

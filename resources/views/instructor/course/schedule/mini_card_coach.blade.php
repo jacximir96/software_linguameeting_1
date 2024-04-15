@@ -15,13 +15,17 @@
                 <div class="card-body padding-05-rem">
                     <div class="row">
                         <div class="col-3">
-                            <i class="fa fa-user fa-3x"></i>
+                            @if ($coach->url_photo)
+                                <img src="{{asset('storage/profile/photo/' . $coach->url_photo)}}" class="img-fluid">
+                            @else
+                                <i class="fa fa-user fa-3x"></i>
+                            @endif   
                         </div>
                         <div class="col-9">
 
                             <div class="">
                                 <p class="mb-0">
-                                    <img src="{{ asset('assets/img/flags/' . $coach->flag . '.png') }}"
+                                    <img src="{{ asset('assets/img/flags/' . strtolower($coach->flag) . '.png') }}"
                                         class="img-thumbnail flag-icon-25 me-20" />
                                     {{$coach->countryName}}
                                 </p>
@@ -49,7 +53,7 @@
                         @isset($courseSelected)
                             <input type="hidden" name="course_id" value="{{ $courseSelected->id }}">
                         @endisset
-                        <button type="submit" class="text-corporate-dark-color fw-bold small text-decoration-underline" style="border: none; background-color: transparent;" type="submit">Filter Sessions3</button>
+                        <button type="submit" class="text-corporate-dark-color fw-bold small text-decoration-underline" style="border: none; background-color: transparent;" type="submit">Filter Sessions</button>
                     </form>
                 </div>
             </div>
