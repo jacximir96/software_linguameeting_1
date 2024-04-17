@@ -48,12 +48,18 @@ class ActiveCourseController extends Controller
         if (empty($course->is_flex)) {
             $dueDates = CoachingWeekModel::select('end_date')->where('course_id',$course_id)->first();
             
-            $date_due = Carbon::parse($dueDates->end_date . " " . $today_uni->format('H:i:s'))->setTimezone($university[0]->name);
-            
-            if ($date_due->toDateTimeString() >= $today_uni->toDateTimeString()) {
-                // no se puede cerrar porque existen sesiones futuras.
-                $close = false;
+            if($dueDates != null){
+                $date_due = Carbon::parse($dueDates->end_date . " " . $today_uni->format('H:i:s'))->setTimezone($university[0]->name);
+           
+                if ($date_due->toDateTimeString() >= $today_uni->toDateTimeString()) {
+                    // no se puede cerrar porque existen sesiones futuras.
+                    $close = false;
+                }
+            }else{
+                return redirect()->back()->with('error', 'The course cannot be closed');
             }
+
+            
         } else {
             $sessions = SessionModel::where('course_id',$course_id)
                         ->where(DB::raw("CONCAT(session.day, ' ', session.end_time)"), '>=', $today_uni->subDays(1)->toDateTimeString())
