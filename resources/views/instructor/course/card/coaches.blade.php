@@ -1,8 +1,8 @@
-<div class="container mt-5">
+<div class="container">
 <div class="row">
 
     @forelse ($coaches as $coach)
-        <div class="col-md-3 d-flex">
+        <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
             @include('instructor.course.card.mini_card_coach', ['coach' => $coach])
         </div>
     @empty

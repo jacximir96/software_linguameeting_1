@@ -24,51 +24,53 @@ class IndexController extends Controller
 
         if($request->has('course')){
             if ($request->course === 'all') {
-                $coachesQuery = DB::table('coach_info')
-                ->join('session', 'coach_info.user_id', '=', 'session.coach_id')
-                ->join('section', 'session.course_id', '=', 'section.course_id')
-                ->join('user','coach_info.user_id','=','user.id')
-                ->join('country','user.country_id','=','country.id')
-                ->leftJoin('profile_image', 'user.id', '=', 'profile_image.user_id')
-                ->select('user.id', 'user.name', 'user.lastname', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description', 'profile_image.filename', 'profile_image.original_name', 'profile_image.mime')
-                ->where('section.instructor_id', '=', $userId)
-                ->distinct();
+
+                $coachesQuery = DB::table('section')
+                    ->join('course_coach', 'section.course_id', '=', 'course_coach.course_id')
+                    ->join('user', 'course_coach.coach_id', '=', 'user.id')
+                    ->join('country','user.country_id','=','country.id')
+                    ->leftJoin('coach_info', 'user.id', '=', 'coach_info.user_id')
+                    ->leftJoin('profile_image', 'user.id', '=', 'profile_image.user_id')
+                    ->where('section.instructor_id', $userId)
+                    ->select('user.id', 'user.name', 'user.lastname', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description', 'profile_image.filename', 'profile_image.original_name', 'profile_image.mime')
+                    ->distinct();
                 
             }else{
-                $coachesQuery = DB::table('coach_info')
-                ->join('session', 'coach_info.user_id', '=', 'session.coach_id')
-                ->join('section', 'session.course_id', '=', 'section.course_id')
-                ->join('user','coach_info.user_id','=','user.id')
+                $coachesQuery = DB::table('section')
+                ->join('course_coach', 'section.course_id', '=', 'course_coach.course_id')
+                ->join('user', 'course_coach.coach_id', '=', 'user.id')
                 ->join('country','user.country_id','=','country.id')
+                ->leftJoin('coach_info', 'user.id', '=', 'coach_info.user_id')
                 ->leftJoin('profile_image', 'user.id', '=', 'profile_image.user_id')
-                ->select('user.id', 'user.name', 'user.lastname', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description', 'profile_image.filename', 'profile_image.original_name', 'profile_image.mime')
-                ->where('section.instructor_id', '=', $userId)
+                ->where('section.instructor_id', $userId)
                 ->where('section.course_id', '=', $request->course)
+                ->select('user.id', 'user.name', 'user.lastname', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description', 'profile_image.filename', 'profile_image.original_name', 'profile_image.mime')
                 ->distinct();
                 
             }
         }else{
-            $coachesQuery = DB::table('coach_info')
-            ->join('session', 'coach_info.user_id', '=', 'session.coach_id')
-            ->join('section', 'session.course_id', '=', 'section.course_id')
-            ->join('user','coach_info.user_id','=','user.id')
-            ->join('country','user.country_id','=','country.id')
-            ->leftJoin('profile_image', 'user.id', '=', 'profile_image.user_id')
-            ->select('user.id', 'user.name', 'user.lastname', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description', 'profile_image.filename', 'profile_image.original_name', 'profile_image.mime')
-            ->where('section.instructor_id', '=', $userId)
-            ->distinct();
-            
+
+            $coachesQuery = DB::table('section')
+                    ->join('course_coach', 'section.course_id', '=', 'course_coach.course_id')
+                    ->join('user', 'course_coach.coach_id', '=', 'user.id')
+                    ->join('country','user.country_id','=','country.id')
+                    ->leftJoin('coach_info', 'user.id', '=', 'coach_info.user_id')
+                    ->leftJoin('profile_image', 'user.id', '=', 'profile_image.user_id')
+                    ->where('section.instructor_id', $userId)
+                    ->select('user.id', 'user.name', 'user.lastname', 'country.name as countryName', 'country.iso2 as flag', 'coach_info.url_video as video', 'coach_info.description as description', 'profile_image.filename', 'profile_image.original_name', 'profile_image.mime')
+                    ->distinct();
         }
 
-        $courses = DB::table('coach_info')
-            ->join('session', 'coach_info.user_id', '=', 'session.coach_id')
-            ->join('section', 'session.course_id', '=', 'section.course_id')
-            ->join('user','coach_info.user_id','=','user.id')
-            ->join('course','section.course_id','=','course.id')
-            ->select('course.*')
-            ->where('section.instructor_id', '=', $userId)
-            ->distinct()
-            ->get();
+        $courses = DB::table('section')
+                        ->join('course', 'section.course_id', '=', 'course.id')
+                        ->join('course_coach', 'course.id', '=', 'course_coach.course_id')
+                        ->join('user', 'section.instructor_id', '=', 'user.id')
+                        ->where('section.instructor_id', $userId)
+                        ->select('course.*')
+                        ->distinct()
+                        ->get();
+        
+                       
 
         $coaches = $coachesQuery->get();    
         
