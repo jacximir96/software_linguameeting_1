@@ -18,7 +18,7 @@ class UpdateProfileRequest extends FormRequest
         return [
             'name' => 'required',
             'lastname' => 'required',
-            'country_id' => 'required',
+            // 'country_id' => 'required',
             'timezone_id' => 'required',
 
             'email' => 'required|unique:user,email,'.user()->id,
@@ -28,6 +28,7 @@ class UpdateProfileRequest extends FormRequest
 
             'password' => [new PasswordRule($this, new PasswordService())],
         ];
+      
     }
 
     public function messages()
@@ -36,7 +37,7 @@ class UpdateProfileRequest extends FormRequest
             'name.required' => trans('common_form.required', ['field' => 'name']),
             'lastname.required' => trans('common_form.required', ['field' => 'lastname']),
 
-            'country_id.required' => trans('common_form.required', ['field' => 'country']),
+            // 'country_id.required' => trans('common_form.required', ['field' => 'country']),
             'timezone_id.required' => trans('common_form.required', ['field' => 'time zone']),
 
             'email.required' => trans('common_form.required', ['field' => 'email']),

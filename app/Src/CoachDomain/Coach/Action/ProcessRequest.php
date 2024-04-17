@@ -18,23 +18,28 @@ class ProcessRequest
 
     public function __construct(UploadImageCommand $uploadImageCommand, DeleteImageCommand $deleteImageCommand)
     {
-
+    
         $this->uploadImageCommand = $uploadImageCommand;
         $this->deleteImageCommand = $deleteImageCommand;
     }
 
-    public function updatePersonalData(ICoachRequest $request, User $coach): User
+    public function updatePersonalData($request, $coach): User
     {
-
+        
         $coach->name = $request->name;
         $coach->lastname = $request->lastname;
         $coach->email = $request->email;
-        $coach->country_id = $request->country_id;
+        if($request->country_id != null){
+            $coach->country_id = $request->country_id;
+        }
         $coach->country_live_id = $request->country_live_id;
         $coach->timezone_id = $request->timezone_id;
-
-        $coach->phone = $request->phone;
-        $coach->whatsapp = $request->whatsapp;
+        if($request->phone != null){
+            $coach->phone = $request->phone;
+        }
+        if($request->whatsapp != null){
+            $coach->whatsapp = $request->whatsapp;
+        }
         $coach->skype = $request->skype;
 
         if ($request->filled('password')) {
@@ -44,7 +49,7 @@ class ProcessRequest
         if ($request->has('active')) {
             $coach->active = $request->active;
         }
-
+        
         if ($request->has('email_verified')){
 
             $emailVerified = (bool)$request->email_verified;
@@ -59,12 +64,16 @@ class ProcessRequest
                 }
             }
         }
-
+        
         $coach->save();
 
-        $coach->language()->sync($request->language());
-
-        $coach->syncRoles($request->role_id);
+        if($request->language != null){
+            $coach->language()->sync($request->language());
+        }
+        
+        if($request->role_id != null){
+            $coach->syncRoles($request->role_id);
+        }
 
         return $coach;
     }

@@ -32,16 +32,16 @@ class EditProfileController extends Controller
     public function update(UpdateProfileRequest $request)
     {
         try {
-            $action = app(UpdateProfileAction::class);
+            $action = app(UpdateProfileAction::class);         
             $action->handle($request, user());
-
+            
             flash(trans('user.profile_update_success'))->success();
 
             return back();
         } catch (\Throwable $exception) {
             Log::error('There is an error when update profile', [
                 'request' => $request,
-                'user' => $user,
+                'user' => user(),
                 'exception' => $exception,
             ]);
 
