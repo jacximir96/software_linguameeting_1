@@ -57,7 +57,7 @@ class ShowController extends Controller
 
     public function __invoke(Course $course, Request $request)
     {
-       
+        
         try {
          
             $instructor = user();
@@ -475,9 +475,10 @@ class ShowController extends Controller
                 'startOfWeek' => $startOfWeek,
                 'days' => $days,
                 'coachesActive' => $coachesActive,
-                'timezone' => $this->userTimezone()
+                'timezone' => $this->userTimezone(),
+                'sectionCourse' => $request->section
             ]);
-           
+            
             return view('instructor.course.show_tab');
 
         } catch (\Throwable $exception) {

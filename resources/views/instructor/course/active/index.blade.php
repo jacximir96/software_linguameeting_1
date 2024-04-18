@@ -102,9 +102,9 @@
                         <div class="custom-select">
                             <div class="select-selected">Seleccionar una opción</div>
                             <div class="select-items">
-                                <div><a href="{{route('get.instructor.course.show', $section->course_id)}}" style="text-decoration: none; color:black">&nbsp;&nbsp;See course Instructions</a></div>
+                                <div><a href="{{route('get.instructor.course.show', [$section->course_id])}}" style="text-decoration: none; color:black">&nbsp;&nbsp;See course Instructions</a></div>
                                 <div><a href="{{route('get.common.course.section.file.instructions.download', $section->id)}}" style="text-decoration: none; color:black">&nbsp;&nbsp;Download Instructions</a></div>
-                                <div><a href="{{route('get.admin.course.coaching_form.course_assignment', $section->course->id)}}?sectionToExpand={{$section->id}}" style="text-decoration: none; color:black">&nbsp;&nbsp;Add Conversation Guides</a></div>
+                                <div><a href="{{route('get.instructor.course.show', [$section->course_id, $section->id])}}" style="text-decoration: none; color:black">&nbsp;&nbsp;Add Conversation Guides</a></div>
                                 <div><a href="{{route('get.instructor.course.makeup.assign', $section->course_id)}}"
                                     title="Add make-up all students"
                                     class="open-modal text-dark"

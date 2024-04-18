@@ -11,7 +11,7 @@
     @foreach ($course->section as $section)
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed"
+                <button class="accordion-button {{$sectionCourse == $section->hashId() ? '' : 'collapsed'}}"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#section-{{$section->hashId()}}"
@@ -21,7 +21,7 @@
                     <span class="ms-5 fw-bold">{{$section->code}}</span>
                 </button>
             </h2>
-            <div id="section-{{$section->hashId()}}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div id="section-{{$section->hashId()}}" class="accordion-collapse collapse {{$sectionCourse == $section->hashId() ? 'show' : ''}}" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     @if ($isSmallGroup)
                         @include('instructor.course.card.assignment_weeks')

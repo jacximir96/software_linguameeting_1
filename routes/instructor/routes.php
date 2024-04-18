@@ -45,7 +45,7 @@ Route::prefix('course')->group(function () {
 
     Route::get('', \App\Http\Controllers\Instructor\Course\IndexController::class)->name('get.instructor.course.index');
 
-    Route::get('/show/{course}', \App\Http\Controllers\Instructor\Course\ShowController::class)->name('get.instructor.course.show');
+    Route::get('/show/{course}/{section?}', \App\Http\Controllers\Instructor\Course\ShowController::class)->name('get.instructor.course.show');
 
     Route::prefix('active')->group(function () {
 
