@@ -6,7 +6,7 @@
     </a>
 
      <a class="nav-link" href="{{route('get.instructor.coaching_form.zero_step')}}">
-        <div class="sb-nav-link-icon"><i class="fas fa-question-circle"></i></div>
+        <div class="sb-nav-link-icon"><i class="fas fa-plus-circle"></i></div>
         Create Course
     </a>
 
