@@ -7,7 +7,7 @@ return [
     ],
     'experience' => [
         'register' => [
-            'success' => 'Thank you for your register in this Experience. Close window to continue.',
+            'success' => 'Thank you for registering for this Experience. Please close the window to continue.',
             'error' => [
                 'general' => 'When create a payment for the register in experience.',
                 'already_registered' => 'The user is already registered in the experience.',

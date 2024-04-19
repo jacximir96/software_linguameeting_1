@@ -159,11 +159,11 @@
                     </a>
                 @endif
 
-                @if ($registerList->canDeleteRegisterNow($experience, $nowUTC))
+                @if (in_array($experience->hashId(), $registerList))
                     <a href="{{route('get.experience.register.delete', $experience->hashId())}}"
                        onclick="return confirm('Are you sure to remove your assitence to this experience?');"
                        class="text-corporate-danger">
-                        <i class="fa fa-times me-1"></i> Delete Register
+                        <i class="fa fa-times me-1"></i> Cancel Registration
                     </a>
                 @endif
 

@@ -7,6 +7,7 @@ use App\Src\CourseDomain\Course\Repository\CourseRepository;
 use App\Src\ExperienceDomain\Experience\Presenter\Breadcrumb\Instructor\ListBreadcrumb;
 use App\Src\ExperienceDomain\Experience\Repository\ExperienceFilter;
 use App\Src\ExperienceDomain\Experience\Repository\ExperienceRepository;
+use App\Src\ExperienceDomain\ExperienceRegister\Model\ExperienceRegister;
 use App\Src\ExperienceDomain\ExperienceRegister\Repository\ExperienceRegisterRepository;
 use App\Src\ExperienceDomain\ExperienceRegister\Service\RegisterList;
 use App\Src\Localization\TimeZone\Repository\TimeZoneRepository;
@@ -55,13 +56,19 @@ class ListController extends Controller
         $breadcrumb = new ListBreadcrumb($isUpcoming);
         $this->buildBreadcrumbInstanceAndSendToView($breadcrumb);
 
-        $registerList = $this->obtainRegisterList($instructor);
+        $registerList = $this->obtainRegisterList($instructor)->get();
 
+        $registerIds = array();
+
+        foreach ($registerList as $register) {
+            $registerIds[] = $register['experience_id']; 
+        }
+            
         $timezone = TimeZoneRepository::findByName(config('linguameeting.timezone.by_default_in_experiences'));
 
         view()->share([
             'experiences' => $experiences,
-            'registerList' => $registerList,
+            'registerList' => $registerIds,
             'isUpcoming' => $isUpcoming,
             'mustPayForExperiences' => $instructor->mustPayForExperiences(),
             'instructor' => $instructor,
@@ -110,5 +117,5 @@ class ListController extends Controller
         }
 
         return $registerList;
-    }
+    }  
 }

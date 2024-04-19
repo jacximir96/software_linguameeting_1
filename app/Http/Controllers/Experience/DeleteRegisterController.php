@@ -7,6 +7,7 @@ use App\Src\ExperienceDomain\Experience\Exception\ExperienceAlreadyStarted;
 use App\Src\ExperienceDomain\Experience\Model\Experience;
 use App\Src\ExperienceDomain\ExperienceRegister\Action\DeleteRegisterAction;
 use App\Src\ExperienceDomain\ExperienceRegister\Exception\RegisterNotFound;
+use App\Src\ExperienceDomain\ExperienceRegister\Model\ExperienceRegister;
 use App\Src\ExperienceDomain\ExperienceRegister\Repository\ExperienceRegisterRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -28,16 +29,17 @@ class DeleteRegisterController extends Controller
         try {
 
             $experienceRegister = $this->experienceRegisterRepository->obtainByExperienceAndUser($experience, user());
-
-            if (!is_null($experienceRegister)){
+            
+            if (is_null($experienceRegister)){
               throw new RegisterNotFound();
             }
-
+            
             DB::beginTransaction();
 
-            $action = app(DeleteRegisterAction::class);
-            $action->handle($experienceRegister, user());
+            // $action = app(DeleteRegisterAction::class);        
+            // $action->handle($experienceRegister, user());
 
+            $exp = ExperienceRegister::where('experience_id', $experience->id)->first()->delete();
             DB::commit();
 
             flash(trans('experience.comment.user.create_success'))->success();

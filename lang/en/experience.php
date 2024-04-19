@@ -12,14 +12,14 @@ return [
     ],
     'comment' => [
         'user' => [
-            'create_success' => 'Thank you for your comment.',
+            'create_success' => 'Your registration has been canceled successfully.',
             'error' => [
                 'general' => 'Lo sentimos, pero hubo un error al guardar tu comentario.'
             ]
         ],
 
         'public' => [
-            'create_success' => 'Thank you for your comment.',
+            'create_success' => 'Your registration has been canceled successfully.',
             'error' => [
                 'general' => 'Lo sentimos, pero hubo un error al guardar tu comentario.'
             ]
