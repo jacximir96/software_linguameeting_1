@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  
+
     <div class="row">
         <div class="col-md-5 ">
             <div class="row p-2 boxBlueSummary color4" style="background-color: rgba(53, 180, 180,0.2)">
